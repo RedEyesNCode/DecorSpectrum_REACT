@@ -1,0 +1,102 @@
+.App-header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    
+    
+  }
+  .header-1{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  
+  
+  .navbar {
+    color: black;
+   margin-left:100px;
+    transform:translateY(60px);
+     padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  }
+  
+  .navbar a {
+   
+    display: block;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left:30px;
+  }
+  
+  .navbar a:hover {
+    background-color:black;
+    color: black;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color:black;
+    padding: 14px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .icon{
+   margin-left:900px;
+   background-color:black;
+   
+  }
+  .logo{
+    float:left;
+    width:100px;
+    height: auto;
+    
+  }
