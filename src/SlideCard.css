@@ -1,0 +1,30 @@
+import React from 'react';
+import SlideCard from './SlideCard';
+import './App.css'; // Import your CSS file where you'll define the overall styles
+
+function App() {
+  const items = [
+    {
+      imageUrl: 'https://example.com/image1.jpg',
+      alt: 'Image 1',
+      title: 'Title 1',
+      description: 'Description 1',
+    },
+    {
+      imageUrl: 'https://example.com/image2.jpg',
+      alt: 'Image 2',
+      title: 'Title 2',
+      description: 'Description 2',
+    },
+    // Add more items as needed
+  ];
+
+  return (
+    <div className="container">
+      <h1>Slide Card Example</h1>
+      <SlideCard items={items} />
+    </div>
+  );
+}
+
+export default App;

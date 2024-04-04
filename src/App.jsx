@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import ImageSlider from './components/ImageSlider';
 import Navbar from './navbar';
 import { getAllCategory } from './api/apiInterface';
+// import { getPopularProducts } from './api/apiInterface';
 import Middle from './Middle';
 
 
@@ -34,14 +35,26 @@ function App() {
     fetchLeadsData();
   }, []);
 
+
+  // useEffect(() => {
+  //   const fetchLeadsData = async () => {
+  //     const getAllLeadsResponse = await getPopularProducts();
+  //     console.log("Get All products Response -->", getAllLeadsResponse);
+
+  //     setBannersStates(getAllLeadsResponse);
+  //   };
+  //   fetchLeadsData();
+  // }, []);
+
+
   return (
     <header classname="App-header">
-     
-          { <Navbar/> }
+
+      {<Navbar />}
       {slides && (<ImageSlider images={slides.data} />)}
-      
-      { <Middle/> }
-      
+
+      {<Middle />}
+
     </header>
   );
 }

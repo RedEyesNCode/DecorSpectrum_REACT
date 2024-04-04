@@ -18,8 +18,8 @@
   }
   .container h1{
     font-family: Rosario;
-    font-size: 20px;
-    color:black;
+    font-size: 30px;
+    color:rgb(193, 155, 118);
     margin-left:-120px;
   }
   .row {
@@ -41,8 +41,36 @@
   
 
  .gap{
-    width:200px;
+    width:300px;
  }
  .rounded-image{
-    border-radius:200px 200px 20px 20px;
+  width: 290px; /* Adjust the width as needed */
+  height: 550px; /* Adjust the height as needed */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 200px 100px 200px 100px;
+  animation: fadeInOut 6s linear infinite;
+  transition: width 2s;
+  transform: translateY(-200px);
+  
  }
+.rounded-image1{
+  width: 270px; /* Adjust the width as needed */
+  height: 300px;
+  border-radius: 70px 70px;
+  animation: fadeInOut 6s linear infinite;
+  transition: width 2s;
+
+
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.rounded-image:hover{
+  width:330px;
+  
+}
