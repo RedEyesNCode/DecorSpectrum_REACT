@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import logoImg from './images/logo-1.png';
+import logoImg from '../images/logo-1.png';
 import './Navbar.css'; // Import your CSS file for styling
 import {FaAngleDown,FaAngleUp} from 'react-icons/fa'
 const Navbar = () => {

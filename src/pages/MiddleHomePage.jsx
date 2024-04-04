@@ -1,7 +1,7 @@
 import React from 'react';
-import './Middle.css'; // Import your CSS file for styling
-import image4 from './images/image4.jpg';
-import image5 from './images/image5.jpg';
+import './MiddleHomepage.css'; // Import your CSS file for styling
+import image4 from '../images/image-4.webp';
+import image5 from '../images/image5.jpg';
 
 
 const Middle = () => {
