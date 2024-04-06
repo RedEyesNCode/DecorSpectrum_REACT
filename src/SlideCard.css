@@ -1,30 +1,44 @@
-import React from 'react';
-import SlideCard from './SlideCard';
-import './App.css'; // Import your CSS file where you'll define the overall styles
-
-function App() {
-  const items = [
-    {
-      imageUrl: 'https://example.com/image1.jpg',
-      alt: 'Image 1',
-      title: 'Title 1',
-      description: 'Description 1',
-    },
-    {
-      imageUrl: 'https://example.com/image2.jpg',
-      alt: 'Image 2',
-      title: 'Title 2',
-      description: 'Description 2',
-    },
-    // Add more items as needed
-  ];
-
-  return (
-    <div className="container">
-      <h1>Slide Card Example</h1>
-      <SlideCard items={items} />
-    </div>
-  );
+.slide-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px; 
+  margin: auto;
+  overflow: hidden;
 }
 
-export default App;
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  text-align: center;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}

@@ -3,10 +3,10 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    color:white ;
   }
   ul li a{
-    color:black;
+    color:white;
   }
   li {
     float: left;
@@ -62,3 +62,8 @@ ul {
   .navbar{
     margin-left:300px;
   }
+  .rounded-image29{
+    width:70px;
+    float:left;
+  }
+  

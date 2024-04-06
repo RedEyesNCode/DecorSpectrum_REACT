@@ -18,3 +18,11 @@ export const getAllCategory = async () => {
     throw error;
   }
 };
+export const getPopularProducts = async () => {
+  try {
+    const response = await apiService("product/getPopularProducts", "GET",);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
