@@ -8,6 +8,7 @@ import ProductDetail from "./components/product/ProductDetail";
 import ProductByCategory from "./components/product/ProductByCategory";
 
 ReactDOM.render(
+  // ADD REACT-ROUTER
   <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<App />} />
