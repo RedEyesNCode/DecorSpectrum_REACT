@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-import './SlideCard.css'; // Import your CSS file where you'll define the slide card styles
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-function SlideCard({ items }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+const Reactcard = ({ images }) => {
+  const settings = {    
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   return (
-    <div className="slide-card">
-      <button onClick={handlePrev}>&lt;</button>
-      <div className="card">
-        <img src={items[currentIndex].imageUrl} alt={items[currentIndex].alt} />
-        <div className="content">
-          <h2>{items[currentIndex].title}</h2>
-          <p>{items[currentIndex].description}</p>
-        </div>
-      </div>
-      <button onClick={handleNext}>&gt;</button>
+    <div className="image-slider">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img src={image.bannerLink} alt={`Slide ${index}`} />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
-}
+};
 
-export default SlideCard;
+export default Reactcard;

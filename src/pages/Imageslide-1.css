@@ -1,0 +1,35 @@
+/* ImageRow.css */
+.image-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+  }
+  
+  .image {
+    width: 100px; 
+    height: auto; 
+    margin: 10px; 
+  }
+  .app-1{
+    display: flex;
+    flex-direction: row;
+    margin-top:400px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+  }
+  .rounded-image5{
+    gap:30px;
+    width:270px;
+    height:350px;
+    border-radius: 20px 20px;
+
+  }
+  .app-3{
+
+    margin-top:-300px;
+
+  }
+  
