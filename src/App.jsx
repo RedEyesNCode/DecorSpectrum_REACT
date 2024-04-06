@@ -40,13 +40,15 @@ function App() {
    
 
   return (
-    <header classname="App-header">
-
+    <div>
       {<MaterialNavBar />}
       {slides && (<ImageSlider images={slides.data} />)}
-
-      
-    </header>
+      <Middle/>
+      <Headmean/>
+      <Headcard/>
+      <Headbottom/>
+      <Footer/>
+    </div>
   );
 }
 
