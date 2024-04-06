@@ -16,6 +16,7 @@ import Headbottom from './pages/Headbottom';
 import Image2slide from './pages/Image2slide';
 // import Footer from './pages/footer';
 import Footer from './pages/Footer';
+import MaterialNavBar from './components/MaterialNavBar';
 
 
 
@@ -33,40 +34,18 @@ function App() {
     fetchLeadsData();
   }, []);
 
-  useEffect(() => {
-    const fetchLeadsData = async () => {
-      const getAllLeadsResponse = await getAllCategory();
-      console.log("Get All banners Response -->", getAllLeadsResponse);
-
-      setBannersStates(getAllLeadsResponse);
-    };
-    fetchLeadsData();
-  }, []);
+  
 
 
-   useEffect(() => {
-     const fetchLeadsData = async () => {
-       const getAllLeadsResponse = await getPopularProducts();
-       console.log("Get All products Response -->", getAllLeadsResponse);
-
-       setBannersStates(getAllLeadsResponse);
-     };
-     fetchLeadsData();
-   }, []);
-
+   
 
   return (
     <header classname="App-header">
 
-      {<Navbar />}
+      {<MaterialNavBar />}
       {slides && (<ImageSlider images={slides.data} />)}
-      {<Middle />}
-      {slides && (<Reactcard images={slides.data} />)}
-      {<Headmean />}
-      {<Headcard />}
-      {<Headbottom />}
-      {<Image2slide />}
-      {<Footer/>}
+
+      
     </header>
   );
 }

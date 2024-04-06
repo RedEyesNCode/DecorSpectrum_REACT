@@ -34,6 +34,7 @@ const Navbar = () => {
             <a href="#">LEATHER BOOKENDS {dropdownOpen ? <FaAngleUp /> : <FaAngleDown />}</a>
             <a href="#">LEATHER FURNITURE ASSENTS {dropdownOpen ? <FaAngleUp /> : <FaAngleDown />}</a>
             <a href="#">LEATHER WALL HEADS {dropdownOpen ? <FaAngleUp /> : <FaAngleDown />}</a>
+            
           </div>
         </li>
       </ul>
