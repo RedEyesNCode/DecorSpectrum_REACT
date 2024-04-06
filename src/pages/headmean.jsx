@@ -3,6 +3,7 @@ import image11 from "../images/image-3.webp";
 import image12 from "../images/ic_blue_lamp.jpg";
 import image1 from "../images/image-14.jpg";
 import imageLamp from "../images/ic_light_lamp.jpg";
+import { Typography, Box, Stack } from '@mui/material';
 
 const Headmean = () => {
   return (
@@ -11,7 +12,9 @@ const Headmean = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
-        margin: "25px",
+        padding : "100px",
+        marginTop : "150px",
+        backgroundColor : "#2C1A00",
       }}
     >
       <div style={{ position: "relative" }}>
@@ -37,15 +40,24 @@ const Headmean = () => {
             borderStartEndRadius: "50px",
             borderStartStartRadius: "20px",
             position: "absolute",
-            bottom: 0,
+            bottom: 10,
             left: "90%",
-            transform: "translateX(-30%)",
-            width: "40%",
+            transform: "translateX(-10%)",
+            width: "210px",
             height: "auto",
           }}
         />
         {/* Text Above Overlapping Image */}
-        <p style={{ position: "absolute", bottom: "90px", left: "110%", transform: "translate(150%, -20%)", textAlign: "center", backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "10px" }}>Your Text Above Overlapping Image</p>
+        <div style={{ position: "absolute", bottom: "-90px",  transform: "translate(150%, -30%)",  backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "10px" }}>
+          <Stack direction="column">
+          <Typography variant='h2' style={{ fontFamily : 'Rosario-Regular', padding : "10px"}}>Innovative Design is our passion</Typography>
+          <Typography variant='body1' style={{ fontFamily : 'Rosario-Regular', marginTop: "12px",marginRight :"20px",padding : "10px", color: "#000000" }}>We Strive to bring you the latest in designs, directly from our manufacturers. We give you the option and flexibility to choose the styles of globes and create your own chandelier patterns.</Typography>
+          <Box sx={{ marginTop: "50px", backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Typography style={{color : "#FFFFFF",fontFamily : 'Rosario-Medium'}}  variant="body1">Read More </Typography>
+          </Box>
+          </Stack>
+
+        </div>
         {/* Overlapping Image */}
         <img
           src={image1}
@@ -59,12 +71,14 @@ const Headmean = () => {
             width: "150%", // Increased size
             height: "auto",
             bottom: "-80%",
-            left: "110%",
+            left: "120%",
           }}
         />
       </div>
       <div style={{ marginTop: "60px" }}>
-        <p>Handicraft Importers Since 2009</p>
+      <Typography variant='h4' style={{ fontFamily : 'Rosario-Bold',color : "#FFFFFF",fontWeight : 500, padding : "10px"}}>{'Handicraft Importers Since  2009'}</Typography>
+
+        
       </div>
     </div>
   );
