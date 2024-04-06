@@ -1,22 +1,27 @@
 import React from 'react';
 import './MiddleHomepage.css'; // Import your CSS file for styling
 import image4 from '../images/image-4.webp';
-import image5 from '../images/image5.jpg';
-
+import image5 from '../images/decore-2.jpg';
+import { Typography, Box, Stack } from '@mui/material';
 
 const Middle = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <h1 className="heading">We Offer Top Quality Products -
-A Statement In Style</h1>
-        <p className="paragraph">Huge selection of Exotic handmade Turkish Chandeliers, Lamps, Ceiling Lights & Ceramics. Choose from our fast-selling colors or customize a unique combination.</p>
-        </div>
-        <div className='gap'></div>
-        <img src={image4} alt="Example" className="rounded-image1"/>
-        <div className='gap'></div>
-        <img src={image5} alt="Example" className="rounded-image"/>
-    
+    <div style={{ display: "flex", justifyContent: "space-between", margin: "150px" }}>
+      <div>
+        <Stack>
+          <Typography variant='h2' style={{ fontFamily : 'Rosario-Regular', padding : "10px"}}>We Offer Top Quality Products</Typography>
+          <Typography variant='h4' style={{ fontFamily : 'Rosario-Medium', marginTop : "20px",padding : "10px", color: "#C19B76", fontWeight: 700 }}>A Statement in Style</Typography>
+          <Typography variant='body1' style={{ fontFamily : 'Rosario-Regular', marginTop: "12px",marginRight :"20px",padding : "10px", color: "#000000" }}>Huge selection of Exotic handmade Turkish Chandeliers, Lamps, Ceiling Lights & Ceramics. Choose from our fast-selling colors or customize a unique combination.</Typography>
+
+          <Box sx={{ marginTop: "50px", backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Typography style={{color : "#FFFFFF",fontFamily : 'Rosario-Medium'}}  variant="body1">View Our Collection</Typography>
+          </Box>
+        </Stack>
+      </div>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <img src={image4} alt="Example" className="rounded-image2" style={{ marginRight: "20px" }} />
+        <img src={image5} alt="Example" className="rounded-image2" />
+      </div>
     </div>
   );
 }

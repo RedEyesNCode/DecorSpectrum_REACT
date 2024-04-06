@@ -44,6 +44,7 @@ function App() {
       {<MaterialNavBar />}
       {slides && (<ImageSlider images={slides.data} />)}
       <Middle/>
+      <Image2slide/>
       <Headmean/>
       <Headcard/>
       <Headbottom/>

@@ -58,9 +58,9 @@ const ImageSlider = ({ images }) => {
                   fontWeight: "bold",
                 }}
               >
-                <Typography variant="h4">Unique Turkish Decor Collection</Typography>
-                  <Typography variant="h2">Statement in Style</Typography>
-                  <Box style={{ marginLeft : "120px",  backgroundColor : "#C19B76",padding : "20px",width : "250px",height : "50px"}} alignContent="center" 
+                <Typography style={{fontFamily : 'Rosario-Bold'}} variant="h4">Unique Turkish Decor Collection</Typography>
+                  <Typography variant="h2" style={{fontFamily : 'Rosario-Bold', fontWeight : 900}}>Statement in Style</Typography>
+                  <Box style={{ fontFamily : 'Rosario-Bold', marginLeft : "120px",  backgroundColor : "#C19B76",padding : "20px",width : "250px",height : "50px"}} alignContent="center" 
                   justifyItems="center">
                     <Typography>
                       FIND OUT MORE
