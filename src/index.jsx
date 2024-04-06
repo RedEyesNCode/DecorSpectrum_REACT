@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ProductByCategory from "./components/product/ProductByCategory";
+import ProductDetail from "./components/product/ProductDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductByCategory />
+    <ProductDetail />
   </React.StrictMode>
 );
 

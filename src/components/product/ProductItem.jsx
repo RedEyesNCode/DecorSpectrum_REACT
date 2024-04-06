@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
+  Paper,
   Typography,
   Button,
   Box,
@@ -31,9 +32,18 @@ const ProductItem = ({
   productCategory,
   isOutOfStock,
 }) => {
+
+  const [openProductDetail,setProductDetail] = useState(false);
+
+  const handleOpenProductDetail = () =>{
+    setProductDetail(true);
+    
+  }
+
   return (
     <div>
-      <Card
+      <Paper
+      elevation={7}
         sx={{
           position: "relative",
           width: 350,
@@ -105,13 +115,15 @@ const ProductItem = ({
             <Button
               variant="contained"
               style={{ width: "140px" }}
+              onClick={handleOpenProductDetail}
               sx={{ backgroundColor: "#726251", textTransform: "none" }}
             >
-              Select Options
+              View Details
             </Button>
           </Stack>
         </CardContent>
-      </Card>
+      </Paper>
+      
     </div>
   );
 };
