@@ -4,11 +4,18 @@ import image4 from '../images/image-4.webp';
 import image5 from '../images/decore-2.jpg';
 import { Typography, Box, Stack } from '@mui/material';
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+import LocalStorageManager from '../session/LocalStorageManager';
+import { LOCAL_STORAGE_KEY } from '../session/Constants';
 
 const Middle = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
   const navigateProductCategory = (category_id) =>{
+
+    const sessionCategory = {categoryId : "1", categoryName : "Ceramics"}
+    LocalStorageManager.setItem(LOCAL_STORAGE_KEY.CATEGORY_SESSION,sessionCategory);
+
+
     navigate("/product-category/"+category_id, { state: { category_id: category_id.toString(),category_name : "Ceramics" } });
 
 

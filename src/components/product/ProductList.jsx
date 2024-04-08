@@ -10,10 +10,11 @@ const ProductList = ({ products }) => {
         <Grid key={index} item xs={6} sm={3} md={3} lg={3} margin={5}>
           {/* Adjust the xs, sm, md, lg values to control the number of items per row */}
           <ProductItem
+          product_id={product.productTable.id}
             imageUrl={product.media[0]}
             productName={product.productTable.productName}
             productCategory={product.category.name}
-            isOutOfStock={true}
+            isOutOfStock={false}
           />
         </Grid>
       ))}

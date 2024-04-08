@@ -16,7 +16,6 @@ const ProductItemRating = ({ imageUrl, title, description, rating }) => {
         <Typography variant="body1" gutterBottom>
           {description}
         </Typography>
-        <Rating name="product-rating" value={rating} readOnly />
       </Box>
     </Box>
   );

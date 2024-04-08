@@ -42,3 +42,21 @@ export const getPopularProducts = async () => {
     throw error;
   }
 };
+
+export const getAllProductDetails = async () => {
+  try {
+    const response = await apiService("product/getAllProductsDetails", "GET",);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getProductFullDetails = async (productDetailMap) => {
+  try {
+    const response = await apiService("product/getProductDetail", "POST",productDetailMap);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};

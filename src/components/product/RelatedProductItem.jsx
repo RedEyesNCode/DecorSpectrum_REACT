@@ -1,59 +1,44 @@
-import React from 'react';
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import React, { useState, useEffect } from "react";
+import { getProductsForCategory } from '../../api/apiInterface';
 
-const RelatedProductItem = ({  }) => {
+const RelatedProductItem = ({ categoryID }) => {
   // Destructure the necessary product properties if they are coming from a prop
-  const products = [
-    {
-      id: 1,
-      imageUrl: 'https://via.placeholder.com/300',
-      title: 'Product 1',
-      description: 'Description for Product 1',
-    },
-    {
-      id: 2,
-      imageUrl: 'https://via.placeholder.com/300',
-      title: 'Product 2',
-      description: 'Description for Product 2',
-    },
-    {
-        id: 2,
-        imageUrl: 'https://via.placeholder.com/300',
-        title: 'Product 2',
-        description: 'Description for Product 2',
-      },
-     {
-      id: 2,
-      imageUrl: 'https://via.placeholder.com/300',
-      title: 'Product 2',
-      description: 'Description for Product 2',
-    },
-    {
-        id: 2,
-        imageUrl: 'https://via.placeholder.com/300',
-        title: 'Product 2',
-        description: 'Description for Product 2',
-      },
-      
-    // Add more products as needed
-  ];
+  const [products, setProductsData] = useState(null);
+  useEffect(() => {
+    const fetchLeadsData = async () => {
+      const reqJSON = { category_id: categoryID };
+      const getAllLeadsResponse = await getProductsForCategory(reqJSON);
+
+      setProductsData(getAllLeadsResponse.data);
+
+      console.log("Get All Category Products --->", getAllLeadsResponse);
+
+      // window.alert(getAllLeadsResponse.message);
+
+    };
+    fetchLeadsData();
+  }, []); // Add categoryId to the dependency array
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'start' }}>
-    {products.map((product) => (
+    {products &&  products.slice(0,6).map((product) => (
        <Card sx={{ maxWidth: 345, m: 2 }} >
        <CardMedia
          component="img"
          height="300"
-         image='https://via.placeholder.com/300'
+         image={product.media[0]}
          alt='Product Image'
        />
        <CardContent>
-         <Typography gutterBottom variant="h5" component="div">
-           Product Category
+       <Typography gutterBottom variant="h5" component="div">
+           {product.productTable.productName}
+         </Typography>
+         <Typography gutterBottom variant="body2" component="div">
+           {product.category.name}/{product.subcategory.name}
          </Typography>
          <Typography variant="body2" color="text.secondary">
-           Product Description
+           {product.productTable.description}
          </Typography>
        </CardContent>
        <CardActions>

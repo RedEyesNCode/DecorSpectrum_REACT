@@ -2,35 +2,54 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import ProductList from "./ProductList";
 import ProductItemRatingList from "./ProductItemRatingList";
-import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import { getProductsForCategory } from "../../api/apiInterface";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+import {
+  getAllProductDetails,
+  getProductsForCategory,
+} from "../../api/apiInterface";
+import LocalStorageManager from "../../session/LocalStorageManager";
+import { LOCAL_STORAGE_KEY } from "../../session/Constants";
+import MaterialNavBar from "../MaterialNavBar";
+import Footer from "../../pages/Footer";
 
 const ProductByCategory = () => {
-  const { categoryId } = useParams();
-  const [categoryProductsData, setCategoryProductData] = useState (null);
+  const navigate = useNavigate(); // Initialize useHistory
 
+  const [categoryProductsData, setCategoryProductData] = useState(null);
+  const [allProductsData, setProductsData] = useState(null);
+
+  const sessionCategory = LocalStorageManager.getItem(
+    LOCAL_STORAGE_KEY.CATEGORY_SESSION
+  );
 
   useEffect(() => {
     const fetchLeadsData = async () => {
-      const reqJSON = {category_id : categoryId.category_id}
+      const reqJSON = { category_id: sessionCategory.categoryId };
       const getAllLeadsResponse = await getProductsForCategory(reqJSON);
-      console.log("Get All catery navbar -->", getAllLeadsResponse);
-      
+
+      const responseGetAllProducts = await getAllProductDetails();
+      setProductsData(responseGetAllProducts);
+
+      console.log("Get All Category Products --->", getAllLeadsResponse);
+      console.log("Get All Product Details --->", responseGetAllProducts);
+
+      // window.alert(getAllLeadsResponse.message);
+
       setCategoryProductData(getAllLeadsResponse);
     };
     fetchLeadsData();
-  }, []);
-  
+  }, []); // Add categoryId to the dependency array
 
   return (
     <div>
+      <MaterialNavBar/>
       <Stack direction="column">
         <Typography variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
-          Home/{categoryId.category_name}
+          Home/{sessionCategory.categoryName}
         </Typography>
         <Typography variant="h3" sx={{ margin: "15px", color: "#051507" }}>
-          {categoryId.category_name}
+          {sessionCategory.categoryName}
         </Typography>
 
         <Box marginTop="50px">
@@ -52,14 +71,18 @@ const ProductByCategory = () => {
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
-            {categoryProductsData!=undefined && (<ProductList products={categoryProductsData} />)}
-            
+            {categoryProductsData != undefined && (
+              <ProductList products={categoryProductsData} />
+            )}
           </Grid>
-          {/* <Grid item xs={12} md={3}>
-            <ProductItemRatingList products={dummyProducts} />
-          </Grid> */}
+          <Grid item xs={12} md={3}>
+            {allProductsData != undefined && (
+              <ProductItemRatingList products={allProductsData} />
+            )}
+          </Grid>
         </Grid>
       </Stack>
+      <Footer/>
     </div>
   );
 };

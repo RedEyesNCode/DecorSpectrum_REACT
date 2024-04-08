@@ -11,6 +11,9 @@ import {
 import DosisRegular from "../../fonts/Dosis-Regular.ttf";
 import DosisMedium from "../../fonts/Dosis-Medium.ttf";
 import DosisBold from "../../fonts/Dosis-Bold.ttf";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+import LocalStorageManager from "../../session/LocalStorageManager";
+import { LOCAL_STORAGE_KEY } from "../../session/Constants";
 
 const styles = {
   dosisRegular: {
@@ -27,6 +30,8 @@ const styles = {
   },
 };
 const ProductItem = ({
+  product_id,
+
   imageUrl,
   productName,
   productCategory,
@@ -34,9 +39,15 @@ const ProductItem = ({
 }) => {
 
   const [openProductDetail,setProductDetail] = useState(false);
+  const navigate = useNavigate(); // Initialize useHistory
+
+
 
   const handleOpenProductDetail = () =>{
-    setProductDetail(true);
+    const sessionProduct = {productId : product_id}
+    LocalStorageManager.setItem(LOCAL_STORAGE_KEY.PRODUCT_SESSION,sessionProduct)
+    navigate("/product-detail");
+    
     
   }
 
@@ -115,7 +126,7 @@ const ProductItem = ({
             <Button
               variant="contained"
               style={{ width: "140px" }}
-              onClick={handleOpenProductDetail}
+              onClick={() => handleOpenProductDetail()}
               sx={{ backgroundColor: "#726251", textTransform: "none" }}
             >
               View Details

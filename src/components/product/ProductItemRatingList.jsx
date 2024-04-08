@@ -4,13 +4,12 @@ import ProductItemRating from "./ProductItemRating";
 const ProductItemRatingList = ({ products }) => {
   return (
     <div>
-      {products.map((product, index) => (
+      {products.data.slice(0, 6).map((product, index) => (
         <ProductItemRating
           key={index}
-          imageUrl={product.imageUrl}
-          title={product.title}
-          description={product.description}
-          rating={product.rating}
+          imageUrl={product.media[0]}
+          title={product.productTable.productName}
+          description={product.productTable.description}
         />
       ))}
     </div>

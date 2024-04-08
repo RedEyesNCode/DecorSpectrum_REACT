@@ -3,8 +3,10 @@ import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem,Stack } from '@
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import logoImg from '../images/logo-1.png';
 import { getAllCategory } from '../api/apiInterface';
+import Imageslide2 from '../pages/Image2slide';
+import ImageSlider from './ImageSlider';
 
-const MaterialNavBar = () => {
+const MaterialNavBar = ({slidesx}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [mainCategory, setMainCategory] = useState (null);
@@ -29,7 +31,8 @@ const MaterialNavBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <Stack>
+      <AppBar position="static">
       <Toolbar style={{backgroundColor : "#ffffff", height : "130px"}} >
         <img src={logoImg} width="200px" style={{padding : "40px"}} height="180px" alt="Example" />
 
@@ -92,6 +95,10 @@ const MaterialNavBar = () => {
 
       </Toolbar>
     </AppBar>
+
+    {/* <ImageSlider images={slidesx.data} /> */}
+    </Stack>
+    
   );
 }
 

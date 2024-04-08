@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import ProductDetail from "./components/product/ProductDetail";
 import ProductByCategory from "./components/product/ProductByCategory";
 import AboutUs from "./components/AboutUs";
+import CounterComponent from "./components/CounterComponent";
 
 ReactDOM.render(
   <BrowserRouter>
