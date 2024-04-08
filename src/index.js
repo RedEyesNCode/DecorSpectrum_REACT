@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ProductDetail from "./components/product/ProductDetail";
 import ProductByCategory from "./components/product/ProductByCategory";
+import AboutUs from "./components/AboutUs";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,7 +14,10 @@ ReactDOM.render(
       <Route exact path="/" element={<App />} />
 
       <Route exact path="/product-detail" element={<ProductDetail />} />
-      <Route path="/product-category" element={<ProductByCategory />} />
+      <Route exact path="/about-us" element={<AboutUs />} />
+
+      <Route path="/product-category/:categoryId" element={<ProductByCategory />} />
+
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

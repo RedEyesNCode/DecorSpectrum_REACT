@@ -2,8 +2,12 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import ProductList from "./ProductList";
 import ProductItemRatingList from "./ProductItemRatingList";
+import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ProductByCategory = () => {
+  const { categoryId } = useParams();
+
   const products = [
     {
       imageUrl:
