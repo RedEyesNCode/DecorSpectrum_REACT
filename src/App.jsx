@@ -42,7 +42,7 @@ function App() {
   return (
 
     <div>
-    
+
       {<MaterialNavBar slidesx={slides}/>}
       <Middle/>
       <Image2slide/>
@@ -50,6 +50,7 @@ function App() {
       <Headcard/>
       <Headbottom/>
       <Footer/>
+
     </div>
   );
 }

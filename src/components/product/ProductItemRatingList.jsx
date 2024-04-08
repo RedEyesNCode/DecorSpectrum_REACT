@@ -7,7 +7,7 @@ const ProductItemRatingList = ({ products }) => {
       {products.data.slice(0, 6).map((product, index) => (
         <ProductItemRating
           key={index}
-          imageUrl={product.media[0]}
+          imageUrl={product.media && product.media.length > 0 ? product.media[0].link : null}
           title={product.productTable.productName}
           description={product.productTable.description}
         />

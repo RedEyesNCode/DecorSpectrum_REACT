@@ -11,8 +11,8 @@ const ProductList = ({ products }) => {
           {/* Adjust the xs, sm, md, lg values to control the number of items per row */}
           <ProductItem
           product_id={product.productTable.id}
-            imageUrl={product.media[0]}
-            productName={product.productTable.productName}
+          imageUrl={product.media && product.media.length > 0 ? product.media[0].link : null}
+          productName={product.productTable.productName}
             productCategory={product.category.name}
             isOutOfStock={false}
           />

@@ -34,7 +34,7 @@ const MaterialNavBar = ({slidesx}) => {
     <Stack>
       <AppBar position="static">
       <Toolbar style={{backgroundColor : "#ffffff", height : "130px"}} >
-        <img src={logoImg} width="200px" style={{padding : "40px"}} height="180px" alt="Example" />
+        <img src={logoImg} width="100px" style={{padding : "40px"}} height="100px" alt="Example" />
 
         <Typography variant="h6" component="div" style={{color : "#000000",marginLeft : "50px"}} >
           Home

@@ -27,7 +27,7 @@ const RelatedProductItem = ({ categoryID }) => {
        <CardMedia
          component="img"
          height="300"
-         image={product.media[0]}
+         image={product.media && product.media.length > 0 ? product.media[0].link : null}
          alt='Product Image'
        />
        <CardContent>

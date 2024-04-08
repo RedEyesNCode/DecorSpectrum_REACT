@@ -1,61 +1,94 @@
-import React from 'react';
-import './Footer-1.css';
-import images19 from '../images/logo-1.png';
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import React from "react";
+import {
+  Container,
+  Grid,
+  Typography,
+  Stack,
+  Link,
+  Divider,
+} from "@mui/material";
+import { FaFacebook, FaTwitter } from "react-icons/fa";
 import { PiLinkDuotone } from "react-icons/pi";
-
-
-
+import logo from "../images/logo-1.png";
 
 const Footer = () => {
-	return (
-		<footer class="footer">
-			<div class="container row">
-				<img src={images19} alt="Example" className="rounded-image18" />
-				<div class="footer-col">
+  return (
+    <footer style={{ backgroundColor: "#2C1A00", color: "#FFFFFF" }}>
+      <Container sx={{ py: 10 }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={3}>
+            <img
+              src={logo}
+              alt="Example"
+              style={{
+                width: "150px",
+                marginBottom: "1rem",
+              }}
+            />
+            <Typography variant="h6">Follow Us</Typography>
+            <div style={{ display: "flex" }}>
+              <Link href="#" style={{ marginRight: "1rem" }}>
+                <FaFacebook />
+              </Link>
+              <Link href="#" style={{ marginRight: "1rem" }}>
+                <FaTwitter />
+              </Link>
+              <Link href="#">
+                <PiLinkDuotone />
+              </Link>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Typography variant="h6">Get Help</Typography>
+            <Stack direction="column">
+              <li>
+                <Link href="#">Support</Link>
+              </li>
+              <li>
+                <Link href="#">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="#">Address</Link>
+              </li>
+              <li>
+                <Link href="#">Primary Location</Link>
+              </li>
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Typography variant="h6">Get In Touch</Typography>
+			<li>
+			Question or feedback? We’d love to hear from you
 
-					<h4>Explore Support</h4>
-					<ul >
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Shop</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>get help</h4>
-					<ul>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Address</a></li>
-						<li><a href="#">Primary Location</a></li>
+				</li>
+            
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Typography variant="h6">Explore Support</Typography>
 
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>Get In Touch</h4>
-					<h5>Question or feedback?
-						We’d love to hear from you</h5>
-				</div>
-				<div class="footer-col">
-					<h4>follow us</h4>
-					<div class="social-links">
-						<a href="#"><FaFacebook />
-						</a>
-						<a href="#"><FaTwitter /></a>
-
-						<a href="#"><PiLinkDuotone />
-						</a>
-						
-					</div>
-				</div>
-			</div>
-			<hr></hr>
-			<h6 div className='h-1'>Designed by 2024</h6>
-		</footer>
-
-	);
+            <Stack direction="column">
+              <li>
+                <Link href="#">Home</Link>
+              </li>
+              <li>
+                <Link href="#">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="#">About Us</Link>
+              </li>
+              <li>
+                <Link href="#">Shop</Link>
+              </li>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Container>
+      <Divider />
+      <Typography variant="body2" sx={{ textAlign: "center", py: 2 }}>
+        Designed by Megma IT
+      </Typography>
+    </footer>
+  );
 };
 
 export default Footer;
