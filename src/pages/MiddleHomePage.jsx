@@ -9,7 +9,7 @@ const Middle = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
   const navigateProductCategory = (category_id) =>{
-    navigate("/product-category/"+category_id, { state: { category_id: category_id.toString() } });
+    navigate("/product-category/"+category_id, { state: { category_id: category_id.toString(),category_name : "Ceramics" } });
 
 
 

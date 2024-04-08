@@ -40,9 +40,11 @@ function App() {
    
 
   return (
+
     <div>
+    
       {<MaterialNavBar />}
-      {slides && (<ImageSlider images={slides.data} />)}
+      {/* {slides && (<ImageSlider images={slides.data} />)} */}
       <Middle/>
       <Image2slide/>
       <Headmean/>
