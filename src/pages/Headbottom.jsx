@@ -1,60 +1,156 @@
-import React from 'react';
-import './Headbottom1.css'; 
+import React from "react";
+import "./Headbottom1.css";
 import { RiTeamFill } from "react-icons/ri";
 import { AiTwotoneLike } from "react-icons/ai";
 import { MdPriceChange } from "react-icons/md";
 
-
+import { Typography, Box, Stack } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
+} from "@mui/material";
+import { ImPriceTag } from "react-icons/im";
 const Headbottom = () => {
+  const videoId = "VIDEO_ID_HERE";
 
-    const videoId = 'VIDEO_ID_HERE'; 
   return (
-    <div className='header-3'>
-    <div className='container-5'>
-    <div className="container-4">
-      <div className="column">
-      <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-        
-      </div>
-      <div className='column-1'>
-      <div className="column">
-      
-      <h2 className="column-heading">Passionate About Elegance <br></br>and Beauty In Design</h2> 
-        <p className="column-paragraph"></p>
-      </div>
-      <div className="column">
-      <div className='icon-1'>
-      <RiTeamFill color="#E7CC80" size={60}/> 
-      </div>
-        <h2 className="column-heading">100% Guarantee</h2>
-        <p className="column-paragraph">We stand behind the quality of our<br></br> Products and assure<br></br> you that you that will fall in love with them</p>
-      </div>
-      <div className="column">
-      <div className='icon-1'>
-      <AiTwotoneLike color="#E7CC80" size={60}/>
-      </div>
-       <h2 className="column-heading">Professional Staff</h2>
-       <p className="column-paragraph">We Are Family Ownend That Response<br></br> The Nedds of Every Customer.<br></br>We Provide Friendly Customer<br></br> Services And Are Happy to help.</p>
-     </div>
-     <div className="column">
-     <div className='icon-1'>
-     <MdPriceChange color="#E7CC80" size={60}/>
-      </div>
-       <h2 className="column-heading">Addordable Price</h2>
-       <p className="column-paragraph">We Impact Directly From The Manfactoures Without With The<br></br> Help Of any Middle Men Without the help of any Middle-men or Agents We Therefore<br></br> Gurantee The Most Competitve<br></br> Price in Town</p><br></br><br></br>
-       <p className="column-paragraph">Explore our huge selection of Exotic handmade Turkish<br></br> Chandeliers, Lamps, Ceiling Lights and Ceramics. Choose<br></br> from our fast-selling colors or customize your own unique<br></br> combination of Chandeliers and Floor lamps.</p>
-     </div>
-    </div>
-    </div>
-    </div>
+    <div style={{ backgroundColor: "#2C1A00" }}>
+      <Stack direction="row" style={{ backgroundColor: "#2C1A00" }}>
+        <iframe
+          width="70%"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <Stack direction="column" style={{ margin: "10px" }}>
+          <Typography
+            variant="h2"
+            style={{ color: "#ffffff", fontFamily: "Rosario-Regular" }}
+          >
+            Passionate About Elegance and Beauty In Design
+          </Typography>
+
+          <Stack direction="row">
+            <ImPriceTag
+              style={{
+                width: "30px",
+                height: "30px",
+                color: "#ffffff",
+                marginTop: "25px",
+              }}
+            />
+            <Stack direction="column" style={{ padding: "10px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 25,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                100 % Guarantee
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 20,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                We stand behind the quality of our products and assure you that you will fall in love with them.
+              </Typography>
+            </Stack>
+          </Stack>
+          <Stack direction="row">
+            <ImPriceTag
+              style={{
+                width: "30px",
+                height: "30px",
+                color: "#ffffff",
+                marginTop: "25px",
+              }}
+            />
+            <Stack direction="column" style={{ padding: "10px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 25,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                Professional Staff 
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 20,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                We are a family-owned business that respects the needs of every customer. We provide friendly customer service and are always happy to help.
+              </Typography>
+            </Stack>
+          </Stack>
+          <Stack direction="row">
+            <ImPriceTag
+              style={{
+                width: "30px",
+                height: "30px",
+                color: "#ffffff",
+                marginTop: "25px",
+              }}
+            />
+            <Stack direction="column" style={{ padding: "10px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 25,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                Afforadable Price
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 20,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+                We import directly from the manufacturers without the help of any middle-men or agents. We therefore guarantee the most competitive price in town.
+              </Typography>
+            </Stack>
+            
+          </Stack>
+          <Typography
+                variant="body1"
+                style={{
+                  color: "#ffffff",
+                  fontSize: 20,
+                  fontFamily: "Rosario-Regular",
+                  marginLeft: "10px",
+                }}
+              >
+               Explore our huge selection of Exotic handmade Turkish Chandeliers, Lamps, Ceiling Lights and Ceramics. Choose from our fast-selling colors or customize your own unique combination of 
+              </Typography>
+        </Stack>
+      </Stack>
     </div>
   );
 };

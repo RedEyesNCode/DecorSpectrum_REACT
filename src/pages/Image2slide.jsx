@@ -20,7 +20,7 @@ const Imageslide2 = () => {
 
   return (
     <Stack style={{margin : "80px"}}>
-      <Typography variant='h4' style={{marginBottom : "25px",color : "#000000"}}>Trending Products</Typography>
+      <Typography variant='h4' style={{marginBottom : "25px",color : "#000000"  , fontFamily: "Rosario-Regular", fontSize: 60 }}>Trending Products</Typography>
       <div id="scroll-container" style={{ display: 'flex', overflowX: 'hidden' }}>
         {products && products.map(item => (
           <div key={item.productTable.id} style={{ flex: '0 0 auto', margin: '0 10px' }}>
@@ -28,8 +28,8 @@ const Imageslide2 = () => {
               <img src={item.media[0].link} alt={item.productTable.productName} style={{ width: '200px', height: '200px', borderRadius: '8px' }} />
             )}
             <div style={{ marginTop: '16px' }}>
-              <p>{item.productTable.productName}</p>
-              <p>{item.category.name}</p>
+              <p style={{fontFamily: "Rosario-Regular", fontSize: 20,fontWeight : 600 }}>{item.productTable.productName}</p>
+              <p style={{fontFamily: "Rosario-Regular", fontSize: 20,fontWeight : 400 }}>{item.category.name}</p>
             </div>
           </div>
         ))}

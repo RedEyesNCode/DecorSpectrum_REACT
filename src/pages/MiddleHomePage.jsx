@@ -29,14 +29,14 @@ const Middle = () => {
           <Typography variant='h4' style={{ fontFamily : 'Rosario-Medium', marginTop : "20px",padding : "10px", color: "#C19B76", fontWeight: 700 }}>A Statement in Style</Typography>
           <Typography variant='body1' style={{ fontFamily : 'Rosario-Regular', marginTop: "12px",marginRight :"20px",padding : "10px", color: "#000000" }}>Huge selection of Exotic handmade Turkish Chandeliers, Lamps, Ceiling Lights & Ceramics. Choose from our fast-selling colors or customize a unique combination.</Typography>
 
-          <Box onClick={()=> navigateProductCategory("1")}  sx={{ marginTop: "50px", backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Box onClick={()=> navigateProductCategory("1")}  sx={{ marginTop: "50px",borderEndEndRadius : 70,borderEndStartRadius: 40,borderStartEndRadius : 40, borderStartStartRadius : 70, backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Typography style={{color : "#FFFFFF",fontFamily : 'Rosario-Medium'}}  variant="body1">View Our Collection</Typography>
           </Box>
         </Stack>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <img src={image4} alt="Example" className="rounded-image2" style={{ marginRight: "20px" }} />
-        <img src={image5} alt="Example" className="rounded-image2" />
+        <img src={image4} alt="Example"  style={{ marginRight: "20px" , borderEndEndRadius : 100,borderEndStartRadius : 60,borderStartEndRadius : 60,borderStartStartRadius: 150 }} />
+        <img src={image5} alt="Example" style={{borderStartEndRadius : 90,borderStartStartRadius : 90}} />
       </div>
     </div>
   );

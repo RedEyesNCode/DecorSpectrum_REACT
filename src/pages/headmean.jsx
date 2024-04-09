@@ -59,7 +59,7 @@ const Headmean = () => {
           <Stack direction="column">
           <Typography variant='h2' style={{ fontFamily : 'Rosario-Regular', padding : "10px"}}>Innovative Design is our passion</Typography>
           <Typography variant='body1' style={{ fontFamily : 'Rosario-Regular', marginTop: "12px",marginRight :"20px",padding : "10px", color: "#000000" }}>We Strive to bring you the latest in designs, directly from our manufacturers. We give you the option and flexibility to choose the styles of globes and create your own chandelier patterns.</Typography>
-          <Box onClick={navigateAboutUs} sx={{ marginTop: "50px", backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Box onClick={navigateAboutUs} sx={{ marginTop: "50px",borderEndEndRadius : 70,borderEndStartRadius: 40,borderStartEndRadius : 40, borderStartStartRadius : 70, backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Typography style={{color : "#FFFFFF",fontFamily : 'Rosario-Medium'}}  variant="body1">Read More </Typography>
           </Box>
           </Stack>
