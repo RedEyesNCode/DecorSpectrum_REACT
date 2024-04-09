@@ -1,8 +1,13 @@
 import React from 'react';
+import MaterialNavBar from './MaterialNavBar';
+import Footer from '../pages/Footer';
 
 const AboutUs = () => {
   return (
-    <div className="about-us">
+
+    <div>
+      <MaterialNavBar/>
+       <div className="about-us">
       <h1>About Us</h1>
       <p>Welcome to our website! We're glad you're here to learn more about us.</p>
       <section>
@@ -22,6 +27,10 @@ const AboutUs = () => {
         <p>Have questions or want to get in touch? Email us at contact@ourwebsite.com.</p>
       </section>
     </div>
+    <Footer/>
+
+    </div>
+   
   );
 };
 

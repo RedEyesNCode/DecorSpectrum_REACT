@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography, CircularProgress } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import ProductList from "./ProductList";
 import ProductItemRatingList from "./ProductItemRatingList";
@@ -16,6 +16,7 @@ import Footer from "../../pages/Footer";
 const ProductByCategory = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
+  const [loading, setLoading] = useState(true); // State to control loading indicator
   const [categoryProductsData, setCategoryProductData] = useState(null);
   const [allProductsData, setProductsData] = useState(null);
 
@@ -37,54 +38,50 @@ const ProductByCategory = () => {
       // window.alert(getAllLeadsResponse.message);
 
       setCategoryProductData(getAllLeadsResponse);
+      setLoading(false); // Set loading to false after receiving response
     };
     fetchLeadsData();
-  }, []); // Add categoryId to the dependency array
+  }, [sessionCategory]); // Add categoryId to the dependency array
 
   return (
     <div>
-      <MaterialNavBar/>
+      <MaterialNavBar />
       <Stack direction="column">
-        <Typography style={{fontFamily : 'Rosario-Regular'}} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
+        <Typography style={{ fontFamily: 'Rosario-Regular' }} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
           Home/{sessionCategory.categoryName}
         </Typography>
-        <Typography style={{fontFamily : 'Rosario-Bold',fontWeight : 900}} variant="h3" sx={{ margin: "15px", color: "#051507" }}>
+        <Typography style={{ fontFamily: 'Rosario-Bold', fontWeight: 900 }} variant="h3" sx={{ margin: "15px", color: "#051507" }}>
           {sessionCategory.categoryName}
         </Typography>
 
-        {/* <Box marginTop="50px">
-          <Stack direction="row" justifyContent="center" spacing={4}>
-            <Typography
-            style={{fontFamily : 'Rosario-Regular',fontSize : 20}}
-              variant="body1"
-              sx={{ margin: "15px", color: "#000000" }}
-            >
-              Showing 1-12 of 40 results
-            </Typography>
-            <Typography
-              variant="body1"
-              style={{fontFamily : 'Rosario-Regular',fontSize : 20}}
-              sx={{ margin: "15px", color: "#000000" }}
-            >
-              Sort Products
-            </Typography>
-          </Stack>
-        </Box> */}
-
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
-            {categoryProductsData != undefined && (
-              <ProductList products={categoryProductsData} />
+            {/* Show loading indicator if loading is true */}
+            {loading ? (
+              <Box display="flex" justifyContent="center" alignItems="center" height="200px">
+                <CircularProgress />
+              </Box>
+            ) : (
+              categoryProductsData != undefined && (
+                <ProductList products={categoryProductsData} />
+              )
             )}
           </Grid>
           <Grid item xs={12} md={3}>
-            {allProductsData != undefined && (
-              <ProductItemRatingList products={allProductsData} />
+            {/* Show loading indicator if loading is true */}
+            {loading ? (
+              <Box display="flex" justifyContent="center" alignItems="center" height="200px">
+                <CircularProgress />
+              </Box>
+            ) : (
+              allProductsData != undefined && (
+                <ProductItemRatingList products={allProductsData} />
+              )
             )}
           </Grid>
         </Grid>
       </Stack>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

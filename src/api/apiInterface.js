@@ -18,6 +18,15 @@ export const getAllCategory = async () => {
     throw error;
   }
 };
+
+export const getAllSubcategories = async () => {
+  try {
+    const response = await apiService("product/getAllSubCategory", "GET",);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
 export const getProductsForCategory = async (addCategoryData) => {
   try {
     const response = await apiService("product/getProductsByCategory", "POST",addCategoryData);
