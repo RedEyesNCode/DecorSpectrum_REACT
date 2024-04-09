@@ -1,0 +1,15 @@
+.custom-button {
+    width: 140px;
+    background-color: #726251;
+    text-transform: none;
+    text-align: start;
+    font-size: large;
+    &:hover {
+        background-color: black; /* Change background color */
+        color: white; /* Change text color */
+        
+        transform: scale(1.05);
+         /* Grow the button size */
+      }
+    /* Add any additional styles you want here */
+}

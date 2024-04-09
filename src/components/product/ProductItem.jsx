@@ -14,7 +14,8 @@ import DosisBold from "../../fonts/Dosis-Bold.ttf";
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
 import LocalStorageManager from "../../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../../session/Constants";
-
+import '../product/css/ProductCSS.css'
+import ImageWithCartIcon from "./css/ImageWithCartIcon";
 const styles = {
   dosisRegular: {
     fontFamily: "DosisRegular", // Specify the font family name
@@ -37,24 +38,21 @@ const ProductItem = ({
   productCategory,
   isOutOfStock,
 }) => {
-
-  const [openProductDetail,setProductDetail] = useState(false);
+  const [openProductDetail, setProductDetail] = useState(false);
   const navigate = useNavigate(); // Initialize useHistory
 
-
-
-  const handleOpenProductDetail = () =>{
-    const sessionProduct = {productId : product_id}
-    LocalStorageManager.setItem(LOCAL_STORAGE_KEY.PRODUCT_SESSION,sessionProduct)
+  const handleOpenProductDetail = () => {
+    const sessionProduct = { productId: product_id };
+    LocalStorageManager.setItem(
+      LOCAL_STORAGE_KEY.PRODUCT_SESSION,
+      sessionProduct
+    );
     navigate("/product-detail");
-    
-    
-  }
+  };
 
   return (
     <div>
-      <Paper
-      elevation={7}
+      <Stack
         sx={{
           position: "relative",
           width: 350,
@@ -62,11 +60,12 @@ const ProductItem = ({
           m: "8px", // Add margin between cards
         }}
       >
-        <img
+        <ImageWithCartIcon imageUrl={imageUrl} alt={productName}/>
+        {/* <img
           src={imageUrl}
           alt={productName}
-          style={{ width: "100%", height: 250, objectFit: "cover" }}
-        />
+          style={{ width: "180px", height: "190px", objectFit: "cover" }}
+        /> */}
         {isOutOfStock && (
           <Box
             sx={{
@@ -91,17 +90,16 @@ const ProductItem = ({
           <Typography
             fontWeight="1"
             variant="subtitle1"
-            color="text.secondary"
+            style={{ color: "#000000", fontFamily: styles.dosisBold }}
             gutterBottom
-            sx={styles.dosisRegular}
           >
             {productCategory}
           </Typography>
           <Typography
             sx={styles.dosisMedium}
-            variant="h5"
+            variant="h6"
             component="div"
-            style={{ fontWeight: "11px" }}
+            style={{ fontWeight: 700 }}
             gutterBottom
           >
             {productName}
@@ -118,8 +116,7 @@ const ProductItem = ({
           <Stack direction="row" spacing={2}>
             <Button
               variant="contained"
-              style={{ width: "140px" }}
-              sx={{ backgroundColor: "#726251", textTransform: "none" }}
+              className="custom-button" // Add a class name for styling
             >
               Add to Cart
             </Button>
@@ -133,8 +130,7 @@ const ProductItem = ({
             </Button>
           </Stack>
         </CardContent>
-      </Paper>
-      
+      </Stack>
     </div>
   );
 };
