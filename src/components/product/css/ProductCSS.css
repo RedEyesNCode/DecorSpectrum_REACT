@@ -2,14 +2,44 @@
     width: 140px;
     background-color: #726251;
     text-transform: none;
-    text-align: start;
+    text-align: center;
+    font-family : 'Rosario-Regular';
+    color: white;
+
     font-size: large;
-    &:hover {
-        background-color: black; /* Change background color */
-        color: white; /* Change text color */
-        
-        transform: scale(1.05);
-         /* Grow the button size */
-      }
-    /* Add any additional styles you want here */
 }
+
+.custom-button:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.2);
+}
+
+.rosaria-text {
+    font-family : 'Rosario-Regular';
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-icon {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    background-color: rgba(123, 57, 3, 0.7); /* semi-transparent white background */
+    border-radius: 60%; /* make it circular */
+    padding: 10px; /* adjust padding as needed */
+  }
+  
+  .cart-icon svg {
+    width: 40px; /* adjust icon size as needed */
+    height: 40px;
+    color: #ffffff; /* icon color */
+  }
+  
+  .image-container:hover .cart-icon {
+    opacity: 1; /* show cart icon on hover */
+  }

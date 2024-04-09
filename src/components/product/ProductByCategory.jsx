@@ -45,16 +45,17 @@ const ProductByCategory = () => {
     <div>
       <MaterialNavBar/>
       <Stack direction="column">
-        <Typography variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
+        <Typography style={{fontFamily : 'Rosario-Regular'}} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
           Home/{sessionCategory.categoryName}
         </Typography>
-        <Typography variant="h3" sx={{ margin: "15px", color: "#051507" }}>
+        <Typography style={{fontFamily : 'Rosario-Bold',fontWeight : 900}} variant="h3" sx={{ margin: "15px", color: "#051507" }}>
           {sessionCategory.categoryName}
         </Typography>
 
-        <Box marginTop="50px">
-          <Stack direction="row" justifyContent="space-between">
+        {/* <Box marginTop="50px">
+          <Stack direction="row" justifyContent="center" spacing={4}>
             <Typography
+            style={{fontFamily : 'Rosario-Regular',fontSize : 20}}
               variant="body1"
               sx={{ margin: "15px", color: "#000000" }}
             >
@@ -62,12 +63,13 @@ const ProductByCategory = () => {
             </Typography>
             <Typography
               variant="body1"
+              style={{fontFamily : 'Rosario-Regular',fontSize : 20}}
               sx={{ margin: "15px", color: "#000000" }}
             >
               Sort Products
             </Typography>
           </Stack>
-        </Box>
+        </Box> */}
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>

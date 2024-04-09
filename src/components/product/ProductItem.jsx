@@ -80,7 +80,7 @@ const ProductItem = ({
               zIndex: 1,
             }}
           >
-            <Typography sx={styles.dosisBold} fontWeight="900" variant="h7">
+            <Typography style={{fontFamily : 'Rosario-Bold',fontWeight : 900}} sx={styles.dosisBold} fontWeight="900" variant="h7">
               OUT OF STOCK
             </Typography>
           </Box>
@@ -90,7 +90,7 @@ const ProductItem = ({
           <Typography
             fontWeight="1"
             variant="subtitle1"
-            style={{ color: "#000000", fontFamily: styles.dosisBold }}
+            style={{ color: "#000000", fontFamily : 'Rosario-Bold',fontWeight : 400,fontSize : 15 }}
             gutterBottom
           >
             {productCategory}
@@ -114,12 +114,9 @@ const ProductItem = ({
           </Typography>
 
           <Stack direction="row" spacing={2}>
-            <Button
-              variant="contained"
-              className="custom-button" // Add a class name for styling
-            >
-              Add to Cart
-            </Button>
+          <button class="custom-button">
+  Add to Cart
+</button>
             <Button
               variant="contained"
               style={{ width: "140px" }}
