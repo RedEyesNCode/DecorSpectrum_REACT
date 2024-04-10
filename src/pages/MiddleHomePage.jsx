@@ -12,7 +12,7 @@ const Middle = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
   const navigateProductCategory = (category_id) => {
-    const sessionCategory = { categoryId: "1", categoryName: "Ceramics" };
+    const sessionCategory = { categoryId: "1", categoryName: "Turkish Decor" };
     LocalStorageManager.setItem(
       LOCAL_STORAGE_KEY.CATEGORY_SESSION,
       sessionCategory

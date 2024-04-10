@@ -1,0 +1,8 @@
+.elementor-background-overlay{
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    height: 1000.2px;
+    width: '100%';
+    color: '#626262';
+}

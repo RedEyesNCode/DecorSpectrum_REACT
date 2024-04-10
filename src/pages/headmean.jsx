@@ -5,7 +5,8 @@ import image1 from "../images/image-14.jpg";
 import imageLamp from "../images/ic_light_lamp.jpg";
 import { Typography, Box, Stack } from '@mui/material';
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
-
+import '../components/product/css/ProductCSS.css'
+import { BiSolidArrowFromLeft } from "react-icons/bi";
 const Headmean = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
@@ -19,7 +20,7 @@ const Headmean = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
-        padding : "100px",
+        padding : "170px",
         marginTop : "150px",
         backgroundColor : "#2C1A00",
       }}
@@ -55,12 +56,41 @@ const Headmean = () => {
           }}
         />
         {/* Text Above Overlapping Image */}
-        <div style={{ position: "absolute", bottom: "-90px",  transform: "translate(150%, -30%)",  backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "10px" }}>
+        <div style={{ position: "absolute", bottom: "-76px",  transform: "translate(150%, -30%)", padding: "10px" }}>
           <Stack direction="column">
-          <Typography variant='h2' style={{ fontFamily : 'Rosario-Regular', padding : "10px"}}>Innovative Design is our passion</Typography>
-          <Typography variant='body1' style={{ fontFamily : 'Rosario-Regular', marginTop: "12px",marginRight :"20px",padding : "10px", color: "#000000" }}>We Strive to bring you the latest in designs, directly from our manufacturers. We give you the option and flexibility to choose the styles of globes and create your own chandelier patterns.</Typography>
-          <Box onClick={navigateAboutUs} sx={{ marginTop: "50px",borderEndEndRadius : 70,borderEndStartRadius: 40,borderStartEndRadius : 40, borderStartStartRadius : 70, backgroundColor: "#C19B76", padding: "20px", width: "250px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography style={{color : "#FFFFFF",fontFamily : 'Rosario-Medium'}}  variant="body1">Read More </Typography>
+          <Typography style={{color : '#FFFFFF',fontSize : '48px', fontStyle : 'normal', fontWeight : '600'}} className="rosaria-text">Innovative Design is our passion</Typography>
+          <Typography style={{color : '#ffffff',marginBottom :'20px',fontSize : '16px'}} className="rosaria-text">We Strive to bring you the latest in designs, directly from our manufacturers. We give you the option and flexibility to choose the styles of globes and create your own chandelier patterns.</Typography>
+          <Box
+            onClick={navigateAboutUs}
+            style={{
+              backgroundColor: "#82705d",
+              height: "30px",
+              width: "200px",
+              borderTopLeftRadius: "30px",
+              borderTopRightRadius: "5px",
+              borderBottomLeftRadius: "5px",
+              borderBottomRightRadius: "30px",
+              paddingTop: "20px",
+              paddingRight: "25px",
+              paddingLeft: "25px",
+              paddingBottom: "20px",
+              fontFamily: "Poppins, sans-serif",
+              fontSize: "16px",
+              display: "flex", // Set display to flex
+              alignItems: "center", // Align items vertically
+              justifyContent: "center", // Center the items horizontally
+            }}
+          >
+            <Typography
+              className="rosaria-text"
+              style={{ color: "#FFFFFF", marginRight: "10px" }}
+              variant="body1"
+            >
+              Read More
+            </Typography>
+            <BiSolidArrowFromLeft
+              style={{ color: "#FFFFFF", width: "25px", height: "25px" }}
+            />
           </Box>
           </Stack>
 

@@ -1,39 +1,304 @@
-import React from 'react';
-import './Headcard1.css'; 
-import image13 from '../images/donkey-1.jpg';
-import image14 from '../images/donkey-2.jpg';
-import image15 from '../images/donkey-3.jpg';
+import React from "react";
+import "./Headcard1.css";
+import { Box, Typography, Stack } from "@mui/material";
+import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+import LocalStorageManager from "../session/LocalStorageManager";
+import { LOCAL_STORAGE_KEY } from "../session/Constants";
 
-const headcard = () => {
+const Headcard = () => {
+  const navigate = useNavigate(); // Initialize useHistory
+  const navigateProductCategory = (category_id,category_name) => {
+    const sessionCategory = { categoryId: category_id, categoryName: category_name };
+    LocalStorageManager.setItem(
+      LOCAL_STORAGE_KEY .CATEGORY_SESSION,
+      sessionCategory
+    );
+
+    navigate("/product-category/" + category_id, {
+      state: { category_id: category_id.toString(), category_name: category_name },
+    });
+  };
+
   return (
-    <div className="container-3">
-      <h1 className="upper-heading">Unique Handicrafts Collection</h1>
-      <p className="paragraph">Explore our vast range of gifts and accents- we have something to please everyone!</p>
-      <div className="card-row">
-        <div className="card">
-        <img src={image13} alt="Example" className="rounded-image3"/>
-          <div className="card-content">
-            <h3 className="card-title">Leather Animal Decor</h3>
-            <p className="card-description">These handcrafted pieces of art are made with passion, imitating every wrinkle in the animals’ skin, closest to the original. Truly art at its best!</p>
-          </div>
-        </div>
-        <div className="card">
-        <img src={image14} alt="Example" className="rounded-image3"/>
-          <div className="card-content">
-            <h3 className="card-title">Turkish Lamps & Chandeliers</h3>
-            <p className="card-description">Stunning 16th century Turkish Mosaic art brought to your doorstep. You are sure to get blown away while you navigate through the wide array of colors and patterns.</p>
-          </div>
-        </div>
-        <div className="card">
-        <img src={image15} alt="Example" className="rounded-image3"/>
-          <div className="card-content">
-            <h3 className="card-title">Turkish Ceramics</h3>
-            <p className="card-description">This user-friendly style of pottery, also called Iznik cini is an age old traditional Turkish art that incorporates motifs like Tulips, Carnations, 3 spot, Rumi etc that having symbolic meanings and unique styles from 16th century onwards. </p>
-          </div>
-        </div>
-      </div>
+    <div style={{ display: "flex", justifyContent: "center",padding : "50px" }}>
+      <Stack direction="column" sx={{ marginTop: "140px" }} alignItems="center">
+        <Typography
+          style={{
+            marginBottom: "25px",
+            color: "#000000",
+            fontFamily: "'Rosario', sans-serif",
+            fontSize: "35px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            textAlign: "center",
+            textSizeAdjust: "100%",
+            lineHeight: "45.5px",
+          }}
+        >
+          Unique Handicraft Collection
+        </Typography>
+        <Typography
+          style={{
+            marginBottom: "25px",
+            color: "#626262",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            textAlign: "center",
+            textSizeAdjust: "100%",
+            lineHeight: "45.5px",
+          }}
+        >
+          Explore our vast range of gifts and accents- we have something to
+          please everyone!
+        </Typography>
+
+        <Stack direction="row" alignItems="center" justifyContent="center">
+          <Stack direction="column" alignItems="center" width="35%">
+            <img
+              style={{
+                height: "420px",
+                width: "380px",
+                borderBottomLeftRadius: "20px",
+                borderBottomRightRadius: "20px",
+                borderTopRightRadius: "250px",
+                borderTopLeftRadius: "250px",
+                alignItems: "center",
+              }}
+              src="https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/2322-pz22vpk1i1co6nzqerull5k00ae7wyiypc38a9zce4-qembhafl4tvbn5f10udy8iw9obups5fh03fx9ldm64.jpg"
+              alt="Leather Animal Decor"
+            />
+
+            <Typography
+              style={{
+                marginBottom: "25px",
+                color: "#000000",
+                fontFamily: "'Rosario', sans-serif",
+                fontSize: "30px",
+                fontStyle: "normal",
+                fontWeight: 400,
+                textAlign: "center",
+                textSizeAdjust: "100%",
+                lineHeight: "45.5px",
+              }}
+            >
+              Leather Animal Decor
+            </Typography>
+            <Typography
+              variant="body1"
+              className="rosaria-text"
+              style={{
+                marginTop: "12px",
+                marginRight: "20px",
+                padding: "10px",
+                color: "#626262",
+                textAlign : 'center'
+              }}
+            >
+              Huge selection of Exotic handmade Turkish Chandeliers, Lamps,
+              Ceiling Lights & Ceramics. Choose from our fast-selling colors or
+              customize a unique combination.
+            </Typography>
+            <Box
+                        onClick={() => navigateProductCategory("2","Leather Animal Decor")}
+
+              style={{
+                backgroundColor: "#82705d",
+                height: "30px",
+                width: "200px",
+                borderTopLeftRadius: "30px",
+                borderTopRightRadius: "5px",
+                borderBottomLeftRadius: "5px",
+                borderBottomRightRadius: "30px",
+                paddingTop: "20px",
+                paddingRight: "25px",
+                paddingLeft: "25px",
+                paddingBottom: "20px",
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Typography
+                className="rosaria-text"
+                style={{ color: "#FFFFFF", marginRight: "10px" }}
+                variant="body1"
+              >
+                View Gallery
+              </Typography>
+              <BsArrowRight
+                style={{ color: "#FFFFFF", width: "25px", height: "25px" }}
+              />
+            </Box>
+          </Stack>
+          <Stack direction="column" alignItems="center" width="35%">
+            <img
+              style={{
+                height: "420px",
+                width: "380px",
+                borderBottomLeftRadius: "20px",
+                borderBottomRightRadius: "20px",
+                borderTopRightRadius: "250px",
+                borderTopLeftRadius: "250px",
+                alignItems: "center",
+              }}
+              
+              src="https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/IMG_4650-scaled-1-pz22ew7z8qc0hsf0li6uzeb5g59u7vrtq3yj82wvp8-qembhf4s301r97879ef32zpkn97jumy4oqpcnz6nb0.jpg"
+              alt="Leather Animal Decor"
+            />
+
+            <Typography
+              style={{
+                marginBottom: "25px",
+                color: "#000000",
+                fontFamily: "'Rosario', sans-serif",
+                fontSize: "30px",
+                fontStyle: "normal",
+                fontWeight: 400,
+                textAlign: "center",
+                textSizeAdjust: "100%",
+                lineHeight: "45.5px",
+              }}
+            >
+              Turkish Lamp & Chandeliers
+            </Typography>
+            <Typography
+              variant="body1"
+              className="rosaria-text"
+              style={{
+                marginTop: "12px",
+                marginRight: "20px",
+                padding: "10px",
+                color: "#626262",
+                textAlign : 'center'
+              }}
+            >
+              Stunning 16th century Turkish Mosaic art brought to your doorstep. You are sure to get blown away while you navigate through the wide array of colors and patterns.
+              
+            </Typography>
+            <Box
+                        onClick={() => navigateProductCategory("1","Turkish Decor")}
+
+              style={{
+                backgroundColor: "#82705d",
+                height: "30px",
+                width: "200px",
+                borderTopLeftRadius: "30px",
+                borderTopRightRadius: "5px",
+                borderBottomLeftRadius: "5px",
+                borderBottomRightRadius: "30px",
+                paddingTop: "20px",
+                paddingRight: "25px",
+                paddingLeft: "25px",
+                paddingBottom: "20px",
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                
+              }}
+            >
+              <Typography
+                className="rosaria-text"
+                style={{ color: "#FFFFFF", marginRight: "10px" }}
+                variant="body1"
+              >
+                View Gallery
+              </Typography>
+              <BsArrowRight
+                style={{ color: "#FFFFFF", width: "25px", height: "25px" }}
+              />
+            </Box>
+          </Stack>
+          <Stack direction="column" alignItems="center"width="30%">
+            <img
+              style={{
+                height: "420px",
+                width: "380px",
+                borderBottomLeftRadius: "20px",
+                borderBottomRightRadius: "20px",
+                borderTopRightRadius: "250px",
+                borderTopLeftRadius: "250px",
+                alignItems: "center",
+              }}
+              src="https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/New-Project-2022-12-18T164412.798-qempzcyj16jm292xi0fama5vfomw050fs3pk19as8s.jpg"
+              alt="Leather Animal Decor"
+            />
+
+            <Typography
+              style={{
+                marginBottom: "25px",
+                color: "#000000",
+                fontFamily: "'Rosario', sans-serif",
+                fontSize: "30px",
+                fontStyle: "normal",
+                fontWeight: 400,
+                textAlign: "center",
+                textSizeAdjust: "100%",
+                lineHeight: "45.5px",
+              }}
+            >
+              Turkish Ceramics
+            </Typography>
+            <Typography
+              variant="body1"
+              className="rosaria-text"
+              style={{
+                marginTop: "12px",
+                marginRight: "20px",
+                padding: "10px",
+                color: "#626262",
+                margin : '20px',
+                textAlign : 'center'
+              }}
+            >
+              This user-friendly style of pottery.
+            </Typography>
+            <Box
+                        onClick={() => navigateProductCategory("3","Ceramics")}
+
+              style={{
+                backgroundColor: "#82705d",
+                height: "30px",
+                width: "200px",
+                borderTopLeftRadius: "30px",
+                borderTopRightRadius: "5px",
+                borderBottomLeftRadius: "5px",
+                borderBottomRightRadius: "30px",
+                paddingTop: "20px",
+                paddingRight: "25px",
+                paddingLeft: "25px",
+                paddingBottom: "20px",
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Typography
+                className="rosaria-text"
+                style={{ color: "#FFFFFF", marginRight: "10px" }}
+                variant="body1"
+              >
+                View Gallery
+              </Typography>
+              <BsArrowRight
+                style={{ color: "#FFFFFF", width: "25px", height: "25px" }}
+              />
+            </Box>
+          </Stack>
+
+          {/* Repeat the above stack for other images and text */}
+        </Stack>
+      </Stack>
     </div>
   );
 };
 
-export default headcard;
+export default Headcard;
