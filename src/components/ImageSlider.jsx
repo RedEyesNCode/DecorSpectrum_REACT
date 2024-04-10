@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useRef, useState,useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Tab, Tabs, Typography,Stack } from '@mui/material';
-import '../components/product/css/ProductCSS.css'
+import { Box, Typography } from '@mui/material';
+import '../components/product/css/ProductCSS.css';
+
 const ImageSlider = ({ images }) => {
-  const settings = React.useMemo(
-    () => ({
-      dots: false,
-      infinite: true,
-      speed: 1, // Adjust the speed as needed
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      cssEase: "linear",
-    }),
-    []
-  );
+  const sliderRef = useRef(null);
+  const [zoomIndex, setZoomIndex] = useState(0);
+  
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000, // Adjust the speed as needed
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000, // Adjust autoplay speed as needed
+    cssEase: "linear",
+    afterChange: handleAfterChange
+  };
+
+  function handleAfterChange(index) {
+    setZoomIndex(index);
+  }
 
   return (
     <div style={{ width: "100%", height: "650px", backgroundColor: "#000000" }}>
-      <Slider {...settings}>
-        {images.map((image) => (
+      <Slider ref={sliderRef} {...settings}>
+        {images.map((image, index) => (
           <div key={image.id}>
             <div
               style={{
@@ -34,13 +40,12 @@ const ImageSlider = ({ images }) => {
               <img
                 src={image.bannerLink}
                 alt={image.alt}
-                
                 style={{
                   objectFit: "fill",
                   width: "100%",
                   height: "100%",
-                  opacity: 0.80, // Set the opacity here (value between 0 and 1)
-
+                  transition: zoomIndex === index ? "transform 7s ease-in-out" : "none", // Apply transition only to the active slide
+                  transform: zoomIndex === index ? "scale(1.5)" : "scale(1)", // Zoom effect for active slide
                 }}
               />
               <div
@@ -51,23 +56,36 @@ const ImageSlider = ({ images }) => {
                   transform: "translate(-50%, -50%)",
                   textAlign: "center",
                   color: "white",
-                  alignContent : "center",
-                  justifyContent : "center",
-                  justifyItems : "center",
                   fontSize: "20px",
                   fontWeight: "bold",
                 }}
               >
-                <Typography className="rosaria-text" variant="h4">Unique Turkish Decor Collection</Typography>
-                  <Typography variant="h2" className="rosaria-text">Statement in Style</Typography>
-                  <Box   style={{  marginLeft : "120px",  backgroundColor : "#C19B76",padding : "20px",width : "250px",height : "50px"}} alignContent="center" 
-                  justifyItems="center">
-                    <Typography className="rosaria-text">
-                      FIND OUT MORE
-                    </Typography>
-
-                  </Box>
-
+                <Typography style={{ marginBottom: '60px', fontFamily: 'Poppins, sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
+                <Typography variant="h1" className="rosaria-text">Statement in Style</Typography>
+                <Box 
+                  style={{ 
+                    backgroundColor: "#C19B76", 
+                    padding: "10px", 
+                    width: "150px", 
+                    height: "50px", 
+                    margin: "0 auto", 
+                    display: "flex", 
+                    justifyContent: "center", 
+                    alignItems: "center",
+                    transition: "background-color 0.3s, color 0.3s", // Smooth transition effect for color change
+                    cursor: "pointer" // Change cursor to pointer on hover
+                  }}
+                  alignContent="center" 
+                  justifyContent="center" 
+                  display="flex"
+                  textAlign="center"
+                  hoverbgcolor="#000000"
+                  hovercolor="#C19B76"
+                  >
+                  <Typography className="rosaria-text" style={{ margin: "0 auto" }}>
+                    FIND MORE
+                  </Typography>
+                </Box>
               </div>
             </div>
           </div>

@@ -1,10 +1,12 @@
 .custom-button {
     width: 140px;
+    height: 40px;
     background-color: #726251;
     text-transform: none;
     text-align: center;
     font-family : 'Rosario-Regular';
     color: white;
+    padding: '10px';
 
     font-size: large;
 }
@@ -62,8 +64,8 @@
   }
   
   .cart-icon svg {
-    width: 40px; /* adjust icon size as needed */
-    height: 40px;
+    width: 25px; /* adjust icon size as needed */
+    height: 25px;
     color: #ffffff; /* icon color */
   }
   

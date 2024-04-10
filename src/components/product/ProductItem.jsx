@@ -40,7 +40,9 @@ const ProductItem = ({
 }) => {
   const [openProductDetail, setProductDetail] = useState(false);
   const navigate = useNavigate(); // Initialize useHistory
-
+  const truncatedProductName = productName.length > 24
+  ? `${productName.substring(0, 24)}...`
+  : productName;
   const handleOpenProductDetail = () => {
     const sessionProduct = { productId: product_id };
     LocalStorageManager.setItem(
@@ -53,14 +55,15 @@ const ProductItem = ({
   return (
     <div>
       <Stack
+                    onClick={() => handleOpenProductDetail()}
+
         sx={{
           position: "relative",
           width: 350,
           backgroundColor: "#FFFFFF",
-          m: "8px", // Add margin between cards
         }}
       >
-        <ImageWithCartIcon imageUrl={imageUrl} alt={productName}/>
+        <ImageWithCartIcon imageUrl={imageUrl} alt={productName} productName={productName} productID={product_id}/>
         {/* <img
           src={imageUrl}
           alt={productName}
@@ -88,43 +91,30 @@ const ProductItem = ({
 
         <CardContent>
           <Typography
-            fontWeight="1"
-            variant="subtitle1"
-            style={{ color: "#000000", fontFamily : 'Rosario-Bold',fontWeight : 400,fontSize : 15 }}
+          style={{color : '#626262',fontFamily : 'Poppins, sans-serif',fontSize : '13px',fontStyle : 'normal',fontWeight : '400'}}
             gutterBottom
           >
             {productCategory}
           </Typography>
           <Typography
-            sx={styles.dosisMedium}
-            variant="h6"
-            component="div"
-            style={{ fontWeight: 700 }}
-            gutterBottom
+           style={{fontFamily : 'Rosario, sans-serif',fontSize : '16px',fontWeight : '600',textAlign : 'left',marginBottom : '10px'}}
           >
-            {productName}
+            {truncatedProductName}
           </Typography>
           <Typography
-            sx={styles.dosisBold}
-            style={{ fontSize: "20px", fontWeight: "900" }}
-            component="div"
-            gutterBottom
+            style={{fontFamily : 'Poppins, sans-serif',fontSize : '14px',fontWeight : 700,marginBottom : '10px'}}
           >
             ${productPrice}
           </Typography>
 
           <Stack direction="row" spacing={2}>
-          <button class="custom-button">
+          {/* <button class="custom-button">
   Add to Cart
+</button> */}
+<button class="custom-button">
+  Select Options
 </button>
-            <Button
-              variant="contained"
-              style={{ width: "140px" }}
-              onClick={() => handleOpenProductDetail()}
-              sx={{ backgroundColor: "#726251", textTransform: "none" }}
-            >
-              View Details
-            </Button>
+            
           </Stack>
         </CardContent>
       </Stack>
