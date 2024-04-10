@@ -1,0 +1,30 @@
+.image-gallery-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 25%; /* Equal width to each image */
+  }
+  
+  .image-wrapper img {
+    width: 100%; /* Ensures each image takes up the full width of its container */
+    height: 100%; /* Ensures each image maintains its aspect ratio */
+    object-fit: fill; /* Ensures each image covers the entire container, preserving aspect ratio */
+  }
+  
+  
+  .overlay-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family:  "'Rosario', sans-serif";
+
+    font-weight: bold;
+  }
+  

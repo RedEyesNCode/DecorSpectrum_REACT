@@ -32,7 +32,7 @@ const styles = {
 };
 const ProductItem = ({
   product_id,
-
+  productPrice,
   imageUrl,
   productName,
   productCategory,
@@ -110,7 +110,7 @@ const ProductItem = ({
             component="div"
             gutterBottom
           >
-            $19.99
+            ${productPrice}
           </Typography>
 
           <Stack direction="row" spacing={2}>

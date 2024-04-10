@@ -17,6 +17,7 @@ import Image2slide from './pages/Image2slide';
 // import Footer from './pages/footer';
 import Footer from './pages/Footer';
 import MaterialNavBar from './components/MaterialNavBar';
+import ImageGallery from './components/ImageGallery';
 
 
 
@@ -51,7 +52,7 @@ function App() {
       <Headmean/>
       <Headcard/>
       <Headbottom/>
-
+      <ImageGallery/>
       <Footer/>
 
     </div>

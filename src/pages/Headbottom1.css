@@ -69,3 +69,26 @@
     align-items: center;
    
   }
+  .circle-wrapper {
+    position: relative;
+  }
+  
+.rosaria-text {
+  font-family:  "'Rosario', sans-serif";
+}
+  
+  .circle {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #2C1A00;
+    opacity: 0.5;
+    transition: background-color 0.3s ease;
+  }
+  
+  .circle:hover {
+    background-color: #626262; /* Change to desired hover color */
+  }
