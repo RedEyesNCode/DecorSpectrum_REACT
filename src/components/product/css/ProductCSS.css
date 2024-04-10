@@ -16,10 +16,35 @@
     color: white;
     transform: scale(1.2);
 }
+.zoom-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1); /* Adjust scale value as needed */
+}
+
+.quick-view {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.zoom-effect:hover + .quick-view, .quick-view:hover {
+  opacity: 1;
+}
+
+
+.arrow-button{
+  box-sizing: border-box;
+  display: block;
+  height: 57.6px;
+  width: 435.8px;
+}
 
 .rosaria-text {
-    font-family : 'Rosario-Regular';
+  font-family:  "'Rosario', sans-serif";
 }
+
 
 .image-container {
     position: relative;
