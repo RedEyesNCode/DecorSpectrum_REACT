@@ -141,6 +141,7 @@ const ProductItem = ({ item }) => {
       <Typography className="rosaria-text"  sx={{color : '#2c1a00', fontSize : '16px',fontWeight : 600,textAlign : 'left',fontStyle : 'normal',marginBottom : '8px'}}>{truncatedProductName}</Typography>
       <Typography className="rosaria-text" sx={{ fontSize : '16px',fontStyle : 'normal', fontWeight : 500,color : '#626262',letterSpacing : 'normal',textAlign : 'left',lineHeight : '20.8px',textSizeAdjust : '100%'}}>{item.category.name}</Typography>
     </div>
+
   );
 };
 

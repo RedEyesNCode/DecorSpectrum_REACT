@@ -71,77 +71,78 @@ const MaterialNavBar = ({slidesx}) => {
     setAnchorEl(null);
   };
 
-  return (
-    <Stack>
-      <AppBar position="static">
-      <Toolbar style={{backgroundColor : "#ffffff", height : "130px"}} >
-        <img src={logoImg} width="100px" style={{padding : "40px"}} height="100px" alt="Example" />
+  // return (
+  //   <Stack>
+  //     <AppBar position="static">
+  //     <Toolbar style={{backgroundColor : "#ffffff", height : "130px"}} >
+  //       <img src={logoImg} width="100px" style={{padding : "40px"}} height="100px" alt="Example" />
 
-        <Button onClick={navigateHome} variant="h6" component="div" style={{color : "#000000",marginLeft : "50px"}} >
-          Home
-        </Button>
+  //       <Button onClick={navigateHome} variant="h6" component="div" style={{color : "#000000",marginLeft : "50px"}} >
+  //         Home
+  //       </Button>
 
-        {mainCategory && mainCategory.data.map((category,index) => (
-              <IconButton
-              aria-label="more"
-              aria-controls="dropdown-menu"
-              aria-haspopup="true"
-              color="black"
-              onClick={(e) => handleClick(e,category.name)}
-              style={{fontSize : "20px"}}
-            >
-               {category.name} 
-            </IconButton>
+  //       {mainCategory && mainCategory.data.map((category,index) => (
+  //             <IconButton
+  //             aria-label="more"
+  //             aria-controls="dropdown-menu"
+  //             aria-haspopup="true"
+  //             color="black"
+  //             onClick={(e) => handleClick(e,category.name)}
+  //             style={{fontSize : "20px"}}
+  //           >
+  //              {category.name} 
+  //           </IconButton>
                   
-                ))}
+  //               ))}
 
 
 
-        <div>
-          <IconButton
-            aria-label="more"
-            aria-controls="dropdown-menu"
-            aria-haspopup="true"
-            color="black"
-            onClick={navigateAboutUs}
-            style={{fontSize : "20px"}}
-          >
-            About Us
-          </IconButton>
+  //       <div>
+  //         <IconButton
+  //           aria-label="more"
+  //           aria-controls="dropdown-menu"
+  //           aria-haspopup="true"
+  //           color="black"
+  //           onClick={navigateAboutUs}
+  //           style={{fontSize : "20px"}}
+  //         >
+  //           About Us
+  //         </IconButton>
           
-        </div>
-        <div>
-          <IconButton
-            aria-label="more"
-            aria-controls="dropdown-menu"
-            aria-haspopup="true"
-            color="black"
-            style={{fontSize : "20px"}}
-          >
-            Blogs
-          </IconButton>
+  //       </div>
+  //       <div>
+  //         <IconButton
+  //           aria-label="more"
+  //           aria-controls="dropdown-menu"
+  //           aria-haspopup="true"
+  //           color="black"
+  //           style={{fontSize : "20px"}}
+  //         >
+  //           Blogs
+  //         </IconButton>
           
-        </div>
-        <div>
-          <IconButton
-            aria-label="more"
-            aria-controls="dropdown-menu"
-            aria-haspopup="true"
-            color="black"
-            style={{fontSize : "20px"}}
-          >
-            Contact Us
-          </IconButton>
+  //       </div>
+  //       <div>
+  //         <IconButton
+  //           aria-label="more"
+  //           aria-controls="dropdown-menu"
+  //           aria-haspopup="true"
+  //           color="black"
+  //           style={{fontSize : "20px"}}
+  //         >
+  //           Contact Us
+  //         </IconButton>
           
-        </div>
+  //       </div>
 
-      </Toolbar>
-    </AppBar>
+  //     </Toolbar>
+  //   </AppBar>
 
-    {/* <ImageSlider images={slidesx.data} /> */}
-    </Stack>
+  //   {/* <ImageSlider images={slidesx.data} /> */}
+  //   </Stack>
     
-  );
+  // );
+  <>sjsj</>
 }
 
 export default MaterialNavBar;

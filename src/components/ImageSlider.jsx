@@ -24,9 +24,8 @@ const ImageSlider = ({ images }) => {
   function handleAfterChange(index) {
     setZoomIndex(index);
   }
-
   return (
-    <div style={{ width: "100%", height: "650px", backgroundColor: "#000000" }}>
+    <div style={{ marginLeft:"18px", width: "98%", height: "450px", backgroundColor: "red" }}>
       <Slider ref={sliderRef} {...settings}>
         {images.map((image, index) => (
           <div key={image.id}>
@@ -34,14 +33,14 @@ const ImageSlider = ({ images }) => {
               style={{
                 position: "relative",
                 width: "100%",
-                height: "650px",
+                height: "450px",
               }}
             >
               <img
                 src={image.bannerLink}
                 alt={image.alt}
                 style={{
-                  objectFit: "fill",
+                  objectFit: "cover",
                   width: "100%",
                   height: "100%",
                   transition: zoomIndex === index ? "transform 7s ease-in-out" : "none", // Apply transition only to the active slide
@@ -56,7 +55,7 @@ const ImageSlider = ({ images }) => {
                   transform: "translate(-50%, -50%)",
                   textAlign: "center",
                   color: "white",
-                  fontSize: "20px",
+                  fontSize: "10px",
                   fontWeight: "bold",
                 }}
               >

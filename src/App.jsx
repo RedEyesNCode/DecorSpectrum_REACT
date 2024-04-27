@@ -18,6 +18,9 @@ import Image2slide from './pages/Image2slide';
 import Footer from './pages/Footer';
 import MaterialNavBar from './components/MaterialNavBar';
 import ImageGallery from './components/ImageGallery';
+import LatestCollection from './pages/latestcollection';
+import SafePayment from './pages/Safepayment';
+import InnovativeDesign from './pages/InnovativeDesign';
 
 
 
@@ -47,9 +50,12 @@ function App() {
       {<MaterialNavBar slidesx={slides}/>}
 
       {slides && <ImageSlider images={slides.data}/>}
-      <Middle/>
+      <Middle />
       <Image2slide/>
-      <Headmean/>
+      <LatestCollection/>
+    <SafePayment />
+    <InnovativeDesign/>
+      {/* <Headmean/> */}
       <Headcard/>
       <Headbottom/>
       <ImageGallery/>

@@ -21,50 +21,15 @@ const Headcard = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center",padding : "50px" }}>
-      <Stack direction="column" sx={{ marginTop: "140px" }} alignItems="center">
-        <Typography
-          style={{
-            marginBottom: "25px",
-            color: "#000000",
-            fontFamily: "'Rosario', sans-serif",
-            fontSize: "35px",
-            fontStyle: "normal",
-            fontWeight: 400,
-            textAlign: "center",
-            textSizeAdjust: "100%",
-            lineHeight: "45.5px",
-          }}
-        >
-          Unique Handicraft Collection
-        </Typography>
-        <Typography
-          style={{
-            marginBottom: "25px",
-            color: "#626262",
-            fontFamily: "'Poppins', sans-serif",
-            fontSize: "16px",
-            fontStyle: "normal",
-            fontWeight: 400,
-            textAlign: "center",
-            textSizeAdjust: "100%",
-            lineHeight: "45.5px",
-          }}
-        >
-          Explore our vast range of gifts and accents- we have something to
-          please everyone!
-        </Typography>
+    <div style={{ display: "flex", justifyContent: "center",padding : "50px", backgroundColor:"#D2DBDE" }}>
+      <Stack direction="column"  alignItems="center">
 
         <Stack direction="row" alignItems="center" justifyContent="center">
-          <Stack direction="column" alignItems="center" width="35%">
+          <Stack direction="column" alignItems="center" width="25%">
             <img
               style={{
-                height: "420px",
+                height: "280px",
                 width: "380px",
-                borderBottomLeftRadius: "20px",
-                borderBottomRightRadius: "20px",
-                borderTopRightRadius: "250px",
-                borderTopLeftRadius: "250px",
                 alignItems: "center",
               }}
               src="https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/2322-pz22vpk1i1co6nzqerull5k00ae7wyiypc38a9zce4-qembhafl4tvbn5f10udy8iw9obups5fh03fx9ldm64.jpg"
@@ -73,14 +38,12 @@ const Headcard = () => {
 
             <Typography
               style={{
-                marginBottom: "25px",
                 color: "#000000",
                 fontFamily: "'Rosario', sans-serif",
-                fontSize: "30px",
+                fontSize: "25px",
                 fontStyle: "normal",
                 fontWeight: 400,
                 textAlign: "center",
-                textSizeAdjust: "100%",
                 lineHeight: "45.5px",
               }}
             >
@@ -90,10 +53,9 @@ const Headcard = () => {
               variant="body1"
               className="rosaria-text"
               style={{
-                marginTop: "12px",
-                marginRight: "20px",
-                padding: "10px",
+                padding: "2px",
                 color: "#626262",
+                fontSize:"15px",
                 textAlign : 'center'
               }}
             >
@@ -138,12 +100,8 @@ const Headcard = () => {
           <Stack direction="column" alignItems="center" width="35%">
             <img
               style={{
-                height: "420px",
+                height: "280px",
                 width: "380px",
-                borderBottomLeftRadius: "20px",
-                borderBottomRightRadius: "20px",
-                borderTopRightRadius: "250px",
-                borderTopLeftRadius: "250px",
                 alignItems: "center",
               }}
               
@@ -153,14 +111,12 @@ const Headcard = () => {
 
             <Typography
               style={{
-                marginBottom: "25px",
                 color: "#000000",
                 fontFamily: "'Rosario', sans-serif",
-                fontSize: "30px",
+                fontSize: "25px",
                 fontStyle: "normal",
                 fontWeight: 400,
                 textAlign: "center",
-                textSizeAdjust: "100%",
                 lineHeight: "45.5px",
               }}
             >
@@ -170,10 +126,9 @@ const Headcard = () => {
               variant="body1"
               className="rosaria-text"
               style={{
-                marginTop: "12px",
-                marginRight: "20px",
-                padding: "10px",
+                padding: "2px",
                 color: "#626262",
+                fontSize:"15px",
                 textAlign : 'center'
               }}
             >
@@ -218,12 +173,8 @@ const Headcard = () => {
           <Stack direction="column" alignItems="center"width="30%">
             <img
               style={{
-                height: "420px",
+               height: "280px",
                 width: "380px",
-                borderBottomLeftRadius: "20px",
-                borderBottomRightRadius: "20px",
-                borderTopRightRadius: "250px",
-                borderTopLeftRadius: "250px",
                 alignItems: "center",
               }}
               src="https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/New-Project-2022-12-18T164412.798-qempzcyj16jm292xi0fama5vfomw050fs3pk19as8s.jpg"
@@ -232,14 +183,12 @@ const Headcard = () => {
 
             <Typography
               style={{
-                marginBottom: "25px",
                 color: "#000000",
                 fontFamily: "'Rosario', sans-serif",
-                fontSize: "30px",
+                fontSize: "25px",
                 fontStyle: "normal",
                 fontWeight: 400,
                 textAlign: "center",
-                textSizeAdjust: "100%",
                 lineHeight: "45.5px",
               }}
             >
@@ -249,11 +198,9 @@ const Headcard = () => {
               variant="body1"
               className="rosaria-text"
               style={{
-                marginTop: "12px",
-                marginRight: "20px",
-                padding: "10px",
+                padding: "2px",
                 color: "#626262",
-                margin : '20px',
+                fontSize:"15px",
                 textAlign : 'center'
               }}
             >
@@ -298,6 +245,7 @@ const Headcard = () => {
         </Stack>
       </Stack>
     </div>
+    // <>nknkkk</>
   );
 };
 

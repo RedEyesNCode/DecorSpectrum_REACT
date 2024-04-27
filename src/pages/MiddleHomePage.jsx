@@ -23,42 +23,39 @@ const Middle = () => {
     });
   };
   return (
+    <>
     <div
       style={{
         display: "flex",
         justifyContent: "space-between",
-        margin: "150px",
+        marginLeft:"15px",
+        marginTop:"50px"
       }}
     >
-      <div>
+      <div style={{width:"50%"}}>
         <Stack>
+        <Typography
+            variant="h2"
+            className="rosaria-text"
+            style={{ padding: "10px", fontSize:"22px", fontWeight:"600" }}
+          >
+            WHO WE ARE
+          </Typography>
           <Typography
             variant="h2"
             className="rosaria-text"
-            style={{ padding: "10px" }}
+            style={{ padding: "10px",fontSize:"70px", fontWeight:"600",color:"black" }}
           >
-            We Offer Top Quality Products
-          </Typography>
-          <Typography
-            variant="h4"
-            className="rosaria-text"
-            style={{
-              marginTop: "20px",
-              padding: "10px",
-              color: "#C19B76",
-              fontWeight: 700,
-            }}
-          >
-            A Statement in Style
+            We Offer Top Quality Products - <span style={{fontSize:"60px",}}> A <br /> Statement in Style</span>
           </Typography>
           <Typography
             variant="body1"
             className="rosaria-text"
             style={{
-              marginTop: "12px",
-              marginRight: "20px",
+              marginTop: "10px",
+              fontSize:"22px",
               padding: "10px",
-              color: "#000000",
+              color: "#484B4F",
             }}
           >
             Huge selection of Exotic handmade Turkish Chandeliers, Lamps,
@@ -69,17 +66,18 @@ const Middle = () => {
           <Box
             onClick={() => navigateProductCategory("1")}
             style={{
-              backgroundColor: "#82705d",
-              height: "30px",
-              width: "200px",
+              backgroundColor: "#D2DBDE",
+              height: "40px",
+              width: "250px",
               borderTopLeftRadius: "30px",
               borderTopRightRadius: "5px",
               borderBottomLeftRadius: "5px",
               borderBottomRightRadius: "30px",
-              paddingTop: "20px",
+              marginTop:"10px",
+              paddingTop: "25px",
               paddingRight: "25px",
               paddingLeft: "25px",
-              paddingBottom: "20px",
+              paddingBottom: "25px",
               fontFamily: "Poppins, sans-serif",
               fontSize: "16px",
               display: "flex", // Set display to flex
@@ -89,7 +87,7 @@ const Middle = () => {
           >
             <Typography
               className="rosaria-text"
-              style={{ color: "#FFFFFF", marginRight: "10px" }}
+              style={{ color: "black" }}
               variant="body1"
             >
               View Our Collection
@@ -100,7 +98,7 @@ const Middle = () => {
           </Box>
         </Stack>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{position:"relative" }}>
         <img
           src={
             "https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/IMG_4694-scaled-1-e1670854127657-pz231i86feigmor6hfv2dpvz8c29zwau7ptop9fp18-qembgj68es2551p6d6f258rjsntn726py1fi84js70.jpg"
@@ -111,9 +109,13 @@ const Middle = () => {
             borderTopRightRadius: "200px",
             borderBottomLeftRadius: "20px",
             borderBottomRightRadius: "20px",
-            height: "350px",
+            height: "450px",
             width: "auto",
             marginRight: "10px",
+            position:"absolute",
+            top:"22%",
+            right:"80%",
+            zIndex:1,
           }}
         />
 
@@ -123,7 +125,8 @@ const Middle = () => {
           }
           alt="Example"
           style={{
-            marginRight: "20px",
+            marginRight: "80px",
+            width:"100%",
             borderTopLeftRadius: "150px",
             borderTopRightRadius: "20px",
             borderBottomLeftRadius: "20px",
@@ -133,6 +136,8 @@ const Middle = () => {
         />
       </div>
     </div>
+    </>
+    
   );
 };
 

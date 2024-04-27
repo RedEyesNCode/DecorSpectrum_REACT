@@ -1,0 +1,84 @@
+.box5 {
+  font-family: "Rosario", sans-serif;
+  margin-top: 8vw;
+  background-color: rgb(2, 34, 31);
+}
+
+.box5a {
+  background-color: rgb(2, 34, 31);
+  position: relative;
+  left: 3%;
+}
+
+
+.box5a-photo {
+  margin-top: 34%;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 100px;
+}
+
+
+.box5a-photo2 {
+  background-color: rgb(2, 34, 31);
+  box-shadow: 0px 0px 20px 0px rgb(2, 34, 31);
+  width: 50%;
+  position: absolute;
+  top: 8%;
+  left: 52%;
+  z-index: 2;
+  overflow: hidden;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+}
+
+.box5-heading {
+  font-size: calc(2.2vw + 1rem);
+  font-weight: bold;
+  line-height: 4vw;
+  color: rgba(207, 216, 220, 0.932);
+}
+
+
+.box5b {
+  padding-top: 4vw;
+  background-color: rgb(2, 34, 31);
+  position: relative;
+}
+
+
+
+.box5b-photo {
+  position: relative;
+  z-index: 3;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  overflow: hidden;
+}
+
+
+.box5 .btn {
+  background-color: rgba(207, 216, 220, 0.932);
+  box-shadow: 0px 0px 10px 0px rgba(207, 216, 220, 0.932);
+  font-size: calc(10px + 0.5vw);
+  color: rgb(2 34 31);
+  font-weight: bold;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.box5 .btn:hover {
+  background-color: rgba(207, 216, 220, 0.932);
+  border: solid rgb(2, 34, 31);
+  color: rgb(2, 34, 31);
+  box-shadow: 0px 0px 10px 0px rgb(2, 34, 31);
+}
+
+
+
+
+

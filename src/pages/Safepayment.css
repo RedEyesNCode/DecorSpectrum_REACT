@@ -1,0 +1,48 @@
+
+.box4 {
+    font-family: "Rosario", sans-serif;
+    margin-top: 7vw;
+    padding-right: 2vw;
+    animation: box4 2s;
+    position: relative;
+  
+  }
+  
+  .box4a,
+  .box4b,
+  .box4c {
+    padding-top: 4vw;
+    background-color: rgba(207, 216, 220, 0.932);
+    margin-left: 2vw;
+    border: solid 2px rgb(2, 34, 31);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 70px;
+  }
+  
+  .box4b {
+    background-color: rgb(2, 34, 31);
+    color: rgba(207, 216, 220, 0.932);
+  }
+  
+  .box4b:hover {
+    background-color: rgb(2, 34, 31);
+    color: rgb(2, 34, 31);
+  }
+  
+  .box4b i:hover {
+    color: rgb(2, 34, 31);
+  }
+  
+  .box4a:hover,
+  .box4b:hover,
+  .box4c:hover {
+    transition: 1s;
+    box-shadow: 15px 15px rgb(2, 34, 31);
+    border-radius: 50px;
+    border: solid 5px rgb(2, 34, 31);
+    background-color: rgba(207, 216, 220, 0.932);
+    transform: scale(1.1,1.1);
+  }
+  
+  
+  
