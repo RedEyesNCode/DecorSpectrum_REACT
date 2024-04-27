@@ -35,17 +35,10 @@ function App() {
     fetchLeadsData();
   }, []);
 
-  
-
-
-   
-
   return (
 
     <div>
-
       {<MaterialNavBar slidesx={slides}/>}
-
       {slides && <ImageSlider images={slides.data}/>}
       <Middle/>
       <Image2slide/>
@@ -54,7 +47,6 @@ function App() {
       <Headbottom/>
       <ImageGallery/>
       <Footer/>
-
     </div>
   );
 }
