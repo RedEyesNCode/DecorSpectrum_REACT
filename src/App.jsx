@@ -46,14 +46,14 @@ function App() {
 
       {<MaterialNavBar slidesx={slides}/>}
 
-      {slides && <ImageSlider images={slides.data}/>}
+      {/* {slides && <ImageSlider images={slides.data}/>}
       <Middle/>
       <Image2slide/>
       <Headmean/>
       <Headcard/>
       <Headbottom/>
       <ImageGallery/>
-      <Footer/>
+      <Footer/> */}
 
     </div>
   );
