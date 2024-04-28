@@ -19,20 +19,20 @@ const Headbottom = () => {
   const videoId = "VIDEO_ID_HERE";
 
   return (
-    <div style={{ backgroundColor: "#2C1A00" }}>
-      <Stack direction="row" style={{ backgroundColor: "#2C1A00" }}>
-        <div style={{ position: "relative", width: "70%" }}>
+    <div style={{ backgroundColor: "#02221F", height:"100vh" }}>
+      <Stack direction="row" style={{ backgroundColor: "#02221F" }}>
+        <div style={{ position: "relative", width: "50%",overflow:"hidden",objectFit:"cover" }}>
           <img
             width="100%"
             src={image12}
             title="YouTube video player"
             alt="YouTube video player"
-            style={{ display: "block" }}
+            style={{ display: "block",objectFit:"contain" }}
           />
           <div
             style={{
               position: "absolute",
-              top: "50%",
+              top: "30%",
               left: "50%",
               transform: "translate(-50%, -50%)",
             }}
@@ -43,17 +43,17 @@ const Headbottom = () => {
                 style={{
                   width: "50px",
                   height: "50px",
-                  color: "#000000",
+                  color: "black",
                   zIndex: "1",
                 }}
               />
             </div>
           </div>
         </div>
-        <Stack direction="column" style={{ marginLeft: "20px",padding : '80px' }}>
+        <Stack direction="column" style={{padding : '80px' }}>
           <Typography
             className="rosaria-text"
-            style={{ color: "#ffffff", fontSize: "48px", fontWeight: "300",marginBottom : '50px' }}
+            style={{ color: "#ffffff", fontSize: "42px", fontWeight: "300",marginBottom : '50px', textAlign:"center" }}
           >
             Passionate About Elegance and Beauty In Design
           </Typography>
@@ -98,7 +98,7 @@ const Headbottom = () => {
                 variant="body1"
                 style={{
                   color: "#ffffff",
-                  fontSize: 20,
+                  fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
               >
@@ -148,7 +148,7 @@ const Headbottom = () => {
                 variant="body1"
                 style={{
                   color: "#ffffff",
-                  fontSize: 20,
+                  fontSize: "16px",
                   fontFamily: "Poppins",
                 }}
               >
@@ -196,7 +196,7 @@ const Headbottom = () => {
                 variant="body1"
                 style={{
                   color: "#ffffff",
-                  fontSize: 20,
+                  fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
               >
@@ -209,14 +209,15 @@ const Headbottom = () => {
           <Typography
             style={{
               color: "#ffffff",
-              fontSize: 20,
+              marginTop:"20px",
+              fontSize: "18px",
               marginLeft: "10px",
-              padding : '25px'
+              textAlign:"center"
             }}
           >
-            Explore our huge selection of Exotic handmade Turkish Chandeliers,
-            Lamps, Ceiling Lights and Ceramics. Choose from our fast-selling
-            colors or customize your own unique combination of
+            Explore our huge selection of Exotic handmade Turkish Chandeliers, <br />
+            Lamps, Ceiling Lights and Ceramics.  Choose from our fast-selling
+            colors or <br /> customize your own unique combination of
           </Typography>
         </Stack>
       </Stack>

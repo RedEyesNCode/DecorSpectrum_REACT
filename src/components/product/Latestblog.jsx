@@ -1,10 +1,10 @@
 import { Typography, Box, Stack } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
-import { getAllProductDetails } from "../api/apiInterface";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import './latestCollection.css';
+import './css/Latestblog.css';
+import { getAllProductDetails } from "../../api/apiInterface";
 
-const LatestCollection = () => {
+const Latestblog = () => {
   const [products, setProductsData] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef(null);
@@ -25,15 +25,16 @@ const LatestCollection = () => {
     const interval = setInterval(() => {
       if (scrollContainerRef.current) {
         const container = scrollContainerRef.current;
-        container.scrollLeft -= container.offsetWidth; // Adjusted to scroll right
-        if (container.scrollLeft <= 0) {
-          container.scrollLeft = container.scrollWidth - container.offsetWidth;
+        container.scrollLeft += container.offsetWidth;
+        if (container.scrollLeft + container.offsetWidth >= container.scrollWidth) {
+          container.scrollLeft = 0;
         }
       }
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
+
   const handleScrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollLeft -= 100;
@@ -47,23 +48,23 @@ const LatestCollection = () => {
   };
 
   return (
-    <div className="collections" style={{position:"relative"}}>
+    <div className="collection" style={{position:"relative",marginBottom:"50px"}}>
       <Stack style={{ marginLeft: "80px",marginRight: "80px"  }}>
         <Typography
           variant="h4"
           style={{
             marginBottom: "35px",
-            color: "White",
+            color: "Black",
             fontFamily: "'Rosario', sans-serif",
             fontSize: "35px",
             fontStyle: "normal",
             fontWeight: 600,
-            textAlign: "Center",
+            textAlign: "Left",
             textSizeAdjust: "100%",
             lineHeight: "45.5px",
           }}
         >
-          Latest Collection
+          Latest Blog
         </Typography>
         <div
           id="scroll-container"
@@ -77,7 +78,7 @@ const LatestCollection = () => {
         <button
           className="scroll-button left"
           onClick={handleScrollLeft}
-          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
+          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronLeft />
         </button>
@@ -85,7 +86,7 @@ const LatestCollection = () => {
         <button
           className="scroll-button right"
           onClick={handleScrollRight}
-          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "55%", transform: "translateY(-50%)"}}
+          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronRight />
         </button>
@@ -112,12 +113,9 @@ const ProductItem = ({ item }) => {
       <div
         style={{
           position: "relative",
-          width: "350px",
+          width: "460px",
           height: "320px",
           overflow: "hidden",
-          marginBottom: "30px",
-          borderTopLeftRadius:"90px",
-          boxShadow:"10px white"
         }}
       >
         {hasValidImage ? (
@@ -149,15 +147,17 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
+      <div style={{backgroundColor:"#D2DBDE",paddingBottom:"30px"}}>
       <Typography
         className="rosaria-text"
         style={{
-          color: "white",
+          color: "black",
           fontSize: "16px",
           fontWeight: 600,
           textAlign: "center",
           fontStyle: "normal",
           marginBottom: "8px",
+          paddingTop:"20px"
         }}
       >
         {truncatedProductName}
@@ -168,7 +168,7 @@ const ProductItem = ({ item }) => {
           fontSize: "12px",
           fontStyle: "normal",
           fontWeight: 500,
-          color: "white",
+          color: "black",
           letterSpacing: "normal",
           textAlign: "center",
           lineHeight: "20.8px",
@@ -177,8 +177,37 @@ const ProductItem = ({ item }) => {
       >
         {item.category.name}
       </Typography>
+      <Box 
+                  style={{ 
+                    backgroundColor: "transparent", 
+                    border:"2px solid #02221F",
+                    borderRadius:"25px",
+                    padding: "10px", 
+                    width: "150px", 
+                    height: "50px", 
+                    margin: "0 auto", 
+                    display: "flex", 
+                    justifyContent: "center",
+                    color:"#E8D0C6",
+                    alignItems: "center",
+                    marginBottom:"20px",
+                    transition: "background-color 0.3s, color 0.3s", // Smooth transition effect for color change
+                    cursor: "pointer" // Change cursor to pointer on hover
+                  }}
+                  alignContent="center" 
+                  justifyContent="center" 
+                  display="flex"
+                  textAlign="center"
+                  hoverbgcolor="#000000"
+                  hovercolor="#C19B76"
+                  >
+                  <Typography className="rosaria-text" style={{ fontSize:"15px", margin: "0 auto" }}>
+                    READ MORE
+                  </Typography>
+                </Box>
+      </div>
     </div>
   );
 };
 
-export default LatestCollection;
+export default Latestblog;

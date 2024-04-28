@@ -1,6 +1,7 @@
-.collections {
+.collection {
     font-family: "Rosario", sans-serif;
-    background-color: rgb(2, 34, 31);
+    background-color: #fff;
+    color: black;
     padding-top: 8vw;
     padding-bottom: 2vw;
     margin-top: 4vw;

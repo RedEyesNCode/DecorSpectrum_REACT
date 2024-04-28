@@ -22,6 +22,8 @@ import LatestCollection from './pages/latestcollection';
 import SafePayment from './pages/Safepayment';
 import InnovativeDesign from './pages/InnovativeDesign';
 import Cardlamp from './components/Cardlamp';
+import Latestblog from './components/product/Latestblog';
+import Testimonials from './components/product/Testimonials';
 
 
 
@@ -68,9 +70,10 @@ function App() {
       <LatestCollection/>
     <SafePayment />
     <InnovativeDesign/>
-      {/* <Headmean/> */}
       {<Headcard category={categories}/>}
+      <Latestblog />
       <Headbottom/>
+      <Testimonials />
       <ImageGallery/>
       <Footer/>
 
