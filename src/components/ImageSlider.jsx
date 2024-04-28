@@ -26,7 +26,7 @@ const ImageSlider = ({ images }) => {
   }
   return (
     <div style={{width: "100%", height: "450px",display:"flex",alignItems:"center",justifyContent:"center" }}>
-      <div style={{ width: "95%", height: "450px", backgroundColor: "red"  }}>
+      <div style={{ width: "95%", height: "450px"  }}>
       <Slider ref={sliderRef} {...settings}  >
         {images.map((image, index) => (
           <div key={image.id}>

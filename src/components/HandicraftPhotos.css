@@ -1,0 +1,90 @@
+
+/* photo 4 */
+
+.handicraft-container {
+    font-family: "Rosario", sans-serif;
+    margin-top: 5vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    padding-right: 2%;
+    position: relative;
+    background-color: rgb(2, 34, 31);
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  
+  .handicraft-container img {
+    border: solid 2px rgba(207, 216, 220, 0.932);
+    margin-top: 40px;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+  .handicraft-container img:hover {
+    transition: 0.5s;
+    box-shadow: 0px 0px 15px 5px rgba(207, 216, 220, 0.932);
+    position: relative;
+    z-index: 2;
+    transform:scale(1.1,1.1);
+    border: none;
+  }
+  
+  .handicraft-title {
+    font-family: "Rosario", sans-serif;
+    font-weight: bold;
+    color: rgb(193 204 207);
+    text-align: center;
+    position: relative;
+    bottom: 62px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  .handicraft-photo-a {
+    position: relative;
+    animation: handicraft-photo-a 2s infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes handicraft-photo-a {
+    from { bottom: 0px}
+    to {bottom: 30px;}
+  }
+  
+  .handicraft-photo-b {
+    position: relative;
+    animation: handicraft-photo-b 2s infinite;
+    animation-direction: alternate-reverse;
+    animation-delay: 1s;
+  }
+  
+  @keyframes handicraft-photo-b {
+    from { bottom: 0px}
+    to {bottom: 30px;}
+  }
+  
+  .handicraft-photo-c {
+    position: relative;
+    animation: handicraft-photo-c 2s infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes handicraft-photo-c {
+    from { bottom: 0px}
+    to {bottom: 30px;}
+  }
+  
+  .handicraft-photo-d {
+    position: relative;
+    animation: handicraft-photo-d 2s infinite;
+    animation-direction: alternate-reverse;
+    animation-delay: 1s;
+  }
+  
+  @keyframes handicraft-photo-d {
+    from { bottom: 0px}
+    to {bottom: 30px;}
+  }
+  
+  
+  

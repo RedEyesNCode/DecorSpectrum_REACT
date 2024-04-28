@@ -24,6 +24,7 @@ import InnovativeDesign from './pages/InnovativeDesign';
 import Cardlamp from './components/Cardlamp';
 import Latestblog from './components/product/Latestblog';
 import Testimonials from './components/product/Testimonials';
+import HandicraftPhotos from './components/HandicraftPhotos';
 
 
 
@@ -74,7 +75,8 @@ function App() {
       <Latestblog />
       <Headbottom/>
       <Testimonials />
-      <ImageGallery/>
+      <HandicraftPhotos />
+      {/* <ImageGallery/> */}
       <Footer/>
 
     </div>
