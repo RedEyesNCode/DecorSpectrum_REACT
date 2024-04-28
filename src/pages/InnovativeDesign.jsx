@@ -10,35 +10,29 @@ const HandicraftBox = ({ imgSrc, altText, width, aosAnimation }) => {
 
 const InnovativeDesign = () => {
   return (
-    // <div className="container-fluid">
-    //   <div className="row box5">
-    //     <div className="col-lg-7 box5a" style={{display:"flex",alignItems:"center"}}>
-    //       <HandicraftBox imgSrc="http://colourking.co.in/code/decor/photos/handicarft%202.webp" altText="Handicraft 3" width="100%" aosAnimation="slide-up" />
-    //       <HandicraftBox imgSrc="http://colourking.co.in/code/decor/photos/box%202a.webp" altText="Box 2a" width="70%" aosAnimation="slide-right" />
-    //       <br /><br />
-    //       <div className="box5-heading" data-aos="slide-up">Handicraft Importers Since 2009 </div><br /><br /><br />
-    //     </div>
-    //     <div className="col-lg-5 box5b">
-    //       <div style={{ marginLeft: '13%' }} data-aos="slide-left">
-    //         <span className="box5-heading">Innovative Design is Our Passion </span><br />
-    //         <p style={{ fontSize: '20px', color: 'rgba(207, 216, 220, 0.932)' }}>
-    //           <br /> Vivamus nulla montes vehicula ex semper mus finibus quis eleifend facilisi.
-    //           Turpis consectetur pulvinar auctor vestibulum quisque. Velit quisque ante interdum
-    //           consectetuer habitant blandit.
-    //         </p>
-    //         <br />
-    //         <a href="index.html" className="btn btn-success" target="_top">View Collection</a>
-    //         <br /><br />
-    //       </div>
+    <>
+    <div className='in_container_main'>
+      <div className='container_left'>
+        <img src="http://colourking.co.in/code/decor/photos/box%202a.webp" alt="" />
+      </div>
+      <div className='container_right'>
+        <div className='right_container_top'>
+          <h1>Innovative Design is Our Passion</h1>
+          <p>Vivamus nulla montes vehicula ex semper mus finibus quis eleifend facilisi. Turpis consectetur pulvinar auctor vestibulum quisque. Velit quisque ante interdum consectetuer habitant blandit.</p>
+          <button>View Collection</button>
+        </div>
 
-    //       <div className="box5b-photo" data-aos="slide-left">
-    //         <img src="http://colourking.co.in/code/decor/photos/box%202a.webp" alt="Handicraft 2" height="auto" width="100%" />
-    //       </div>
-    //     </div>
-       
-    //   </div>
-    // </div>
-    <>Innovative Design</>
+        <div className='right_container_buttom'>
+          <img src="http://colourking.co.in/code/decor/photos/handicarft%202.webp" alt="" />
+        </div>
+      </div>
+      <img className='center_image' src="http://colourking.co.in/code/decor/photos/handicraft%203.jpg" alt="" />
+    </div>
+    <div className='in_container_bottom'>
+      <h1>Handicraft Importers Since</h1>
+      <h1>2009</h1>
+    </div>
+    </>
   );
 };
 

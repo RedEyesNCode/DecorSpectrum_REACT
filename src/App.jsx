@@ -21,6 +21,7 @@ import ImageGallery from './components/ImageGallery';
 import LatestCollection from './pages/latestcollection';
 import SafePayment from './pages/Safepayment';
 import InnovativeDesign from './pages/InnovativeDesign';
+import Cardlamp from './components/Cardlamp';
 
 
 
@@ -39,7 +40,18 @@ function App() {
   }, []);
 
   
+  const [categories, setCategory] = useState (null);
 
+
+  useEffect(() => {
+    const fetchCategoryData = async () => {
+      const getAllLeadsResponse = await getAllCategory();
+      console.log("Get All category -->", getAllLeadsResponse);
+
+      setCategory(getAllLeadsResponse);
+    };
+    fetchCategoryData();
+  }, []);
 
    
 
@@ -50,13 +62,14 @@ function App() {
       {<MaterialNavBar slidesx={slides}/>}
 
       {slides && <ImageSlider images={slides.data}/>}
+      <Cardlamp />
       <Middle />
       <Image2slide/>
       <LatestCollection/>
     <SafePayment />
     <InnovativeDesign/>
       {/* <Headmean/> */}
-      <Headcard/>
+      {<Headcard category={categories}/>}
       <Headbottom/>
       <ImageGallery/>
       <Footer/>

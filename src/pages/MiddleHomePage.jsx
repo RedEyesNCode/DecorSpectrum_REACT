@@ -66,6 +66,7 @@ const Middle = () => {
           <Box
             onClick={() => navigateProductCategory("1")}
             style={{
+              cursor:"pointer",
               backgroundColor: "#D2DBDE",
               height: "40px",
               width: "250px",

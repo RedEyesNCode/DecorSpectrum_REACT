@@ -18,15 +18,16 @@ const ImageSlider = ({ images }) => {
     autoplay: true,
     autoplaySpeed: 4000, // Adjust autoplay speed as needed
     cssEase: "linear",
-    afterChange: handleAfterChange
+    afterChange: handleAfterChange,
   };
 
   function handleAfterChange(index) {
     setZoomIndex(index);
   }
   return (
-    <div style={{ marginLeft:"18px", width: "98%", height: "450px", backgroundColor: "red" }}>
-      <Slider ref={sliderRef} {...settings}>
+    <div style={{width: "100%", height: "450px",display:"flex",alignItems:"center",justifyContent:"center" }}>
+      <div style={{ width: "95%", height: "450px", backgroundColor: "red"  }}>
+      <Slider ref={sliderRef} {...settings}  >
         {images.map((image, index) => (
           <div key={image.id}>
             <div
@@ -90,6 +91,7 @@ const ImageSlider = ({ images }) => {
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };
