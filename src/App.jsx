@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { getAllBannersDashboard } from './api/apiInterface';
 import Slider from 'react-slick';
 import ImageSlider from './components/ImageSlider';
-import Navbar from './components/navbar';
 import { getAllCategory } from './api/apiInterface';
  import { getPopularProducts } from './api/apiInterface';
 import Middle from './pages/MiddleHomePage';
@@ -44,16 +43,16 @@ function App() {
 
     <div>
 
-      {<MaterialNavBar slidesx={slides}/>}
+      {<MaterialNavBar/>}
 
-      {/* {slides && <ImageSlider images={slides.data}/>}
+      {slides && <ImageSlider images={slides.data}/>}
       <Middle/>
       <Image2slide/>
       <Headmean/>
       <Headcard/>
       <Headbottom/>
       <ImageGallery/>
-      <Footer/> */}
+      <Footer/>
 
     </div>
   );
