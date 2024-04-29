@@ -4,11 +4,57 @@ import React, { useState, useEffect, useRef } from "react";
 import { getAllProductDetails } from "../api/apiInterface";
 import '../components/product/css/ProductCSS.css';
 import { BsEye } from "react-icons/bs";
+import { delay, motion } from "framer-motion";
 
 const Imageslide2 = () => {
   const [products, setProductsData] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const textVariants = {
+      initial: {
+          x: 50,
+          opacity: 0,
+      },
+      animate: {
+          x: 0,
+          opacity: 1,
+          transition: {
+              duration: 1,
+              delay:2,
+              staggerChildren: 0.1,
+          },
+      }
+  };
+
+  const abcVariants = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 2,
+            delay:2,
+            staggerChildren: 0.1,
+        },
+    }
+  };
+
+
+  useEffect(() => {
+      const handleScroll = () => {
+          setScrollPosition(window.scrollY);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+
 
   useEffect(() => {
     const fetchProductsData = async () => {
@@ -38,9 +84,12 @@ const Imageslide2 = () => {
   }, []);
 
   return (
-    <Stack style={{ margin: "80px", position: "relative" }}>
-      <Typography
+    <Stack style={{ margin: "80px", position: "relative", }}>
+      <motion.Typography
         variant="h4"
+        variants={textVariants}
+        initial="initial"
+        animate={scrollPosition > 100 ? "animate" : "initial"}
         style={{
           marginBottom: "25px",
           color: "#000000",
@@ -54,28 +103,38 @@ const Imageslide2 = () => {
         }}
       >
         Trending Products
-      </Typography>
-      <div
+      </motion.Typography>
+      
+      <motion.div
+       variants={abcVariants}
+       initial="initial"
+       animate={scrollPosition > 100 ? "animate" : "initial"}
         id="scroll-container"
         ref={scrollContainerRef}
         style={{ display: "flex", overflowX: "hidden", scrollBehavior: "smooth" }}
       >
         {products && products.map((item) => <ProductItem key={item.productTable.id} item={item} />)}
-      </div>
+      </motion.div>
       {/* Left navigation button */}
-      <button
+      <motion.button
+       variants={abcVariants}
+       initial="initial"
+       animate={scrollPosition > 100 ? "animate" : "initial"}
         style={{ position: "absolute", color:"black", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", left:"-60px", top: "60%", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft -= 100 }}
       >
         <BsChevronLeft />
-      </button>
+      </motion.button>
       {/* Right navigation button */}
-      <button
+      <motion.button
+       variants={abcVariants}
+       initial="initial"
+       animate={scrollPosition > 100 ? "animate" : "initial"} 
         style={{ position: "absolute", color:"", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", top: "60%", right: "-50px", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft += 100 }}
       >
         <BsChevronRight />
-      </button>
+      </motion.button>
     </Stack>
   );
 };
@@ -153,7 +212,7 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
-      <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column", borderBottomLeftRadius:"11px",borderBottomRightRadius:"11px"}}>
+      <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column", borderBottomLeftRadius:"11px",borderBottomRightRadius:"11"}}>
       <Typography className="rosaria-text" sx={{ color: '#C1CCCF', fontSize: '16px', fontWeight: 600, textAlign: 'left', fontStyle: 'normal', marginBottom: '8px', margintop: '8px', padding:"10px" }}>{truncatedProductName}</Typography>
       <Typography className="rosaria-text" sx={{ color:"#C1CCCF", fontSize: '16px', textAlign:"left", fontStyle: 'normal', fontWeight: 500, letterSpacing: 'normal', lineHeight: '20.8px', textSizeAdjust: '100%' ,padding:"8px"}}>{item.category.name}</Typography>
       </div>

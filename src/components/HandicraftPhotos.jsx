@@ -7,25 +7,25 @@ const HandicraftPhotos = () => {
       <div className="row handicraft-container" style={{display:"flex", flexDirection:"row"}}>
         
         <div className="col-lg-3 col-md-6 handicraft-photo-b">
-          <img src="http://colourking.co.in/code/decor/photos/card%20img%205.webp" alt="" style={{ width: "105%" }} />
+          <img src="https://androidbucket3577.s3.ap-south-1.amazonaws.com/1714215624099_0L1A1264JPEG-clear-1024x769.jpg.webp" alt="" style={{ width: "105%" }} />
           <div className="handicraft-title">
             <h2>Decorative Plates</h2>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 handicraft-photo-c">
-          <img src="http://colourking.co.in/code/decor/photos/card%20img%204.webp" alt="" style={{ width: "105%" }} />
+          <img src="https://androidbucket3577.s3.ap-south-1.amazonaws.com/1714215624099_0L1A1264JPEG-clear-1024x769.jpg.webp" alt="" style={{ width: "105%" }} />
           <div className="handicraft-title">
             <h2>Floor Lamps</h2>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 handicraft-photo-d">
-          <img src="http://colourking.co.in/code/decor/photos/card%20img2.webp" alt="" style={{ width: "105%" }} />
+          <img src="https://androidbucket3577.s3.ap-south-1.amazonaws.com/1714215624099_0L1A1264JPEG-clear-1024x769.jpg.webp" alt="" style={{ width: "105%" }} />
           <div className="handicraft-title">
             <h2>This And That</h2>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 handicraft-photo-d">
-          <img src="http://colourking.co.in/code/decor/photos/card%20img2.webp" alt="" style={{ width: "105%" }} />
+          <img src="https://androidbucket3577.s3.ap-south-1.amazonaws.com/1714215624099_0L1A1264JPEG-clear-1024x769.jpg.webp" alt="" style={{ width: "105%" }} />
           <div className="handicraft-title">
             <h2>This And That</h2>
           </div>

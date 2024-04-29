@@ -3,12 +3,53 @@ import React, { useState, useEffect, useRef } from "react";
 import { getAllProductDetails } from "../api/apiInterface";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import './latestCollection.css';
+import { motion } from "framer-motion";
 
 const LatestCollection = () => {
   const [products, setProductsData] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  const textVariants = {
+    initial: {
+        x: 50,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 2,
+            delay:2,
+            staggerChildren: 0.1,
+        },
+    }
+};
+const abcVariants = {
+  initial: {
+      opacity: 0,
+  },
+  animate: {
+      opacity: 1,
+      transition: {
+          duration: 2,
+          delay:2,
+          staggerChildren: 0.1,
+      },
+  }
+};
+useEffect(() => {
+  const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+      window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
   useEffect(() => {
     const fetchProductsData = async () => {
       try {
@@ -49,8 +90,11 @@ const LatestCollection = () => {
   return (
     <div className="collections" style={{position:"relative"}}>
       <Stack style={{ marginLeft: "80px",marginRight: "80px"  }}>
-        <Typography
+        <motion.Typography
           variant="h4"
+          variants={textVariants}
+        initial="initial"
+        animate={scrollPosition > 100 ? "animate" : "initial"}
           style={{
             marginBottom: "35px",
             color: "White",
@@ -64,31 +108,40 @@ const LatestCollection = () => {
           }}
         >
           Latest Collection
-        </Typography>
-        <div
+        </motion.Typography>
+        <motion.div
+        variants={abcVariants}
+        initial="initial"
+        animate={scrollPosition > 100 ? "animate" : "initial"}
           id="scroll-container"
           ref={scrollContainerRef}
           style={{ display: "flex", overflowX: "hidden", scrollBehavior: "smooth" }}
         >
           {products &&
             products.map((item) => <ProductItem key={item.productTable.id} item={item} />)}
-        </div>
+        </motion.div>
         {/* Left navigation button */}
-        <button
+        <motion.button
+        variants={abcVariants}
+        initial="initial"
+        animate={scrollPosition > 100 ? "animate" : "initial"}
           className="scroll-button left"
           onClick={handleScrollLeft}
           style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronLeft />
-        </button>
+        </motion.button>
         {/* Right navigation button */}
-        <button
+        <motion.button
+        variants={abcVariants}
+        initial="initial"
+        animate={scrollPosition > 100 ? "animate" : "initial"}
           className="scroll-button right"
           onClick={handleScrollRight}
           style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronRight />
-        </button>
+        </motion.button>
       </Stack>
     </div>
   );

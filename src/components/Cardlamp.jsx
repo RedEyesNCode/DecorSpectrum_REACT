@@ -5,36 +5,48 @@ import { motion, useAnimation } from 'framer-motion';
 const Cardlamp = () => {
   const [isVisble,SetisVisible]=useState(false);
   const controls=useAnimation();
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+    const textVariants = {
+        initial: {
+            rotateY:90,
+            opacity:0,
+        },
+        animate: {
+          rotateY:0,
+          opacity:1,
+            transition: {
+                duration: 1,
+                staggerChildren: 0.1,
+            },
+        },
+        scrollButton: {
+            opacity: 0,
+            y: 10,
+            transition: {
+                duration: 2,
+                repeat: Infinity,
+            },
+        },
+    };
+
+  
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate the distance from the top of the window to the top of the component
-      const distanceToTop = document.querySelector('.box-1').getBoundingClientRect().top;
-      
-      // If the distance is less than the window height, the component is in view
-      SetisVisible(distanceToTop < window.innerHeight);
+        setScrollPosition(window.scrollY);
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
 
-    // Remove event listener on cleanup
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-  useEffect(() => {
-    // When the component is in view, start the animation
-    if (isVisble) {
-      controls.start({ rotateY: 0 });
-    } else {
-      controls.start({ rotateY: 90 });
-    }
-  }, [isVisble, controls]);
+}, []);
+  
 
   return (
-    <motion.div className="container-fluid"style={{ color: '#CFD8DC',marginTop:"25px" }}>
-      <motion.div className="row box-1"  animate={controls} transition={{ delay:1, duration: 2 }}  data-aos="flip-left" style={{display:'flex', flexDirection:'row', justifyContent:"center",alignItems:'center'}}>
+    <div className="container-fluid"style={{ color: '#CFD8DC',marginTop:"45px" }}>
+      <motion.div className="row box-1" variants={textVariants} animate={scrollPosition > 100 ? "animate" : "initial"} initial="initial"  transition={{  duration: 1 }}  data-aos="flip-left" style={{display:'flex', flexDirection:'row', justifyContent:"center",alignItems:'center'}}>
         <div className="col-lg box-1a">
           <div>
             <h4 style={{fontSize:"28px", marginBottom:"10px"}}>New Lamp </h4>
@@ -69,7 +81,7 @@ const Cardlamp = () => {
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Headbottom1.css";
 import { RiTeamFill } from "react-icons/ri";
 import { AiTwotoneLike } from "react-icons/ai";
@@ -17,6 +17,25 @@ import { ImPriceTag } from "react-icons/im";
 import { BiLike, BiPlay, BiStar, BiVideoPlus } from "react-icons/bi";
 const Headbottom = () => {
   const videoId = "VIDEO_ID_HERE";
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.querySelector(".collections");
+      if (element) {
+        const top = element.getBoundingClientRect().top;
+        const isVisible = top < window.innerHeight;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once to set initial visibility
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div style={{ backgroundColor: "#02221F", height:"100vh" }}>
