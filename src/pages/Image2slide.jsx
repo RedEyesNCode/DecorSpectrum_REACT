@@ -32,7 +32,7 @@ const Imageslide2 = () => {
           container.scrollLeft = 0; // Reset to beginning
         }
       }
-    }, 3000); // Adjust the interval as needed
+    }, 5000); // Adjust the interval as needed
 
     return () => clearInterval(interval);
   }, []);
@@ -113,8 +113,8 @@ const ProductItem = ({ item }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderTopLeftRadius: "150px",
-            borderTopRightRadius: "150px",
+                borderTopLeftRadius: "80px",
+            borderTopRightRadius: "80px",
                 transition: "transform 0.3s ease-in-out",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -153,7 +153,7 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
-      <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column"}}>
+      <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column", borderBottomLeftRadius:"11px",borderBottomRightRadius:"11px"}}>
       <Typography className="rosaria-text" sx={{ color: '#C1CCCF', fontSize: '16px', fontWeight: 600, textAlign: 'left', fontStyle: 'normal', marginBottom: '8px', margintop: '8px', padding:"10px" }}>{truncatedProductName}</Typography>
       <Typography className="rosaria-text" sx={{ color:"#C1CCCF", fontSize: '16px', textAlign:"left", fontStyle: 'normal', fontWeight: 500, letterSpacing: 'normal', lineHeight: '20.8px', textSizeAdjust: '100%' ,padding:"8px"}}>{item.category.name}</Typography>
       </div>

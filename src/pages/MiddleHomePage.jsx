@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MiddleHomepage.css"; // Import your CSS file for styling
 import image4 from "../images/image-4.webp";
 import image5 from "../images/decore-2.jpg";
@@ -8,8 +8,25 @@ import LocalStorageManager from "../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../session/Constants";
 import "../components/product/css/ProductCSS.css";
 import { BiArrowToRight } from "react-icons/bi";
+import { motion } from "framer-motion";
 const Middle = () => {
   const navigate = useNavigate(); // Initialize useHistory
+  const [isVisible,setIsVisible]=useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const middleSection = document.querySelector(".Section1");
+      if (middleSection) {
+        const distanceToTop = middleSection.getBoundingClientRect().top;
+        setIsVisible(distanceToTop < window.innerHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navigateProductCategory = (category_id) => {
     const sessionCategory = { categoryId: "1", categoryName: "Turkish Decor" };
@@ -24,15 +41,17 @@ const Middle = () => {
   };
   return (
     <>
-    <div
+    <motion.div className="Section1"
       style={{
         display: "flex",
         justifyContent: "space-between",
         marginLeft:"15px",
-        marginTop:"50px"
+        marginTop:"50px",
+        overflow:"hidden"
       }}
     >
-      <div style={{width:"50%"}}>
+      <motion.div animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -100 }}
+        transition={{ duration: 2 }} style={{width:"50%"}}>
         <Stack>
         <Typography
             variant="h2"
@@ -98,29 +117,32 @@ const Middle = () => {
             />
           </Box>
         </Stack>
-      </div>
-      <div style={{position:"relative" }}>
-        <img
+      </motion.div>
+      <div style={{position:"relative",width:"35%" }}>
+        <motion.img
+        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 1000 }}
+        transition={{ duration: 1, }}
           src={
             "https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/IMG_4694-scaled-1-e1670854127657-pz231i86feigmor6hfv2dpvz8c29zwau7ptop9fp18-qembgj68es2551p6d6f258rjsntn726py1fi84js70.jpg"
           }
           alt="Example"
           style={{
-            borderTopLeftRadius: "200px",
-            borderTopRightRadius: "200px",
-            borderBottomLeftRadius: "20px",
-            borderBottomRightRadius: "20px",
-            height: "450px",
+            borderTopLeftRadius: "80px",
+            borderTopRightRadius: "80px",
+            borderBottomRightRadius: "80px",
+            height: "400px",
             width: "auto",
             marginRight: "10px",
             position:"absolute",
             top:"22%",
-            right:"80%",
+            right:"75%",
             zIndex:1,
           }}
         />
 
-        <img
+        <motion.img
+         animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 300 }}
+         transition={{ duration: 2 }}
           src={
             "https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/IMG_4650-scaled-1-pz22ew7z8qdpvkfvlq88kpt6lomg1jpdikg1ayhstw-qembglzs74zkn2fdzrv110kbdujs1oo016ysv9yrsk.jpg"
           }
@@ -132,11 +154,11 @@ const Middle = () => {
             borderTopRightRadius: "20px",
             borderBottomLeftRadius: "20px",
             borderBottomRightRadius: "50px",
-            height: "553px",
+            height: "480px",
           }}
         />
       </div>
-    </div>
+    </motion.div>
     </>
     
   );

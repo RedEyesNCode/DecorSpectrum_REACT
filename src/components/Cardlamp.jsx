@@ -34,7 +34,7 @@ const Cardlamp = () => {
 
   return (
     <motion.div className="container-fluid"style={{ color: '#CFD8DC',marginTop:"25px" }}>
-      <motion.div className="row box-1"  animate={controls} transition={{ delay:1,repeat:Infinity, duration: 2 }}  data-aos="flip-left" style={{display:'flex', flexDirection:'row', justifyContent:"center",alignItems:'center'}}>
+      <motion.div className="row box-1"  animate={controls} transition={{ delay:1, duration: 2 }}  data-aos="flip-left" style={{display:'flex', flexDirection:'row', justifyContent:"center",alignItems:'center'}}>
         <div className="col-lg box-1a">
           <div>
             <h4 style={{fontSize:"28px", marginBottom:"10px"}}>New Lamp </h4>
