@@ -4,6 +4,15 @@
 .box9 .padding {
     padding: 5rem;
   }
+  .box9{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .scroll_div_container{
+    width: 90%;
+    overflow-x: scroll;
+    margin: 0 auto;
+  }
   
   @media (max-width:991.98px) {
     .box9 .padding {
@@ -31,7 +40,7 @@
   .box9 .card {
     position: relative;
     display: flex;
-    width: 600px;
+    width: 400px;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
@@ -65,7 +74,8 @@
   
   
   .box9 .items {
-    width: 90%;
+    /* width: 90%; */
+    width: fit-content;
     margin: 0px auto;
     /* margin-top: 100px */
   }

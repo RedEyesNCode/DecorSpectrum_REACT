@@ -34,84 +34,110 @@ const Testimonials = () => {
 
   return (
     <div className="box9" style={{ marginTop: "8vw", marginBottom: "5vw", position: "relative" }}>
-      <Stack>
-        <div className="items" ref={scrollContainerRef} style={{ display: "flex", overflowX: "auto" }}>
+      <div className="scroll_div_container" ref={scrollContainerRef} style={{ overflowX: "hidden" }}>
+        <div className="items" style={{ display: "flex" }}>
 
-        <div class="card">
-            <div class="media media-2x1 gd-primary">
-              <img class="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" />
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Delbert Simonas</h5>
-              <div class="rating" id="rating">
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star"></span>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
               </div>
-              <p class="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about
-              these customer review on site"</p>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
             </div>
           </div>
-          <div class="card">
-            <div class="media media-2x1 gd-primary">
-              <img class="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" />
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Delbert Simonas</h5>
-              <div class="rating" id="rating">
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star"></span>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
               </div>
-              <p class="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about
-              these customer review on site"</p>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
+              </div>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
+              </div>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
+              </div>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="media media-2x1 gd-primary">
+              <img className="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" alt="testimonial" />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Delbert Simonas</h5>
+              <div className="rating" id="rating">
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star" ></span>
+                <span className="star"></span>
+              </div>
+              <p className="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review on site"</p>
             </div>
           </div>
 
-          <div class="card">
-            <div class="media media-2x1 gd-primary">
-              <img class="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Delbert Simonas</h5>
-              <div class="rating" id="rating">
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star"></span>
-              </div>
-              <p class="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about
-              these customer review on site"</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="media media-2x1 gd-primary">
-              <img class="profile-image" src="http://colourking.co.in/code/decor/photos/testi%201.jpg" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Delbert Simonas</h5>
-              <div class="rating" id="rating">
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star" ></span>
-                <span class="star"></span>
-              </div>
-              <p class="card-text">"Online reviews can make or break a customer's decision to make a purchase. Read about
-              these customer review on site"</p>
-            </div>
-          </div>
-          
+          {/* Repeat this card structure for additional testimonials */}
 
-          {/* Additional testimonial cards go here */}
-          
         </div>
-      </Stack>
+      </div>
       {/* Left navigation button */}
       <button
         className="scroll-button left"
