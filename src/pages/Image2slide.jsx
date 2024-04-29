@@ -64,14 +64,14 @@ const Imageslide2 = () => {
       </div>
       {/* Left navigation button */}
       <button
-        style={{ position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "50%", transform: "translateY(-50%)" }}
+        style={{ position: "absolute", color:"black", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", left:"-60px", top: "60%", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft -= 100 }}
       >
         <BsChevronLeft />
       </button>
       {/* Right navigation button */}
       <button
-        style={{ position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", top: "50%", right: "10px", transform: "translateY(-50%)" }}
+        style={{ position: "absolute", color:"", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", top: "60%", right: "-50px", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft += 100 }}
       >
         <BsChevronRight />
@@ -97,10 +97,10 @@ const ProductItem = ({ item }) => {
       <div
         style={{
           position: "relative",
-          width: "238px",
-          height: "238px",
+          width: "300px",
+          height: "300px",
           overflow: "hidden",
-          marginBottom: "30px"
+
         }}
       >
         {hasValidImage ? (
@@ -113,6 +113,8 @@ const ProductItem = ({ item }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                borderTopLeftRadius: "150px",
+            borderTopRightRadius: "150px",
                 transition: "transform 0.3s ease-in-out",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -129,7 +131,6 @@ const ProductItem = ({ item }) => {
                 justifyContent: "center",
                 color: "#FFFFFFF",
                 fontSize: "18px",
-                backgroundColor: "rgba(2, 2, 2, 0.5)",
                 opacity: isHovered ? "1" : "0",
                 transition: "opacity 0.3s ease-in-out",
               }}
@@ -152,8 +153,10 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
-      <Typography className="rosaria-text" sx={{ color: '#2c1a00', fontSize: '16px', fontWeight: 600, textAlign: 'left', fontStyle: 'normal', marginBottom: '8px' }}>{truncatedProductName}</Typography>
-      <Typography className="rosaria-text" sx={{ fontSize: '16px', fontStyle: 'normal', fontWeight: 500, color: '#626262', letterSpacing: 'normal', textAlign: 'left', lineHeight: '20.8px', textSizeAdjust: '100%' }}>{item.category.name}</Typography>
+      <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column"}}>
+      <Typography className="rosaria-text" sx={{ color: '#C1CCCF', fontSize: '16px', fontWeight: 600, textAlign: 'left', fontStyle: 'normal', marginBottom: '8px', margintop: '8px', padding:"10px" }}>{truncatedProductName}</Typography>
+      <Typography className="rosaria-text" sx={{ color:"#C1CCCF", fontSize: '16px', textAlign:"left", fontStyle: 'normal', fontWeight: 500, letterSpacing: 'normal', lineHeight: '20.8px', textSizeAdjust: '100%' ,padding:"8px"}}>{item.category.name}</Typography>
+      </div>
     </div>
 
   );

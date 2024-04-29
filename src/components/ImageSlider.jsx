@@ -25,7 +25,7 @@ const ImageSlider = ({ images }) => {
     setZoomIndex(index);
   }
   return (
-    <div style={{width: "100%", height: "450px",display:"flex",alignItems:"center",justifyContent:"center" }}>
+    <div style={{width: "100%", height: "450px",display:"flex",alignItems:"center",justifyContent:"center",}}>
       <div style={{ width: "95%", height: "450px"  }}>
       <Slider ref={sliderRef} {...settings}  >
         {images.map((image, index) => (
@@ -60,8 +60,8 @@ const ImageSlider = ({ images }) => {
                   fontWeight: "bold",
                 }}
               >
-                <Typography style={{ marginBottom: '60px', fontFamily: 'Poppins, sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
-                <Typography variant="h1" className="rosaria-text">Statement in Style</Typography>
+                <Typography style={{ marginBottom: '60px', fontFamily: 'Rosario ,sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
+                <Typography variant="h1" style={{ fontFamily: 'Rosario ,sans-serif'}} className="rosaria-text">Statement in Style</Typography>
                 <Box 
                   style={{ 
                     backgroundColor: "#C19B76", 

@@ -42,8 +42,8 @@ const Headcard = ({ category }) => {
       <p style={{ fontSize: "20px", marginBottom: "20px" }}>Explore are not range gifts and consectetur adipiscing elit</p>
       <Stack direction="column" alignItems="center" style={{ display: "flex", flexDirection: "row" }}>
         {category?.data?.map((category, index) => (
-          <Stack key={index} direction="row" alignItems="center" marginLeft="50px" justifyContent="center" id={index}>
-            <Stack direction="column" alignItems="center" style={{ position: "relative" }}>
+          <Stack key={index} direction="column" alignItems="center" marginLeft="50px" justifyContent="center" id={index} >
+            <Stack direction="column" alignItems="center">
               <img
                 style={{ height: "250px", alignItems: "center", objectFit: "contain" }}
                 src={category.image}
@@ -51,7 +51,7 @@ const Headcard = ({ category }) => {
                 onMouseEnter={() => setIsHovered(index)}
                 onMouseLeave={() => setIsHovered()}
               />
-              <div style={{ backgroundColor: "#02221F", width: "100%", transition: "background-color 0.3s" }}>
+              <div style={{ backgroundColor: "#02221F", width: "100%", transition: "background-color 0.3s"}}>
                 <Typography
                   style={{
                     color: "#C1CCCF",
@@ -86,6 +86,8 @@ const Headcard = ({ category }) => {
                 )}
               </div>
             </Stack>
+
+            
           </Stack>
         ))}
       </Stack>
@@ -95,3 +97,5 @@ const Headcard = ({ category }) => {
 };
 
 export default Headcard;
+
+

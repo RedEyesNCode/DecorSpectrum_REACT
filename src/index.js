@@ -9,6 +9,7 @@ import ProductByCategory from "./components/product/ProductByCategory";
 import AboutUs from "./components/AboutUs";
 import CounterComponent from "./components/CounterComponent";
 import CartCheckout from "./components/CartCheckout";
+import GlobalStyles from "./GlobalStyle";
 
 ReactDOM.render(
   <BrowserRouter>
