@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Stack, Typography, Button } from "@mui/material";
+import { Box, Grid, Stack, Typography, Button, Divider } from "@mui/material";
 import ProductColors from "../product/ProductColors ";
 import ProductTabs from "./ProductTabs";
 import RelatedProductItem from "./RelatedProductItem";
@@ -8,6 +8,7 @@ import { LOCAL_STORAGE_KEY } from "../../session/Constants";
 import { addToCart, getProductFullDetails, loginUser, registerUser } from "../../api/apiInterface";
 import MaterialNavBar from "../MaterialNavBar";
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+import RosarioRegular from "../../fonts/Rosario-Regular.ttf";
 
 import Footer from "../../pages/Footer";
 import "../product/css/ProductCSS.css"; // Import your CSS file for styling
@@ -16,6 +17,7 @@ import amex from "../../images/american-express.png";
 import paypal from "../../images/paypal.png";
 import mastercard from "../../images/mastercard.png";
 import upi from "../../images/ic_upi.jpg";
+import ProductList from "./ProductList";
 
 
 function generateRandomUser() {
@@ -141,9 +143,9 @@ const ProductDetail = ({ product }) => {
       <Box sx={{ backgroundColor: "#FFFFFF", p: 2 }}>
         {productDetailData && allProductData && (
           <Stack direction="column">
-            <Typography variant="h6" sx={{ color: "#B5BBB6" }}>
+            {/* <Typography variant="h6" sx={{ color: "#B5BBB6" }}>
               {allProductData.category.name} / {allProductData.subcategory.name}
-            </Typography>
+            </Typography> */}
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <Box
@@ -153,61 +155,63 @@ const ProductDetail = ({ product }) => {
                       ? allProductData.media[0].link
                       : null
                   }
-                  width="100%"
+                  style={{margin : '10px'}}
+                  width="730px"
                   height="100%"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
-                <Stack direction="column" spacing={2}>
+                <Stack direction="column" spacing={2} style={{marginLeft : '20px',marginTop : '4  0px '}}>
                   <Typography
-                    style={{ fontFamily: "Rosario-Regular" }}
-                    variant="h6"
-                    sx={{ color: "#000000" }}
+                    style={{ fontFamily: 'RosarioRegular',fontSize : '16px' }}
+                    sx={{ color: "#D2DBE0" }}
                   >
                     {allProductData.category.name} /{" "}
                     {allProductData.subcategory.name}
                   </Typography>
                   <Typography
-                    style={{ fontFamily: "Rosario-Regular", fontSize: 75 }}
-                    variant="h3"
+                    style={{ fontFamily: 'RosarioRegular', fontSize: '35px',fontWeight : 700 }}
+                    
                     sx={{ color: "#000000" }}
                   >
                     {productDetailData.productName}
                   </Typography>
                   <Typography
-                    style={{ fontFamily: "Rosario-Regular", fontSize: 21 }}
-                    variant="body1"
+                    style={{ fontFamily: 'RosarioRegular', fontSize: '16px',fontWeight : 400 }}
+                   
                     sx={{ color: "#000000" }}
                   >
                     {productDetailData.description}
                   </Typography>
-                  <Typography style={{ fontFamily: "Rosario-Regular", fontSize: 19 }}>
-                    Dimensions: 35 cm x 18cm x 16cm
-                  </Typography>
-                  <Typography style={{ fontFamily: "Rosario-Regular", fontSize: 19 }}>
+                  <Divider/>
+                 
+                  <Typography style={{ fontFamily: "RosarioRegular", fontSize: 19 }}>
                     SKU: {productDetailData.sku}
                   </Typography>
-                  <Typography style={{ fontFamily: "Rosario-Regular", fontSize: 19 }}>
+                  <Typography style={{ fontFamily: 'RosarioRegular', fontSize: 19 }}>
                     Availability: {productDetailData.quantity} In Stock
                   </Typography>
                   <Stack direction="row">
-                    <Typography style={{ fontFamily: "Rosario-Regular", fontSize: 19,fontWeight : 600 }}>
+                    <Typography style={{ fontFamily: 'RosarioRegular', fontSize: 19,fontWeight : 600 }}>
                       Colors :
                     </Typography>
                     <ProductColors colors={colors} />
                   </Stack>
                   <Stack direction="row" spacing={2} alignItems="center">
+
+                    <Stack direction="row" spacing={2} alignItems="center" sx={{borderWidth : '2px',borderColor : '#D2DBE0',borderRadius : '10px' }}>
                     <Button
-                    style={{backgroundColor : "#726251"}}
+                    style={{backgroundColor : "#D2DBE0"}}
                       variant="contained"
                       onClick={decrementCount}
                       sx={{ minWidth: "40px" }}
                     >
                       -
                     </Button>
-                    <Typography style={{ fontFamily: "Rosario-Regular", fontSize: 19,fontWeight : 600 }}>
+                    <Typography style={{ fontFamily: 'RosarioRegular', fontSize: 19,fontWeight : 600 }}>
                       {count}
                     </Typography>
+                    
                     <Button
                     
                       variant="contained"
@@ -216,12 +220,14 @@ const ProductDetail = ({ product }) => {
 
 
                       sx={{ minWidth: "40px" }}
-                      style={{ fontFamily: "Rosario-Regular",backgroundColor : "#726251" }}
+                      style={{ fontFamily: "Rosario-Regular",backgroundColor : "#02221F" }}
                     >
                       +
                     </Button>
-                    <button style={{ padding: 10 }} onClick={handleNavigate} class="custom-button">
-                      Add to Cart
+                    </Stack>
+                   
+                    <button style={{ padding: 10 ,fontSize : '12px'}} onClick={handleNavigate} class="custom-button">
+                      ADD TO CART
                     </button>
                   </Stack>
                   <Typography
@@ -237,7 +243,7 @@ const ProductDetail = ({ product }) => {
                   <Typography
                     style={{
                       textAlign: "center",
-                      fontFamily: "Rosario-Regular",
+                      fontFamily: 'RosarioRegular',
                       fontSize: 25,
                       fontWeight : 900
                     }}
@@ -249,7 +255,10 @@ const ProductDetail = ({ product }) => {
                     direction="row"
                     spacing={10}
                     style={{
-                      border: '4px dotted grey', // Creates the dotted border
+                      borderWidth : '2px',
+                      borderColor : '#D2DBE0',
+                      borderRadius : '10px',
+                      // Creates the dotted border
                       padding: '5px', // Adds some space inside the box around the content
                       // Add more styling as needed here
                     }}
@@ -284,9 +293,10 @@ const ProductDetail = ({ product }) => {
         <ProductTabs />
 
         {allProductData && (
-          <RelatedProductItem
-            categoryID={allProductData.category.category_id}
-          />
+          // <RelatedProductItem
+          //   categoryID={allProductData.category.category_id}
+          // />
+          <ProductList products={allProductData}/>
         )}
       </Box>
       <Footer />
