@@ -12,6 +12,7 @@ import LocalStorageManager from "../../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../../session/Constants";
 import MaterialNavBar from "../MaterialNavBar";
 import Footer from "../../pages/Footer";
+import MessageSnackbar from "../base/MessageSnackbar";
 
 const ProductByCategory = () => {
   const navigate = useNavigate(); // Initialize useHistory
@@ -46,6 +47,8 @@ const ProductByCategory = () => {
   return (
     <div>
       <MaterialNavBar />
+      <MessageSnackbar message="Products by category"  />
+
       <Stack direction="column">
         <Typography style={{ fontFamily: 'Rosario-Regular' }} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
           Home/{sessionCategory.categoryName}
@@ -64,6 +67,7 @@ const ProductByCategory = () => {
             ) : (
               categoryProductsData != undefined && (
                 <ProductList products={categoryProductsData} />
+                
               )
             )}
           </Grid>
@@ -76,6 +80,7 @@ const ProductByCategory = () => {
             ) : (
               allProductsData != undefined && (
                 <ProductItemRatingList products={allProductsData} />
+
               )
             )}
           </Grid>

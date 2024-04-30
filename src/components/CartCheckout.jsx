@@ -15,7 +15,11 @@ import CartTable from "./CartTable";
 import LocalStorageManager from "../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../session/Constants";
 import { getCart } from "../api/apiInterface";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+
 const CartCheckout = () => {
+  const navigate = useNavigate(); // Initialize useHistory
+
   const sessionUser = LocalStorageManager.getItem(
     LOCAL_STORAGE_KEY.USER_DATA
   );

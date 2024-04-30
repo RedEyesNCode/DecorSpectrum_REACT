@@ -21,10 +21,13 @@ import { LOCAL_STORAGE_KEY } from "../session/Constants";
 import LocalStorageManager from "../session/LocalStorageManager";
 import { deleteCartItem, getCart, updateCartItem } from "../api/apiInterface";
 import { IoAddOutline, IoRemoveCircle, IoRemoveOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
 
 // Sample cart data (replace with your actual cart data)
 
 function CartTable() {
+  const navigate = useNavigate(); // Initialize useHistory
+
   const handleRemoveItem = (index) => {
     removeCartItem(index);
   };
@@ -63,6 +66,11 @@ function CartTable() {
     
     getUserCart();
   };
+  const handleAddtoCart = () =>{
+
+    navigate("/square-checkout")
+
+  }
 
   useEffect(() => {
     const getUserCart = async () => {
@@ -351,6 +359,7 @@ function CartTable() {
           <button
             style={{ width: "420px", marginTop: "40px" }}
             class="custom-button"
+            onClick={handleAddtoCart}
           >
             Add to Cart
           </button>
