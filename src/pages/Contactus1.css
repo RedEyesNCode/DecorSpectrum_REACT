@@ -1,0 +1,222 @@
+/* Header.css */
+body{
+  overflow-x: hidden;
+  background-color: rgb(215 227 232 / 93%);
+
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white; /* Set text color */
+  padding: 10px;
+  width:100%;
+  height:290px;
+  background: linear-gradient(to right, #19495e, #508f90);
+  margin-top:160px;
+
+  
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left:10px;
+}
+.menu h1{
+  color:white;
+  font-family: "Rosario", sans-serif;
+  font-size: 40px;
+  margin-left:17px;
+
+}
+.menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+  color:#b39373;
+}
+  
+  .navbar {
+    margin-left: 20px; /* Adjust the margin for positioning */
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    display: inline;
+    margin-right: 10px; /* Add spacing between navbar items */
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+  }
+ /* Base styles */
+
+
+/* styles.css */
+
+/* Contactus1.css */
+
+/* Header styling */
+.head-contain-1 {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin-right: 20px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left:-30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+  }
+
+  .form-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+    margin-top:-20px;
+    margin-left:-29px;
+  }
+
+  img {
+    width: 70%;
+    height: 700px;
+    margin-top:-30px;
+    border-radius:200px 200px 20px 20px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+
+  .form-group-column {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 150%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    height:50px;
+    background-color: rgba(207, 216, 220, 0.932);
+
+  }
+
+  textarea {
+    resize: vertical;
+    height:50px;
+
+  }
+  .nav-content h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    margin:left;
+    font-family: 'Rosario';
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 20px 20px;
+    cursor: pointer;
+    margin-left: -200px;
+    width:290px;
+    height:50px;
+    transition: background-color 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    background-color: black;
+  }
+
+  /* Media Query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .image-container,
+    .form-container {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  }
+  
+ 
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      margin-left: 0; /* Reset margin for smaller screens */
+    }
+  }
+  

@@ -1,0 +1,162 @@
+/* TelephoneIcons.css */
+
+.telephone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: -300px;
+  /* Remove the negative left margin */
+  margin-top: 120px;
+}
+
+.telephone-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  /* Adjust margin as needed */
+}
+
+.telephone-icon {
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  /* Add transition for smooth animation */
+
+}
+
+.telephone-text h2 {
+  color: black;
+  font-family: 'Rosario';
+}
+
+.telephone-text p {
+  color: black;
+  font-family: 'Rosario';
+}
+
+.con-1 {
+  margin-left:-433px;
+
+
+}
+
+.icon-contain-1 {
+  margin-top: -60px;
+}
+
+.con-2 {
+  margin-left:203px;
+  margin-top:-100px;
+
+}
+
+/* Icons2.css */
+.telephone-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+}
+
+.telephone-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+}
+
+.Mail-icon {
+  font-size: 40px;
+  color: black;
+  /* Adjust the font size as needed */
+}
+
+.IoIosHourglass-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+
+  /* Add transition for smooth animation */
+
+  /* Adjust the font size as needed */
+
+}
+
+.FaAddressBook-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+
+}
+
+.Mail-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+
+}
+
+.telephone-icon {
+  color: black;
+
+  font-size: 40px;
+  transition: transform 0.3s ease;
+  /* Add transition for smooth animation */
+
+}
+
+.FaAddressBook-icon {
+  font-size: 40px;
+  margin-left: -120px;
+  transition: transform 0.3s ease;
+  /* Add transition for smooth animation */
+  color: black;
+
+}
+
+.IoIosHourglass-icon {
+  font-size: 40px;
+  margin-left: -120px;
+  color: black;
+
+  transition: transform 0.3s ease;
+  /* Add transition for smooth animation */
+
+}
+
+.telephone-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* styles.css */
+.left-align {
+
+  margin-left: -700px;
+  margin-top: 100px;
+  font-family: 'Rosario';
+  font-size: 30px;
+}
+
+.telephone-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+}
+
+.FaAddressBook-icon:hover {
+  transform: scale(1.2);
+  /* Scale up the icon on hover */
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 5px;
+  font-family: 'Rosario';
+  /* Adjust the gap between heading and paragraph */
+}
+
+.paragraph {
+  font-size: 16px;
+}
+
+/* styles.css */
+
+.with-gap {
+  margin-left: 500px;
+  /* Adjust the margin as needed */
+}

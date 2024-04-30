@@ -65,7 +65,7 @@ const PaymentDetail = () => {
   }, []);
 
   return (
-    <div className="max-w-[40%] bg-zinc-100 font-bold text-zinc-600 h-fit p-8">
+    <div className=" max-w-[40%] bg-zinc-100 font-bold text-zinc-600 h-fit p-8">
       <h1 className="text-xl text-black font-semibold mb-4">Your Order</h1>
       <div className="mb-8">
         <table className="w-full ">

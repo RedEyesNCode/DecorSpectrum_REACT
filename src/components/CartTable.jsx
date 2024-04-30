@@ -107,12 +107,12 @@ function CartTable() {
 
 
   return (
-    <Stack>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="cart table">
-          <TableHead>
+    <Stack >
+      <TableContainer component={Paper} sx={{paddingX: '10px'}}>
+        <Table sx={{ minWidth: 650  }} aria-label="cart table" >
+          <TableHead  >
             <TableRow>
-              <TableCell>
+              <TableCell >
                 <Typography
                   style={{ fontFamily: "Rosario-Regular", fontSize: 21 }}
                   variant="body1"
@@ -125,6 +125,7 @@ function CartTable() {
                 <Typography
                   style={{ fontFamily: "Rosario-Regular", fontSize: 21 }}
                   variant="body1"
+                  align="left"
                   sx={{ color: "#000000" }}
                 >
                   Product
@@ -134,12 +135,13 @@ function CartTable() {
                 <Typography
                   style={{ fontFamily: "Rosario-Regular", fontSize: 21 }}
                   variant="body1"
+                  align="right"
                   sx={{ color: "#000000" }}
                 >
                   Price
                 </Typography>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <Typography
                   style={{ fontFamily: "Rosario-Regular", fontSize: 21 }}
                   variant="body1"
@@ -171,7 +173,7 @@ function CartTable() {
           <TableBody>
             {cartData !== null &&
               cartData.data.map((item, index) => (
-                <TableRow key={index}>
+                <TableRow key={index} >
                   <TableCell>
                     <img
                       src={item.image}
@@ -179,12 +181,12 @@ function CartTable() {
                       style={{ width: 50 }}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell align="left" sx={{color : '#C49373', fontSize :'18px' }}>
                     {item.product.productName}
                   </TableCell>
-                  <TableCell align="right">${item.product.maxPrice}</TableCell>
-                  <TableCell align="right">
-                    <Stack direction="row" spacing={1}>
+                  <TableCell align="right" sx={{fontSize :'18px'}}>${item.product.maxPrice}</TableCell>
+                  <TableCell align="center" alignItems="center" >
+                    <Stack direction="row" spacing={1} alignItems={"center"}>
                       <IconButton
                         onClick={() => updateQuantity(index, item.quantity - 1)}
                       >
@@ -212,7 +214,8 @@ function CartTable() {
         </Table>
       </TableContainer>
 
-      <Stack
+      {/*---------------------------------- Table Ending---------------------------------------------------- */}
+        <Stack
         direction="column"
         style={{
           margin: "10px",

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -20,44 +20,38 @@ import { useNavigate } from "react-router-dom"; // Import useHistory from react-
 const CartCheckout = () => {
   const navigate = useNavigate(); // Initialize useHistory
 
-  const sessionUser = LocalStorageManager.getItem(
-    LOCAL_STORAGE_KEY.USER_DATA
-  );
+ 
+  const sessionUser = LocalStorageManager.getItem(LOCAL_STORAGE_KEY.USER_DATA);
 
-  const [cartData,setCartData] = useState(null);
+  const [cartData, setCartData] = useState(null);
 
-
-  
   useEffect(() => {
-    const getUserCart = async () =>{
+    const getUserCart = async () => {
       const rawJson = {
-        user_id : sessionUser.id
-      }
+        user_id: sessionUser.id,
+      };
       const cartResponse = await getCart(rawJson);
       setCartData(cartResponse);
 
-      if(cartResponse.code==200){
+      if (cartResponse.code == 200) {
         setCartData(cartResponse);
       }
-      
-    }
+    };
     getUserCart();
-
-      
-  },[]);
+  }, []);
 
   return (
-    <Stack direction="column">
-
+    <Stack direction="column" className="bg-zinc-500 ">
       <MaterialNavBar/>
       <Typography
         variant="h2"
-        style={{ fontFamily: "Rosario-Regular", padding: "10px" }}
+        // style={{ fontFamily: "Rosario-Regular", padding: "10px" }}
+        className="text-[#2C1A00] font-['Rosario-Regular'] px-3"
       >
         Cart
       </Typography>
       <CartTable />
-      <Footer/>
+      <Footer />
     </Stack>
   );
 };
