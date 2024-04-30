@@ -16,7 +16,7 @@ const Blog = () => {
         </p>
         <h1 className="text-[#cfd8dcee] text-[3.2vw] font-['Rosario']">Blogs</h1>
       </div>
-      <div className=" px-[4vw] flex flex-wrap gap-[8vw] mb-[20px]">
+      <div className=" px-[4vw] flex gap-[8vw] mb-[20px]">
         <motion.div
           transition={{ duration: 0.8 }}
           initial={{ x: 200 }}
@@ -90,7 +90,7 @@ const Blog = () => {
           </div>
         </motion.div>
       </div>
-      <div className="mb-[5vw] px-[4vw] flex flex-wrap gap-[8vw] ">
+      <div className="mb-[5vw] px-[4vw] flex gap-[8vw] ">
         <motion.div
           transition={{ duration: 0.8 }}
           initial={{ x: 200 }}
