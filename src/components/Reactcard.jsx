@@ -25,6 +25,7 @@ const Reactcard = ({ images }) => {
         ))}
       </Slider>
     </div>
+    // <></>
   );
 };
 

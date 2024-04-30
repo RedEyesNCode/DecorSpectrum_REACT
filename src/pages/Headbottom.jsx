@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Headbottom1.css";
 import { RiTeamFill } from "react-icons/ri";
 import { AiTwotoneLike } from "react-icons/ai";
@@ -15,19 +15,145 @@ import {
 } from "@mui/material";
 import { ImPriceTag } from "react-icons/im";
 import { BiLike, BiPlay, BiStar, BiVideoPlus } from "react-icons/bi";
+import { delay, motion } from "framer-motion";
 const Headbottom = () => {
   const videoId = "VIDEO_ID_HERE";
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.querySelector(".collections");
+      if (element) {
+        const top = element.getBoundingClientRect().top;
+        const isVisible = top < window.innerHeight;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once to set initial visibility
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  const text1Variants = {
+    initial: {
+        x: -100,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            delay:1,
+            staggerChildren: 0.1,
+        },
+    }
+};
+const text2variants={
+  initial: {
+    opacity: 0,
+    x:100,
+},
+animate: {
+  x:0,
+    opacity: 1,
+    transition: {
+        duration: 1,
+        delay:2,
+        staggerChildren: 0.1,
+    },
+}
+}
+
+const text3Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:3,
+      },
+  }
+};
+
+const text4Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:4,
+      },
+  }
+};
+const text5Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:4,
+      },
+  }
+};
+
+const text6Variants = {
+  initial: {
+      x: 100,
+      opacity: 0,
+  },
+  animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:5,
+          staggerChildren: 0.1,
+      },
+  }
+};
+
+useEffect(() => {
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+        console.log(window.scrollY);  
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
 
   return (
-    <div style={{ backgroundColor: "#2C1A00" }}>
-      <Stack direction="row" style={{ backgroundColor: "#2C1A00" }}>
-        <div style={{ position: "relative", width: "70%" }}>
+    <div style={{  height:"100vh",marginBottom:"50px",overflow:"hidden" }}>
+      <Stack direction="row" style={{ height:"100%" }}>
+        <motion.div variants={text1Variants} initial="initial" animate={scrollPosition > 5000 ? "animate" : "initial"}  style={{ height:"100%", position: "relative", width: "50%",overflow:"hidden",objectFit:"cover" }}>
           <img
             width="100%"
             src={image12}
             title="YouTube video player"
             alt="YouTube video player"
-            style={{ display: "block" }}
+            style={{ display: "block",objectFit:"contain" }}
           />
           <div
             style={{
@@ -43,43 +169,41 @@ const Headbottom = () => {
                 style={{
                   width: "50px",
                   height: "50px",
-                  color: "#000000",
+                  color: "black",
                   zIndex: "1",
                 }}
               />
             </div>
           </div>
-        </div>
-        <Stack direction="column" style={{ marginLeft: "20px",padding : '80px' }}>
-          <Typography
+        </motion.div>
+        <Stack  direction="column" style={{height:"100%",padding : '50px',width:"50%" ,backgroundColor: "#02221F" }}>
+          <motion.Typography
+          variants={text2variants} initial="initial" animate={scrollPosition > 5100 ? "animate" : "initial"} 
             className="rosaria-text"
-            style={{ color: "#ffffff", fontSize: "48px", fontWeight: "300",marginBottom : '50px' }}
+            style={{ color: "#C1CCCF", fontSize: "42px", fontWeight: "300",marginBottom : '50px', textAlign:"center" }}
           >
             Passionate About Elegance and Beauty In Design
-          </Typography>
+          </motion.Typography>
 
-          <Stack direction="row">
+          <motion.Stack variants={text3Variants} initial="initial" animate={scrollPosition > 5100 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
+                  
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
+                 
                 }}
               >
                 <BiStar
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    color: "#ffffff",
+                    width: "50px",
+                    height: "50px",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -89,7 +213,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                 }}
               >
                 100 % Guarantee
@@ -97,8 +221,8 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
-                  fontSize: 20,
+                  color: "#C1CCCF",
+                  fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
               >
@@ -106,29 +230,24 @@ const Headbottom = () => {
                 you will fall in love with them.
               </Typography>
             </Stack>
-          </Stack>
-          <Stack direction="row">
+          </motion.Stack>
+          <motion.Stack variants={text4Variants} initial="initial" animate={scrollPosition > 5300 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
                 }}
               >
                 <BiLike
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    color: "#ffffff",
+                    width: "50px",
+                    height: "50px",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -138,7 +257,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                   textAlign : 'left'
                 }}
               >
@@ -147,37 +266,32 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
-                  fontSize: 20,
+                  color: "#C1CCCF",
+                  fontSize: "16px",
                   fontFamily: "Poppins",
                 }}
               >
                 We are a family-owned business that respects the need of every customer.We provide friendly customer service and are always happy to help
               </Typography>
             </Stack>
-          </Stack>
-          <Stack direction="row">
+          </motion.Stack>
+          <motion.Stack variants={text5Variants} initial="initial" animate={scrollPosition > 5400 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
                 }}
               >
                 <ImPriceTag
                   style={{
                     width: "30px",
                     height: "30px",
-                    color: "#ffffff",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -187,7 +301,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                 }}
               >
                 Affordable Prioe
@@ -195,8 +309,8 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
-                  fontSize: 20,
+                  color: "#C1CCCF",
+                  fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
               >
@@ -204,20 +318,22 @@ const Headbottom = () => {
 
               </Typography>
             </Stack>
-          </Stack>
+          </motion.Stack>
           
-          <Typography
+          <motion.Typography
+          variants={text6Variants} initial="initial" animate={scrollPosition > 5600 ? "animate" : "initial"} 
             style={{
-              color: "#ffffff",
-              fontSize: 20,
+              color: "#C1CCCF",
+              marginTop:"20px",
+              fontSize: "18px",
               marginLeft: "10px",
-              padding : '25px'
+              textAlign:"center"
             }}
           >
-            Explore our huge selection of Exotic handmade Turkish Chandeliers,
-            Lamps, Ceiling Lights and Ceramics. Choose from our fast-selling
-            colors or customize your own unique combination of
-          </Typography>
+            Explore our huge selection of Exotic handmade Turkish Chandeliers, <br />
+            Lamps, Ceiling Lights and Ceramics.  Choose from our fast-selling
+            colors or <br /> customize your own unique combination of
+          </motion.Typography>
         </Stack>
       </Stack>
     </div>

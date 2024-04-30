@@ -18,30 +18,30 @@ const ImageSlider = ({ images }) => {
     autoplay: true,
     autoplaySpeed: 4000, // Adjust autoplay speed as needed
     cssEase: "linear",
-    afterChange: handleAfterChange
+    afterChange: handleAfterChange,
   };
 
   function handleAfterChange(index) {
     setZoomIndex(index);
   }
-
   return (
-    <div style={{ width: "100%", height: "650px", backgroundColor: "#000000" }}>
-      <Slider ref={sliderRef} {...settings}>
+    <div style={{width: "100%", height: "450px",display:"flex",alignItems:"center",justifyContent:"center",}}>
+      <div style={{ width: "95%", height: "450px"  }}>
+      <Slider ref={sliderRef} {...settings}  >
         {images.map((image, index) => (
           <div key={image.id}>
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                height: "650px",
+                height: "450px",
               }}
             >
               <img
                 src={image.bannerLink}
                 alt={image.alt}
                 style={{
-                  objectFit: "fill",
+                  objectFit: "cover",
                   width: "100%",
                   height: "100%",
                   transition: zoomIndex === index ? "transform 7s ease-in-out" : "none", // Apply transition only to the active slide
@@ -56,12 +56,12 @@ const ImageSlider = ({ images }) => {
                   transform: "translate(-50%, -50%)",
                   textAlign: "center",
                   color: "white",
-                  fontSize: "20px",
+                  fontSize: "10px",
                   fontWeight: "bold",
                 }}
               >
-                <Typography style={{ marginBottom: '60px', fontFamily: 'Poppins, sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
-                <Typography variant="h1" className="rosaria-text">Statement in Style</Typography>
+                <Typography style={{ marginBottom: '60px', fontFamily: 'Rosario ,sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
+                <Typography variant="h1" style={{ fontFamily: 'Rosario ,sans-serif'}} className="rosaria-text">Statement in Style</Typography>
                 <Box 
                   style={{ 
                     backgroundColor: "#C19B76", 
@@ -91,6 +91,7 @@ const ImageSlider = ({ images }) => {
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };

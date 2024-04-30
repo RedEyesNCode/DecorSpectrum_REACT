@@ -11,6 +11,7 @@ import CounterComponent from "./components/CounterComponent";
 import CartCheckout from "./components/CartCheckout";
 import CheckoutForm from "./components/CheckoutForm";
 import BillingCheckoutForm from "./RishiCheckoutPage/BillingCheckoutForm";
+import GlobalStyles from "./GlobalStyle";
 
 ReactDOM.render(
   <BrowserRouter>

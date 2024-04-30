@@ -1,0 +1,108 @@
+.in_container_main {
+  font-family: "Rosario", sans-serif;
+  margin-top: 8vw;
+  overflow: hidden;
+  background-color: rgb(2, 34, 31);
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.in_container_main > .container_left {
+  margin-top: 55px;
+width: 40%;
+height: 100%;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: end;
+justify-content: center;
+padding-bottom: 20px;
+}
+.in_container_main > .container_left > img {
+  border-top-left-radius: 100px;
+  width: 95%;
+}
+
+.in_container_main > .container_right{
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.in_container_main > .container_right > .right_container_top{
+  width: 80%;
+  height: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.in_container_main > .container_right > .right_container_top > h1, .in_container_bottom > h1{
+  font-size: calc(2.2vw + 1rem);
+    font-weight: bold;
+    line-height: 4vw;
+    color: rgba(207, 216, 220, 0.932);
+}
+.in_container_main > .container_right > .right_container_top > p{
+  font-size: 20px;
+    color: rgba(207, 216, 220, 0.932);
+}
+.in_container_main > .container_right > .right_container_top > button{
+  background-color: rgba(207, 216, 220, 0.932);
+    box-shadow: 0px 0px 10px 0px rgba(207, 216, 220, 0.932);
+    font-size: calc(10px + 0.5vw);
+    color: rgb(2 34 31);
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    width: fit-content;
+}
+
+.in_container_main > .container_right > .right_container_buttom{
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  padding: 0 10px 0 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 45%;
+}
+.in_container_main > .container_right > .right_container_buttom > img{
+  height: 100%; 
+  width: 98%;
+  padding-left:35px ;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  object-fit: cover;
+  /* margin: 0 auto; */
+}
+
+
+.in_container_main > .center_image {
+  background-color: rgb(2, 34, 31);
+  box-shadow: 0px 0px 20px 0px rgb(2, 34, 31);
+  width: 30%;
+  position: absolute;
+  top: 5%;
+  left: 52%;
+  transform: translateX(-70%);
+  z-index: 2;
+  overflow: hidden;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+}
+
+.in_container_bottom {
+  background-color: rgb(2, 34, 31);
+  padding: 50px;
+  padding-top: 70px;
+}

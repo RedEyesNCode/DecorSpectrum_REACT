@@ -17,6 +17,13 @@ import Image2slide from './pages/Image2slide';
 import Footer from './pages/Footer';
 import MaterialNavBar from './components/MaterialNavBar';
 import ImageGallery from './components/ImageGallery';
+import LatestCollection from './pages/latestcollection';
+import SafePayment from './pages/Safepayment';
+import InnovativeDesign from './pages/InnovativeDesign';
+import Cardlamp from './components/Cardlamp';
+import Latestblog from './components/product/Latestblog';
+import Testimonials from './components/product/Testimonials';
+import HandicraftPhotos from './components/HandicraftPhotos';
 
 
 
@@ -34,6 +41,22 @@ function App() {
     fetchLeadsData();
   }, []);
 
+
+  const [categories, setCategory] = useState (null);
+
+
+  useEffect(() => {
+    const fetchCategoryData = async () => {
+      const getAllLeadsResponse = await getAllCategory();
+      console.log("Get All category -->", getAllLeadsResponse);
+
+      setCategory(getAllLeadsResponse);
+    };
+    fetchCategoryData();
+  }, []);
+
+   
+
   return (
 
     <div>
@@ -41,12 +64,18 @@ function App() {
       {<MaterialNavBar/>}
 
       {slides && <ImageSlider images={slides.data}/>}
-      <Middle/>
-      <Image2slide/>
-      <Headmean/>
-      <Headcard/>
+      <Cardlamp />
+      <Middle />
+      {/* <Image2slide/> */}
+      <LatestCollection/>
+    <SafePayment />
+    <InnovativeDesign/>
+      {<Headcard category={categories}/>}
+      <Latestblog />
       <Headbottom/>
-      <ImageGallery/>
+      <Testimonials />
+      <HandicraftPhotos />
+      {/* <ImageGallery/> */}
       <Footer/>
     </div>
   );
