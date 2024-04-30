@@ -153,16 +153,18 @@ const ProductItem = ({ item }) => {
 
   return (
     <div
-      style={{ flex: "0 0 auto", margin: "0 10px" }}
+      style={{ flex: "0 0 auto", margin: "0 10px",borderRadius:"11px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
         style={{
           position: "relative",
-          width: "460px",
-          height: "320px",
+          width: "450px",
+          height: "350px",
           overflow: "hidden",
+          borderTopLeftRadius:"11px",
+          borderTopRightRadius:"11px",
         }}
       >
         {hasValidImage ? (
@@ -194,17 +196,20 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
-      <div style={{backgroundColor:"#D2DBDE",paddingBottom:"30px"}}>
+      <div style={{backgroundColor:"#D2DBDE",paddingBottom:"10px",borderBottomLeftRadius:"11px",
+          borderBottomRightRadius:"11px",}}>
       <Typography
         className="rosaria-text"
         style={{
           color: "black",
-          fontSize: "16px",
-          fontWeight: 600,
-          textAlign: "center",
+          fontSize: "25px",
+          fontWeight: "bold",
+          fontFamily:"Rosario",
+          textAlign: "left",
           fontStyle: "normal",
           marginBottom: "8px",
-          paddingTop:"20px"
+          paddingTop:"20px",
+          marginLeft:"15px"
         }}
       >
         {truncatedProductName}
@@ -212,13 +217,14 @@ const ProductItem = ({ item }) => {
       <Typography
         className="rosaria-text"
         style={{
-          fontSize: "12px",
+          fontSize: "16px",
           fontStyle: "normal",
           fontWeight: 500,
-          color: "black",
+          color: "#868787",
+          fontFamily:"Rosario",
           letterSpacing: "normal",
-          textAlign: "center",
-          lineHeight: "20.8px",
+          textAlign: "left",
+          marginLeft:"15px",
           textSizeAdjust: "100%",
         }}
       >
@@ -228,27 +234,24 @@ const ProductItem = ({ item }) => {
                   style={{ 
                     backgroundColor: "transparent", 
                     border:"2px solid #02221F",
-                    borderRadius:"25px",
+                    borderRadius:"10px",
                     padding: "10px", 
                     width: "150px", 
                     height: "50px", 
-                    margin: "0 auto", 
+                    marginLeft: "15px", 
                     display: "flex", 
-                    justifyContent: "center",
                     color:"#E8D0C6",
-                    alignItems: "center",
+                    alignItems: "left",
                     marginBottom:"20px",
                     transition: "background-color 0.3s, color 0.3s", // Smooth transition effect for color change
                     cursor: "pointer" // Change cursor to pointer on hover
-                  }}
-                  alignContent="center" 
-                  justifyContent="center" 
-                  display="flex"
-                  textAlign="center"
+                  }} 
+                  
+                  textAlign="left"
                   hoverbgcolor="#000000"
                   hovercolor="#C19B76"
                   >
-                  <Typography className="rosaria-text" style={{ fontSize:"15px", margin: "0 auto" }}>
+                  <Typography className="rosaria-text" style={{ fontSize:"15px",fontWeight:"bold", margin: "0 auto" }}>
                     READ MORE
                   </Typography>
                 </Box>

@@ -62,12 +62,12 @@ function App() {
 
     <div>
 
-      {<MaterialNavBar slidesx={slides}/>}
+      {<MaterialNavBar/>}
 
       {slides && <ImageSlider images={slides.data}/>}
       <Cardlamp />
       <Middle />
-      {/* <Image2slide/> */}
+      <Image2slide/>
       <LatestCollection/>
     <SafePayment />
     <InnovativeDesign/>

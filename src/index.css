@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: Rosario;
+    src: url(./fonts/Rosario-Regular.ttf);
+}

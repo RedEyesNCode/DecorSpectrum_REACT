@@ -147,7 +147,7 @@ useEffect(() => {
   return (
     <div style={{  height:"100vh",marginBottom:"50px",overflow:"hidden" }}>
       <Stack direction="row" style={{ height:"100%" }}>
-        <motion.div variants={text1Variants} initial="initial" animate={scrollPosition > 5000 ? "animate" : "initial"}  style={{ height:"100%", position: "relative", width: "50%",overflow:"hidden",objectFit:"cover" }}>
+        <motion.div variants={text1Variants} initial="initial" animate={scrollPosition > 5000 ? "animate" : "initial"}  style={{ height:"100%", position: "relative", width: "40%",overflow:"hidden",objectFit:"cover" }}>
           <img
             width="100%"
             src={image12}
@@ -176,7 +176,7 @@ useEffect(() => {
             </div>
           </div>
         </motion.div>
-        <Stack  direction="column" style={{height:"100%",padding : '50px',width:"50%" ,backgroundColor: "#02221F" }}>
+        <Stack  direction="column" style={{height:"100%",padding : '50px',width:"60%" ,backgroundColor: "#02221F" }}>
           <motion.Typography
           variants={text2variants} initial="initial" animate={scrollPosition > 5100 ? "animate" : "initial"} 
             className="rosaria-text"
