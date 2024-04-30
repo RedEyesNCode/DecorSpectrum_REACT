@@ -12,6 +12,7 @@ import {
 import DosisRegular from "../../fonts/Dosis-Regular.ttf";
 import DosisMedium from "../../fonts/Dosis-Medium.ttf";
 import DosisBold from "../../fonts/Dosis-Bold.ttf";
+
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
 import LocalStorageManager from "../../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../../session/Constants";
@@ -102,12 +103,12 @@ const ProductItem = ({
             {productCategory}
           </Typography>
           <Typography
-           style={{fontFamily : 'Rosario, sans-serif',fontSize : '16px',fontWeight : '600',textAlign : 'left',marginBottom : '10px'}}
+           style={{fontFamily : 'RosarioRegular',fontSize : '16px',fontWeight : '600',textAlign : 'left',marginBottom : '10px'}}
           >
             {truncatedProductName}
           </Typography>
           <Typography
-            style={{fontFamily : 'Poppins, sans-serif',fontSize : '14px',fontWeight : 700,marginBottom : '10px'}}
+            style={{fontFamily : 'RosarioRegular',fontSize : '14px',fontWeight : 700,marginBottom : '10px'}}
           >
             ${productPrice}
           </Typography>

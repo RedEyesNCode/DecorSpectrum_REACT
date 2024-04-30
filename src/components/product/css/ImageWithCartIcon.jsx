@@ -30,6 +30,7 @@ const ImageWithCartIcon = ({ imageUrl, productName,productID }) => {
       <img
         src={imageUrl}
         alt={productName}
+        className='zoom-effect'
         style={{ width: "350px", height: "250px",objectFit: "cover",borderTopLeftRadius : '40px',borderTopRightRadius : '40px' }}
       />
       {showCartIcon && (

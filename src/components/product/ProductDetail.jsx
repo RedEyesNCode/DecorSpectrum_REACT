@@ -240,6 +240,8 @@ const ProductDetail = ({ product }) => {
                   >
                     ${productDetailData.sellingPrice}
                   </Typography>
+
+                  <Box>
                   <Typography
                     style={{
                       textAlign: "center",
@@ -285,6 +287,9 @@ const ProductDetail = ({ product }) => {
                       alt="mastercard logo"
                     />
                   </Stack>
+                    
+                  </Box>
+                 
                 </Stack>
               </Grid>
             </Grid>
@@ -293,10 +298,10 @@ const ProductDetail = ({ product }) => {
         <ProductTabs />
 
         {allProductData && (
-          // <RelatedProductItem
-          //   categoryID={allProductData.category.category_id}
-          // />
-          <ProductList products={allProductData}/>
+          <RelatedProductItem
+            categoryID={allProductData.category.category_id}
+          />
+          // <ProductList products={allProductData}/>
         )}
       </Box>
       <Footer />

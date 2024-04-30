@@ -6,6 +6,7 @@ import {
   Button,
   Stack,
   Box,
+  colors,
 } from "@mui/material";
 import { getProductsForCategory } from "../../api/apiInterface";
 import ImageWithCartIcon from "./css/ImageWithCartIcon"; // Assuming similar image handling
@@ -58,7 +59,11 @@ const RelatedProductItem = ({ categoryID }) => {
         style={{ overflowX: "auto", whiteSpace: "nowrap" }}
       >
         {products.slice(0, 6).map((product) => (
-        <Card key={product.id} sx={{ display: 'inline-block', width: 250, margin: '0 10px' }}>
+        <Card key={product.id} sx={{ display: 'inline-block', width: 250, margin: '0 10px',
+        borderWidth : "2px",
+        borderColor : colors.grey,
+        borderRadius : '35px',
+        backgroundColor: "#FFFFFF", }}>
         <ImageWithCartIcon
               imageUrl={product.media?.[0]?.link || "default-image-url"}
               alt="Product Image"
@@ -98,16 +103,10 @@ const RelatedProductItem = ({ categoryID }) => {
                 {product.productTable.productName}
               </Typography>
 
-              <Stack direction="row" spacing={2}>
-                <button className="custom-button">Add to Cart</button>
-                {/* Assuming a View Details or similar action is desired */}
-                <Button
-                  variant="contained"
-                  sx={{ backgroundColor: "#726251", textTransform: "none" }}
-                >
-                  View Details
-                </Button>
-              </Stack>
+              
+              <button class="blue-button" style={{borderRadius : '20px',borderColor : colors.yellow,borderWidth : '2px'}} >
+  Select Options
+</button>
             </CardContent>
           </Card>
         ))}

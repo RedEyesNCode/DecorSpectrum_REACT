@@ -77,8 +77,11 @@
     top: 20%;
     left: 50%;
     transform: translate(0%, -50%);
-    background-color: rgba(123, 57, 3, 0.7); /* semi-transparent white background */ /* make it circular */
+    background-color: rgba(123, 57, 3, 0.7); /* semi-transparent white background */
+    border-radius: 60%; /* make it circular */
     padding: 10px; /* adjust padding as needed */
+    transition: transform 0.3s ease-in-out;
+
   }
   
   .cart-icon svg {

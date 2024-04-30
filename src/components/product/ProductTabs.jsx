@@ -36,11 +36,11 @@ export default function ProductTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', marginTop : '10px' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="product tabs">
-          <Tab label="Additional Information" {...a11yProps(0)} />
-          <Tab label="Reviews" {...a11yProps(1)} />
+          <Tab label="Additional Information" style={{fontFamily : 'RosarioRegular'}} {...a11yProps(0)} />
+          <Tab label="Reviews" style={{fontFamily : 'RosarioRegular'}} {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
