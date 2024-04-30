@@ -17,7 +17,7 @@ import Image2slide from "./pages/Image2slide";
 import Footer from "./pages/Footer";
 import MaterialNavBar from "./components/MaterialNavBar";
 import ImageGallery from "./components/ImageGallery";
-import Blog from "./Blog/Blog";
+import MainFooter from "./MainFooter/MainFooter";
 
 function App() {
   const [slides, setBannersStates] = useState(null);
@@ -34,6 +34,7 @@ function App() {
 
   return (
     <div>
+      
       <MaterialNavBar />
       {slides && <ImageSlider images={slides.data} />}
       <Middle />
@@ -43,7 +44,7 @@ function App() {
       <Headcard />
       <Headbottom />
       <ImageGallery />
-      <Footer />
+      <MainFooter/>
     </div>
   );
 }

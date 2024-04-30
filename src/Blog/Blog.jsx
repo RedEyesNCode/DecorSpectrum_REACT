@@ -89,7 +89,7 @@ const Blog = () => {
             </button>
           </div>
         </motion.div>
-      </div>
+      </div>  
       <div className="mb-[5vw] px-[4vw] flex gap-[8vw] ">
         <motion.div
           transition={{ duration: 0.8 }}
