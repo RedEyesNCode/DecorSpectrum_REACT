@@ -16,8 +16,8 @@ const MaterialNavBar = () => {
         />
       </div>
       <div className="NavLinks ">
-        <ul className="flex gap-8 font-semibold items-center text-[1.3vw]">
-          <li>HOME</li>
+        <ul className="flex gap-8 font-semibold items-center text-[1.3vw] cursor-pointer">
+          <li onClick={() => navigate('/')}>HOME</li>
           <NavLinks />
           <li>ABOUT US</li>
           <li onClick={() => navigate('/blog')}>BLOGS</li> {/* Corrected onClick handler */}
