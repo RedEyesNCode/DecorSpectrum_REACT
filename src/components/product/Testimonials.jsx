@@ -142,7 +142,7 @@ const Testimonials = () => {
       <button
         className="scroll-button left"
         onClick={handleScrollLeft}
-        style={{ position: "absolute", color: "black", backgroundColor: "#02221F", padding: "5px", borderRadius: "25px", fontSize: "30px", left: "10px", top: "50%", transform: "translateY(-50%)" }}
+        style={{ position: "absolute", color: "black", backgroundColor: "#A0A0A0", padding: "5px", borderRadius: "25px", fontSize: "13px", left: "30px", top: "50%", transform: "translateY(-50%)" }}
       >
         <BsChevronLeft />
       </button>
@@ -150,7 +150,7 @@ const Testimonials = () => {
       <button
         className="scroll-button right"
         onClick={handleScrollRight}
-        style={{ position: "absolute", color: "white", backgroundColor: "#02221F", padding: "5px", borderRadius: "25px", fontSize: "30px", right: "30px", top: "50%", transform: "translateY(-50%)" }}
+        style={{ position: "absolute", color: "black", backgroundColor: "#A0A0A0", padding: "5px", borderRadius: "25px", fontSize: "13px", right: "30px", top: "50%", transform: "translateY(-50%)" }}
       >
         <BsChevronRight />
       </button>

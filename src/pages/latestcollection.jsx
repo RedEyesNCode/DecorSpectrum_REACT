@@ -34,7 +34,6 @@ const abcVariants = {
       opacity: 1,
       transition: {
           duration: 2,
-          delay:2,
           staggerChildren: 0.1,
       },
   }
@@ -42,6 +41,7 @@ const abcVariants = {
 useEffect(() => {
   const handleScroll = () => {
       setScrollPosition(window.scrollY);
+      // console.log(window.screenY);
   };
 
   window.addEventListener('scroll', handleScroll);
@@ -94,10 +94,10 @@ useEffect(() => {
           variant="h4"
           variants={textVariants}
         initial="initial"
-        animate={scrollPosition > 100 ? "animate" : "initial"}
+        animate={scrollPosition > 1350 ? "animate" : "initial"}
           style={{
             marginBottom: "35px",
-            color: "White",
+            color: "#C1CCCF",
             fontFamily: "'Rosario', sans-serif",
             fontSize: "35px",
             fontStyle: "normal",
@@ -112,7 +112,7 @@ useEffect(() => {
         <motion.div
         variants={abcVariants}
         initial="initial"
-        animate={scrollPosition > 100 ? "animate" : "initial"}
+        animate={scrollPosition > 1350 ? "animate" : "initial"}
           id="scroll-container"
           ref={scrollContainerRef}
           style={{ display: "flex", overflowX: "hidden", scrollBehavior: "smooth" }}
@@ -124,7 +124,7 @@ useEffect(() => {
         <motion.button
         variants={abcVariants}
         initial="initial"
-        animate={scrollPosition > 100 ? "animate" : "initial"}
+        animate={scrollPosition > 1350 ? "animate" : "initial"}
           className="scroll-button left"
           onClick={handleScrollLeft}
           style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
@@ -135,7 +135,7 @@ useEffect(() => {
         <motion.button
         variants={abcVariants}
         initial="initial"
-        animate={scrollPosition > 100 ? "animate" : "initial"}
+        animate={scrollPosition > 1350 ? "animate" : "initial"}
           className="scroll-button right"
           onClick={handleScrollRight}
           style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "55%", transform: "translateY(-50%)"}}
@@ -158,7 +158,8 @@ const ProductItem = ({ item }) => {
 
   return (
     <div
-      style={{ flex: "0 0 auto", margin: "0 10px" }}
+      style={{ flex: "0 0 auto", margin: "0 10px",border:"2px solid white",borderTopLeftRadius:"90px",
+      boxShadow:"10px white",borderBottomLeftRadius:"11px",borderBottomRightRadius:"11px",overflow:"hidden" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -168,9 +169,7 @@ const ProductItem = ({ item }) => {
           width: "350px",
           height: "320px",
           overflow: "hidden",
-          marginBottom: "30px",
-          borderTopLeftRadius:"90px",
-          boxShadow:"10px white"
+         
         }}
       >
         {hasValidImage ? (
@@ -202,34 +201,10 @@ const ProductItem = ({ item }) => {
           </div>
         )}
       </div>
-      <Typography
-        className="rosaria-text"
-        style={{
-          color: "white",
-          fontSize: "16px",
-          fontWeight: 600,
-          textAlign: "center",
-          fontStyle: "normal",
-          marginBottom: "8px",
-        }}
-      >
-        {truncatedProductName}
-      </Typography>
-      <Typography
-        className="rosaria-text"
-        style={{
-          fontSize: "12px",
-          fontStyle: "normal",
-          fontWeight: 500,
-          color: "white",
-          letterSpacing: "normal",
-          textAlign: "center",
-          lineHeight: "20.8px",
-          textSizeAdjust: "100%",
-        }}
-      >
-        {item.category.name}
-      </Typography>
+      <div style={{backgroundColor:"#FFFFFF",paddingBottom:"10px",display:"flex",flexDirection:"column"}}>
+      <h1 className="rosaria-text" style={{ color: '#02221F', fontFamily:'"Rosario", "sans-serif"',fontSize: '22px', fontWeight: "bold", textAlign: 'left', fontStyle: 'normal', marginBottom: '2px', margintop: '8px', paddingLeft:"10px" ,paddingTop:"10px",paddingBottom:"5px"}}>{truncatedProductName}</h1>
+      <h1 className="rosaria-text" style={{ color:"#02221F", fontSize: '16px', textAlign:"left", fontStyle: 'normal',paddingLeft:"10px"}}>{item.category.name}</h1>
+      </div>
     </div>
   );
 };

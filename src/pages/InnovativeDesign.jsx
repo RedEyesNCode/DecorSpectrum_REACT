@@ -118,7 +118,7 @@ useEffect(() => {
       <motion.div  className='container_right'>
         <motion.div variants={text1Variants} initial="initial" animate={scrollPosition > 2500 ? "animate" : "initial"} className='right_container_top'>
           <h1>Innovative Design is Our Passion</h1>
-          <p>Vivamus nulla montes vehicula ex semper mus finibus quis eleifend facilisi. Turpis consectetur pulvinar auctor vestibulum quisque. Velit quisque ante interdum consectetuer habitant blandit.</p>
+          <p>We Strive to bring you the latest in designs, directly from our manufacturers. We give you the option and flexibility to choose the styles of globes and create your own chandelier patterns.</p>
           <button>View Collection</button>
         </motion.div>
 

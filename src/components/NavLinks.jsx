@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { FaCaretDown } from "react-icons/fa6";
 import { getAllCategory, getAllSubcategories } from "../api/apiInterface";
+import LocalStorageManager from "../session/LocalStorageManager";
+import { LOCAL_STORAGE_KEY } from "../session/Constants";
+import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
+
 const NavLinks = () => {
+  const navigate = useNavigate(); // Initialize useHistory
+
   const [isHoveredOnListItem, setisHoveredOnListItem] = useState(false);
   const [listItemIndexToBeChanged, setlistItemIndexToBeChanged] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [dropDownsData, setDropDownsData] = useState([
-    {
-      name: "Turkish Decor",
-      subCategory: ["lighting", "ceramics", "this and that"],
-    },
-    {
-      name: "Agate Decor",
-      subCategory: ["Bookends", "Coasters", "Platters"],
-    },
   ]);
 
   const handleCategoryHover = (index) => {
@@ -31,6 +29,19 @@ const NavLinks = () => {
   const handleCategoryClick = (index) => {
     setSelectedCategory(index);
   };
+
+  const handleSubCategoryNavigate = (subCategory) =>{
+    const sessionCategory = { categoryId: '10', categoryName: subCategory };
+    LocalStorageManager.setItem(
+      LOCAL_STORAGE_KEY.CATEGORY_SESSION,
+      sessionCategory
+    );
+
+    navigate("/product-category/" + '10', {
+      state: { category_id: '10', category_name: subCategory },
+    });
+
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -100,12 +111,14 @@ const NavLinks = () => {
           >
             {item.subCategory.map((subItem, subIndex) => (
               <li
-                onMouseEnter={() => {
+              onClick={() => handleSubCategoryNavigate(subItem)}  
+              onMouseEnter={() => {
                   setlistItemIndexToBeChanged(subIndex);
                   setisHoveredOnListItem(true);
                 }}
                 onMouseLeave={() => setisHoveredOnListItem(false)}
                 key={subIndex}
+                
                 className={`uppercase leading-10 font-bold px-3 text-nowrap ${
                   listItemIndexToBeChanged === subIndex && isHoveredOnListItem
                     ? "bg-white text-[#02221F]"

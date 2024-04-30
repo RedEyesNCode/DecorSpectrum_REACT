@@ -30,6 +30,7 @@ import Blog from "./Blog/Blog";
 
 function App() {
   const [slides, setBannersStates] = useState(null);
+  const [categories, setCategory] = useState (null);
 
   useEffect(() => {
     const fetchLeadsData = async () => {
@@ -42,7 +43,6 @@ function App() {
   }, []);
 
 
-  const [categories, setCategory] = useState (null);
 
 
   useEffect(() => {
@@ -55,24 +55,24 @@ function App() {
     fetchCategoryData();
   }, []);
 
-   
-
   return (
     <div>
-
       
+      {<MaterialNavBar/>}
 
-
-      <MaterialNavBar />
-      {slides && <ImageSlider images={slides.data} />}
-      <Middle />
-
-      <Image2slide />
-      <Headmean />
-      <Headcard />
-      <Headbottom />
-      <ImageGallery />
-      <Footer />
+{slides && <ImageSlider images={slides.data}/>}
+<Cardlamp />
+<Middle />
+<Image2slide/>
+<LatestCollection/>
+<SafePayment />
+<InnovativeDesign/>
+{<Headcard category={categories}/>}
+<Latestblog />
+<Headbottom/>
+<Testimonials />
+<HandicraftPhotos />
+<Footer/>
     </div>
   );
 }

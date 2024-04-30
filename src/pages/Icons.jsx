@@ -13,7 +13,6 @@ const Icons = ({ mailId, phoneNumber }) => {
     return (
         <div>
             <div className='icon-contain-1'>
-            <div className='con-1'>
 
             <div className="telephone-container">
                 <div className="telephone-icon-wrapper">
@@ -41,9 +40,7 @@ const Icons = ({ mailId, phoneNumber }) => {
             </div>
            
 
-            <h1 style={{  fontSize: '40px', fontFamily: '"Rosario", Sans-serif',fontWeight:'600',lineHeight:'1.3em',color:'#2c1a00',marginTop:'-40px;',marginLeft:'-544px' }}>Location</h1>
 
-<div className='con-2'>
             <div className="telephone-container">
                 <div className="telephone-icon-wrapper">
                     <span className="icon-text with-gap"><IoRefreshOutline className="IoIosHourglass-icon" /></span>
@@ -68,8 +65,6 @@ const Icons = ({ mailId, phoneNumber }) => {
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
         </div>
         

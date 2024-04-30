@@ -11,8 +11,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-@tailwind utilities;
+
+/* @font-face {
+    font-family: Rosario;
+    src: url(./fonts/Rosario-Regular.ttf);
+} */

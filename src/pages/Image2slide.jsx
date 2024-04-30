@@ -36,7 +36,6 @@ const Imageslide2 = () => {
         opacity: 1,
         transition: {
             duration: 1,
-            delay:1,
             staggerChildren: 0.1,
         },
     }
@@ -46,6 +45,7 @@ const Imageslide2 = () => {
   useEffect(() => {
       const handleScroll = () => {
           setScrollPosition(window.scrollY);
+          // console.log(window.screenY);
       };
 
       window.addEventListener('scroll', handleScroll);
@@ -110,10 +110,10 @@ const Imageslide2 = () => {
       <motion.div
        variants={abcVariants}
        initial="initial"
-       animate={scrollPosition > 100 ? "animate" : "initial"}
+       animate={scrollPosition > 850 ? "animate" : "initial"}
         id="scroll-container"
         ref={scrollContainerRef}
-        style={{ display: "flex", overflowX: "hidden", scrollBehavior: "smooth" }}
+        style={{ display: "flex", overflowX: "hidden", boxShadow:"5px rgb(161, 163, 164)", scrollBehavior: "smooth" }}
       >
         {products && products.map((item) => <ProductItem key={item.productTable.id} item={item} />)}
       </motion.div>
@@ -121,7 +121,7 @@ const Imageslide2 = () => {
       <motion.button
        variants={abcVariants}
        initial="initial"
-       animate={scrollPosition > 100 ? "animate" : "initial"}
+       animate={scrollPosition > 850 ? "animate" : "initial"}
         style={{ position: "absolute", color:"black", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", left:"-60px", top: "60%", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft -= 100 }}
       >
@@ -131,7 +131,7 @@ const Imageslide2 = () => {
       <motion.button
        variants={abcVariants}
        initial="initial"
-       animate={scrollPosition > 100 ? "animate" : "initial"} 
+       animate={scrollPosition > 850 ? "animate" : "initial"} 
         style={{ position: "absolute", color:"", backgroundColor:"#C1CCCF", padding:"5px", borderRadius:"25px", fontSize:"20px", top: "60%", right: "-50px", transform: "translateY(-50%)" }}
         onClick={() => { if (scrollContainerRef.current) scrollContainerRef.current.scrollLeft += 100 }}
       >
@@ -151,7 +151,7 @@ const ProductItem = ({ item }) => {
 
   return (
     <div
-      style={{ flex: "0 0 auto", margin: "0 10px" }}
+      style={{ flex: "0 0 auto", margin: "0 10px" ,boxShadow:"50px solid rgb(161, 163, 164)" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -161,7 +161,8 @@ const ProductItem = ({ item }) => {
           width: "300px",
           height: "300px",
           overflow: "hidden",
-
+          borderTopLeftRadius: "80px",
+            borderTopRightRadius: "80px",
         }}
       >
         {hasValidImage ? (
@@ -174,8 +175,6 @@ const ProductItem = ({ item }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                borderTopLeftRadius: "80px",
-            borderTopRightRadius: "80px",
                 transition: "transform 0.3s ease-in-out",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -215,8 +214,8 @@ const ProductItem = ({ item }) => {
         )}
       </div>
       <div style={{backgroundColor:"#02221F",paddingBottom:"10px",display:"flex",flexDirection:"column", borderBottomLeftRadius:"11px",borderBottomRightRadius:"11"}}>
-      <Typography className="rosaria-text" sx={{ color: '#C1CCCF', fontSize: '16px', fontWeight: 600, textAlign: 'left', fontStyle: 'normal', marginBottom: '8px', margintop: '8px', padding:"10px" }}>{truncatedProductName}</Typography>
-      <Typography className="rosaria-text" sx={{ color:"#C1CCCF", fontSize: '16px', textAlign:"left", fontStyle: 'normal', fontWeight: 500, letterSpacing: 'normal', lineHeight: '20.8px', textSizeAdjust: '100%' ,padding:"8px"}}>{item.category.name}</Typography>
+      <h1 className="rosaria-text" style={{ color: '#C1CCCF', fontFamily:'"Rosario", "sans-serif"',fontSize: '22px', fontWeight: "bold", textAlign: 'left', fontStyle: 'normal', marginBottom: '2px', margintop: '8px', paddingLeft:"10px" ,paddingTop:"10px",paddingBottom:"5px"}}>{truncatedProductName}</h1>
+      <h1 className="rosaria-text" style={{ color:"#C1CCCF", fontSize: '16px', textAlign:"left", fontStyle: 'normal', fontWeight: "bold",paddingLeft:"10px"}}>{item.category.name}</h1>
       </div>
     </div>
 

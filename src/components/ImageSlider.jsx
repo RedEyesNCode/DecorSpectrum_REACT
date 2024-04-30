@@ -60,8 +60,9 @@ const ImageSlider = ({ images }) => {
                   fontWeight: "bold",
                 }}
               >
-                <Typography style={{ marginBottom: '60px', fontFamily: 'Rosario ,sans-serif', fontSize: '35px', fontWeight: 700 }}>Unique Turkish Decor Collection</Typography>
-                <Typography variant="h1" style={{ fontFamily: 'Rosario ,sans-serif'}} className="rosaria-text">Statement in Style</Typography>
+                <Typography variant="h2" style={{ fontFamily: 'Rosario ,sans-serif',fontWeight:"bold"}} className="rosaria-text">Statement in Style</Typography>
+                <Typography variant="h4" style={{ marginBottom: '50px', fontWeight:"bold", fontFamily: 'Rosario ,sans-serif' }}>Unique Turkish Decor Collection</Typography>
+                
                 <Box 
                   style={{ 
                     backgroundColor: "#C19B76", 

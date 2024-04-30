@@ -13,7 +13,6 @@ body{
   width:100%;
   height:290px;
   background: linear-gradient(to right, #19495e, #508f90);
-  margin-top:160px;
 
   
 }
@@ -64,11 +63,7 @@ body{
 /* Contactus1.css */
 
 /* Header styling */
-.head-contain-1 {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
+
   
   .header {
     display: flex;
@@ -110,6 +105,7 @@ body{
   .row {
     display: flex;
     flex-wrap: wrap;
+    margin-top:60px;
   }
 
   .image-container {
@@ -122,14 +118,13 @@ body{
     flex: 0 0 50%;
     max-width: 50%;
     padding: 10px;
-    margin-top:-20px;
-    margin-left:-29px;
+    margin-left:-130px;
+    
   }
 
   img {
-    width: 70%;
+    width: 60%;
     height: 700px;
-    margin-top:-30px;
     border-radius:200px 200px 20px 20px;
   }
 
