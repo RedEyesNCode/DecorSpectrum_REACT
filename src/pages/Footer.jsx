@@ -13,7 +13,7 @@ import logo from "../images/logo-1.png";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#2C1A00", color: "#FFFFFF" }}>
+    <footer style={{ backgroundColor: "#02221F", color: "#FFFFFF" }}>
       <Container sx={{ py: 10 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={3}>
