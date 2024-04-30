@@ -45,34 +45,9 @@ const ProductByCategory = () => {
   }, [sessionCategory]); // Add categoryId to the dependency array
 
   return (
+    
     <div>
-      <MaterialNavBar />
-      <MessageSnackbar message="Products by category"  />
-
-      <Stack direction="column">
-        <Typography style={{ fontFamily: 'Rosario-Regular' }} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
-          Home/{sessionCategory.categoryName}
-        </Typography>
-        <Typography style={{ fontFamily: 'Rosario-Bold', fontWeight: 900 }} variant="h3" sx={{ margin: "15px", color: "#051507" }}>
-          {sessionCategory.categoryName}
-        </Typography>
-
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={9}>
-            {/* Show loading indicator if loading is true */}
-            {loading ? (
-              <Box display="flex" justifyContent="center" alignItems="center" height="200px">
-                <CircularProgress />
-              </Box>
-            ) : (
-              categoryProductsData != undefined && (
-                <ProductList products={categoryProductsData} />
-                
-              )
-            )}
-          </Grid>
-          <Grid item xs={12} md={3}>
-            {/* Show loading indicator if loading is true */}
+      {/* <Grid item xs={12} md={3}>}
             {loading ? (
               <Box display="flex" justifyContent="center" alignItems="center" height="200px">
                 <CircularProgress />
@@ -83,12 +58,41 @@ const ProductByCategory = () => {
 
               )
             )}
+          </Grid> */}
+      <MaterialNavBar />
+      <MessageSnackbar message="Products by category"  />
+
+      <Stack direction="column">
+        <Typography style={{ fontFamily: 'Rosario-Regular' }} variant="h6" sx={{ margin: "15px", color: "#B5BBB6" }}>
+          Home/{sessionCategory.categoryName}
+        </Typography>
+        <Typography style={{ fontFamily: 'Rosario-Bold', fontWeight: 900 }} variant="h3" sx={{ margin: "15px", color: "#051507" }}>
+          {sessionCategory.categoryName}
+        </Typography>
+        {loading ? (
+              <Box display="flex" justifyContent="center" alignItems="center" height="200px">
+                <CircularProgress />
+              </Box>
+            ) : (
+              categoryProductsData != undefined && (
+                <ProductList products={categoryProductsData} />
+                
+              )
+            )}
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={11}>
+            {/* Show loading indicator if loading is true */}
+            
           </Grid>
+          
         </Grid>
       </Stack>
       <Footer />
     </div>
   );
 };
+
+
 
 export default ProductByCategory;

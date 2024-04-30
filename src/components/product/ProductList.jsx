@@ -5,9 +5,9 @@ import { Grid } from "@mui/material";
 
 const ProductList = ({ products }) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={5}>
       {products.data.map((product, index) => (
-        <Grid key={index} item xs={6} sm={3} md={3} lg={3} margin={5}>
+        <Grid key={index} item xs={2} sm={2} md={2} lg={2} margin={5}>
           {/* Adjust the xs, sm, md, lg values to control the number of items per row */}
           <ProductItem
           productPrice={product.productTable.sellingPrice}

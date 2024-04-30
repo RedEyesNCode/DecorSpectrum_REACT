@@ -11,7 +11,26 @@
     font-size: large;
 }
 
+.blue-button {
+  width: 140px;
+  height: 40px;
+  background-color: #D2DBDE;
+  text-transform: none;
+  text-align: center;
+  font-family : 'Rosario-Regular';
+  color: black;
+  padding: '10px';
+  font-size: large;
+  font-size:  '12px';
+  &:hover {
+    font-size:  '15px';
 
+  }
+}
+.blue-button:hover{
+  font-size:  '15px';
+
+}
 
 .custom-button:hover {
     background-color: #000000;
@@ -70,5 +89,5 @@
   }
   
   .image-container:hover .cart-icon {
-    opacity: 1; /* show cart icon on hover */
+    opacity: 0; /* show cart icon on hover */
   }

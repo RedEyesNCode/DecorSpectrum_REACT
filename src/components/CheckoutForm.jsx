@@ -17,6 +17,7 @@ import {
 
   } from "@mui/material";
 import BillingDetailsForm from './BillingDetailsForm';
+import BillingCheckoutForm from '../RishiCheckoutPage/BillingCheckoutForm';
 
 
 
@@ -31,7 +32,6 @@ const CheckoutForm = () => {
     <Grid container spacing={0}> {/* Equal spacing optional */}
     <Grid item xs={12} sm={6}> 
       {/* Content for the left half */}
-      <BillingDetailsForm/>
       
     </Grid>
     <Grid item xs={12} sm={6}> 

@@ -7,6 +7,7 @@ import {
   Button,
   Box,
   Stack,
+  colors,
 } from "@mui/material";
 import DosisRegular from "../../fonts/Dosis-Regular.ttf";
 import DosisMedium from "../../fonts/Dosis-Medium.ttf";
@@ -59,7 +60,10 @@ const ProductItem = ({
 
         sx={{
           position: "relative",
-          width: 350,
+          width: 300,
+          borderWidth : "2px",
+          borderColor : colors.grey,
+          borderRadius : '40px',
           backgroundColor: "#FFFFFF",
         }}
       >
@@ -73,6 +77,7 @@ const ProductItem = ({
           <Box
             sx={{
               position: "absolute",
+              
               top: "50%",
               left: "50%",
 
@@ -111,7 +116,7 @@ const ProductItem = ({
           {/* <button class="custom-button">
   Add to Cart
 </button> */}
-<button class="custom-button">
+<button class="blue-button" style={{borderRadius : '20px',borderColor : colors.yellow,borderWidth : '2px'}} >
   Select Options
 </button>
             
