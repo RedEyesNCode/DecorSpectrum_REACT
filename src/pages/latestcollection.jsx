@@ -34,7 +34,6 @@ const abcVariants = {
       opacity: 1,
       transition: {
           duration: 2,
-          delay:2,
           staggerChildren: 0.1,
       },
   }

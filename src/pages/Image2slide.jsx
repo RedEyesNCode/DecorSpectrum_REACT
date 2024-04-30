@@ -36,7 +36,6 @@ const Imageslide2 = () => {
         opacity: 1,
         transition: {
             duration: 1,
-            delay:1,
             staggerChildren: 0.1,
         },
     }

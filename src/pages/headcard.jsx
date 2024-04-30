@@ -1,14 +1,107 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Headcard1.css";
 import { Box, Typography, Stack } from "@mui/material";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import LocalStorageManager from "../session/LocalStorageManager";
 import { LOCAL_STORAGE_KEY } from "../session/Constants";
+import { motion } from "framer-motion";
 
 const Headcard = ({ category }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const text1Variants = {
+    initial: {
+        x: 50,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            delay:2,
+            staggerChildren: 0.1,
+        },
+    }
+};
+const centerimageVariants={
+  initial: {
+    opacity: 0,
+},
+animate: {
+    opacity: 1,
+    transition: {
+        duration: 1,
+        delay:3,
+        staggerChildren: 0.1,
+    },
+}
+}
+
+const rightVariants = {
+  initial: {
+      x: 50,
+      opacity: 0,
+  },
+  animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:5,
+          staggerChildren: 0.1,
+      },
+  }
+};
+
+const leftVariants = {
+  initial: {
+    x: -50,
+    opacity: 0,
+},
+animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+        duration: 1,
+        delay:4,
+        staggerChildren: 0.1,
+    },
+}
+};
+
+const bootomVariants = {
+  initial: {
+    y: 100,
+    opacity: 0,
+},
+animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+        duration: 1,
+        delay:2,
+        staggerChildren: 0.1,
+    },
+}
+};
+
+useEffect(() => {
+  const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+      console.log(window.scrollY);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+      window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
 
   const navigateProductCategory = (category_id, category_name) => {
     const sessionCategory = { categoryId: category_id, categoryName: category_name };
@@ -38,8 +131,8 @@ const Headcard = ({ category }) => {
       transitionDelay: "0s",
       transitionProperty: "box-shadow"
     }}>
-      <h1 style={{ fontSize: "60px", marginBottom: "10px" }}>Unique Handicraft Collection</h1>
-      <p style={{ fontSize: "20px", marginBottom: "20px" }}>Explore are not range gifts and consectetur adipiscing elit</p>
+      <motion.h1 variants={text1Variants} initial="initial" animate={scrollPosition > 3300 ? "animate" : "initial"} style={{ fontSize: "60px", marginBottom: "10px" }}>Unique Handicraft Collection</motion.h1>
+      <motion.p variants={leftVariants} initial="initial" animate={scrollPosition > 3300 ? "animate" : "initial"} style={{ fontSize: "20px", marginBottom: "20px" }}>Explore are not range gifts and consectetur adipiscing elit</motion.p>
       <Stack direction="column" alignItems="center" style={{ display: "flex", flexDirection: "row" }}>
         {category?.data?.map((category, index) => (
           <Stack key={index} direction="column" alignItems="center" marginLeft="50px" justifyContent="center" id={index} >

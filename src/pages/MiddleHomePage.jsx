@@ -29,7 +29,7 @@ const Middle = () => {
   }, []);
 
   const navigateProductCategory = (category_id) => {
-    const sessionCategory = { categoryId: "1", categoryName: "Turkish Decor" };
+    const sessionCategory = { categoryId: category_id, categoryName: "Turkish Decor" };
     LocalStorageManager.setItem(
       LOCAL_STORAGE_KEY.CATEGORY_SESSION,
       sessionCategory
@@ -81,7 +81,7 @@ const Middle = () => {
           </Typography>
 
           <Box
-            onClick={() => navigateProductCategory("1")}
+            onClick={() => navigateProductCategory("10")}
             style={{
               cursor:"pointer",
               backgroundColor: "rgba(207, 216, 220, 0.932)",
