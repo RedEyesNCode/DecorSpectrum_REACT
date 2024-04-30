@@ -9,6 +9,8 @@ import ProductByCategory from "./components/product/ProductByCategory";
 import AboutUs from "./components/AboutUs";
 import CounterComponent from "./components/CounterComponent";
 import CartCheckout from "./components/CartCheckout";
+import RishiCheckout from "./RishiCheckoutPage/RishiCheckout";
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -20,6 +22,7 @@ ReactDOM.render(
       <Route exact path="/about" element={<AboutUs />} />
 
       <Route exact path="/checkout" element={<CartCheckout/>}></Route>
+      <Route exact path="/chpage" element={<RishiCheckout/>}></Route>
 
       <Route path="/product-category/:categoryId" element={<ProductByCategory />} />
 

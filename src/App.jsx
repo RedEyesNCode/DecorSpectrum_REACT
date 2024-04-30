@@ -17,6 +17,7 @@ import Image2slide from './pages/Image2slide';
 import Footer from './pages/Footer';
 import MaterialNavBar from './components/MaterialNavBar';
 import ImageGallery from './components/ImageGallery';
+import Blog from './Blog/Blog';
 
 
 
@@ -34,26 +35,20 @@ function App() {
     fetchLeadsData();
   }, []);
 
-  
-
-
-   
-
   return (
 
     <div>
-
-      {<MaterialNavBar/>}
-
+        {/* <Blog/> */}
+      <MaterialNavBar/>
       {slides && <ImageSlider images={slides.data}/>}
       <Middle/>
+      
       <Image2slide/>
       <Headmean/>
       <Headcard/>
       <Headbottom/>
       <ImageGallery/>
       <Footer/>
-
     </div>
   );
 }

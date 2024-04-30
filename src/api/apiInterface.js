@@ -69,3 +69,55 @@ export const getProductFullDetails = async (productDetailMap) => {
     throw error;
   }
 };
+
+export const registerUser = async (registerUserData) => {
+  try {
+    const response = await apiService("user/signupUser", "POST",registerUserData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const loginUser = async (loginUserData) => {
+  try {
+    const response = await apiService("user/loginUser", "POST",loginUserData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+export const getCart = async (getCartData) => {
+  try {
+    const response = await apiService("cart/user", "POST",getCartData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+export const addToCart = async (addToCartData) => {
+  try {
+    const response = await apiService("cart/add-to-cart", "POST",addToCartData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateCartItem = async (updateCartItemData) => {
+  try {
+    const response = await apiService("cart/update-cart-item", "POST",updateCartItemData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteCartItem = async (deleteCartItemData) => {
+  try {
+    const response = await apiService("cart/delete-cart-item", "POST",deleteCartItemData);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
