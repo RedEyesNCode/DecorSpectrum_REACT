@@ -4,22 +4,23 @@ import { GiCityCar } from "react-icons/gi";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 import { motion } from 'framer-motion';
-import { duration } from '@mui/material';
+import { Hidden, duration } from '@mui/material';
 
 const SafePayment = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const mainvariants={
-    initial:{
-      opacity:0,
+  const mainvariants = {
+    initial: {
+      opacity: 0,
     },
-    animate:{
-      opacity:1,
-      transition:{
-        duration:1,
-        delay:1,
-      }
-    }
-  }
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delayChildren: 2, // Delay for all children
+        staggerChildren: 1, // Delay between each child
+      },
+    },
+  };
   const leftVariants = {
     initial: {
         x: -100,
@@ -44,8 +45,8 @@ const betweenVariants = {
       y: 0,
       opacity: 1,
       transition: {
-          duration: 2,
-          delay:2,
+          duration: 3,
+          delay:3,
           staggerChildren: 0.1,
       },
   }
@@ -59,8 +60,8 @@ const rightVariants = {
       x: 0,
       opacity: 1,
       transition: {
-          duration: 2,
-          delay:2,
+          duration: 3,
+          delay:3,
           staggerChildren: 0.1,
       },
   }
@@ -78,7 +79,7 @@ useEffect(() => {
   };
 }, []);
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{overflow:"hidden"}}>
       <motion.div variants={mainvariants} initial="initial"  animate={scrollPosition > 100 ? "animate" : "initial"}  className="row box4" style={{display:"flex", flexDirection:"row",overflow:"hidden"}}>
        
         <motion.div variants={leftVariants} initial="initial"  animate={scrollPosition > 100 ? "animate" : "initial"}  className="col-md text-center box4a" data-aos="slide-right" style={{ display: 'flex', flexDirection:"column", justifyContent: 'center', alignItems: 'center' }}>

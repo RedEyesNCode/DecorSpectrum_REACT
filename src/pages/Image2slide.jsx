@@ -92,6 +92,8 @@ const Imageslide2 = () => {
         animate={scrollPosition > 100 ? "animate" : "initial"}
         style={{
           marginBottom: "25px",
+          paddingleft: "7%",
+          fontWeight: "bold",
           color: "#000000",
           fontFamily: "'Rosario', sans-serif",
           fontSize: "35px",

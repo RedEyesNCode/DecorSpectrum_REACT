@@ -1,6 +1,7 @@
 .in_container_main {
   font-family: "Rosario", sans-serif;
   margin-top: 8vw;
+  overflow: hidden;
   background-color: rgb(2, 34, 31);
   height: 100vh;
   display: flex;
@@ -9,6 +10,7 @@
 }
 
 .in_container_main > .container_left {
+  margin-top: 55px;
 width: 40%;
 height: 100%;
 position: relative;
@@ -20,11 +22,11 @@ padding-bottom: 20px;
 }
 .in_container_main > .container_left > img {
   border-top-left-radius: 100px;
-  width: 90%;
+  width: 95%;
 }
 
 .in_container_main > .container_right{
-  width: 50%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -68,18 +70,20 @@ padding-bottom: 20px;
 .in_container_main > .container_right > .right_container_buttom{
   position: relative;
   z-index: 3;
+  margin-top: 20px;
   padding: 0 10px 0 10px;
   overflow: hidden;
   width: 100%;
-  height: 40%;
+  height: 45%;
 }
 .in_container_main > .container_right > .right_container_buttom > img{
   height: 100%; 
-  width: 85%;
+  width: 98%;
+  padding-left:35px ;
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   object-fit: cover;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 
@@ -88,8 +92,8 @@ padding-bottom: 20px;
   box-shadow: 0px 0px 20px 0px rgb(2, 34, 31);
   width: 30%;
   position: absolute;
-  top: 8%;
-  left: 50%;
+  top: 5%;
+  left: 52%;
   transform: translateX(-70%);
   z-index: 2;
   overflow: hidden;
@@ -100,4 +104,5 @@ padding-bottom: 20px;
 .in_container_bottom {
   background-color: rgb(2, 34, 31);
   padding: 50px;
+  padding-top: 70px;
 }

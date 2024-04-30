@@ -14,15 +14,15 @@ const LatestCollection = () => {
   const textVariants = {
     initial: {
         x: 50,
-        opacity: 0,
+        opacity: 1,
     },
     animate: {
         x: 0,
         opacity: 1,
         transition: {
-            duration: 2,
-            delay:2,
-            staggerChildren: 0.1,
+            duration: 4,
+            delay:3,
+            staggerChildren: 1,
         },
     }
 };

@@ -3,11 +3,56 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import './css/Latestblog.css';
 import { getAllProductDetails } from "../../api/apiInterface";
+import { motion } from "framer-motion";
 
 const Latestblog = () => {
   const [products, setProductsData] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const mainvariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 2,
+        delay:1,
+        delayChildren: 2, // Delay for all children
+        staggerChildren: 2, // Delay between each child
+      },
+    },
+  };
+  const text1Variants = {
+    initial: {
+      rotateX: 90, // Initial rotation to hide the text
+      opacity: 0,
+    },
+    animate: {
+      rotateX: 0, // Rotate back to 0 degrees
+      opacity: 1,
+      transition: {
+        duration: 2,
+        delay: 1,
+        staggerChildren: 0.1,
+      },
+    }
+  };
+  
+  useEffect(() => {
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+        // console.log(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
+
 
   useEffect(() => {
     const fetchProductsData = async () => {
@@ -47,6 +92,7 @@ const Latestblog = () => {
     }
   };
 
+  
   return (
     <div className="collection" style={{position:"relative",marginBottom:"50px"}}>
       <Stack style={{ marginLeft: "80px",marginRight: "80px"  }}>
@@ -66,19 +112,20 @@ const Latestblog = () => {
         >
           Latest Blog
         </Typography>
-        <div
+        <motion.div
+       variants={text1Variants} initial="initial" animate={scrollPosition > 4300 ? "animate" : "initial"}
           id="scroll-container"
           ref={scrollContainerRef}
           style={{ display: "flex", overflowX: "hidden", scrollBehavior: "smooth" }}
         >
           {products &&
             products.map((item) => <ProductItem key={item.productTable.id} item={item} />)}
-        </div>
+        </motion.div>
         {/* Left navigation button */}
         <button
           className="scroll-button left"
           onClick={handleScrollLeft}
-          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", left:"10px", top: "55%", transform: "translateY(-50%)"}}
+          style={{position: "absolute", color:"black", backgroundColor:"#D2DBDE", padding:"5px", borderRadius:"25px", fontSize:"15px", left:"30px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronLeft />
         </button>
@@ -86,7 +133,7 @@ const Latestblog = () => {
         <button
           className="scroll-button right"
           onClick={handleScrollRight}
-          style={{position: "absolute", color:"white", backgroundColor:"#02221F", padding:"5px", borderRadius:"25px", fontSize:"30px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
+          style={{position: "absolute", color:"black", backgroundColor:"#D2DBDE", padding:"5px", borderRadius:"25px", fontSize:"15px", right:"30px", top: "55%", transform: "translateY(-50%)"}}
         >
           <BsChevronRight />
         </button>

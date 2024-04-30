@@ -46,7 +46,7 @@ const Middle = () => {
         display: "flex",
         justifyContent: "space-between",
         marginLeft:"15px",
-        marginTop:"50px",
+        marginTop:"150px",
         overflow:"hidden"
       }}
     >
@@ -56,50 +56,46 @@ const Middle = () => {
         <Typography
             variant="h2"
             className="rosaria-text"
-            style={{ padding: "10px", fontSize:"22px", fontWeight:"600" }}
+            style={{ padding: "10px", fontSize:"25px", fontWeight:"bold",color:"rgb(2 34 31)",fontFamily:"'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }}
           >
             WHO WE ARE
           </Typography>
           <Typography
             variant="h2"
             className="rosaria-text"
-            style={{ padding: "10px",fontSize:"70px", fontWeight:"600",color:"black" }}
+            style={{ padding: "10px",fontSize: "calc(2.2vw + 1rem)", fontWeight:"bold",lineHeight:"4vw",color:"black",fontFamily:'"Rosario", "sans-serif"', }}
           >
-            We Offer Top Quality Products - <span style={{fontSize:"60px",}}> A <br /> Statement in Style</span>
+            We Offer Top Quality Products - <span style={{color: "rgb(2, 34, 31)"}}> A <br /> Statement in Style</span>
           </Typography>
           <Typography
             variant="body1"
             className="rosaria-text"
             style={{
               marginTop: "10px",
-              fontSize:"22px",
+              fontSize:"20px",
               padding: "10px",
               color: "#484B4F",
             }}
           >
-            Huge selection of Exotic handmade Turkish Chandeliers, Lamps,
-            Ceiling Lights & Ceramics. Choose from our fast-selling colors or
-            customize a unique combination.
+            Vivamus nulla montes vehicula ex semper mus finibus quis eleifend facilisi. Turpis consectetur pulvinar auctor vestibulum quisque. Velit quisque ante interdum consectetuer habitant blandit.
           </Typography>
 
           <Box
             onClick={() => navigateProductCategory("1")}
             style={{
               cursor:"pointer",
-              backgroundColor: "#D2DBDE",
-              height: "40px",
-              width: "250px",
-              borderTopLeftRadius: "30px",
-              borderTopRightRadius: "5px",
-              borderBottomLeftRadius: "5px",
-              borderBottomRightRadius: "30px",
-              marginTop:"10px",
-              paddingTop: "25px",
-              paddingRight: "25px",
-              paddingLeft: "25px",
-              paddingBottom: "25px",
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "16px",
+              backgroundColor: "rgba(207, 216, 220, 0.932)",
+              height: "35px",
+              width: "200px",
+              borderTopLeftRadius: "40px",
+              borderBottomRightRadius: "40px",
+              marginTop:"5%",
+              paddingTop: "5%",
+              paddingRight: "5%",
+              paddingLeft: "5%",
+              paddingBottom: "5%",
+              boxShadow:"0px 0px 10px 0px rgba(207, 216, 220, 0.932)",
+              border:"1px solid rgb(2 34 31)",
               display: "flex", // Set display to flex
               alignItems: "center", // Align items vertically
               justifyContent: "center", // Center the items horizontally
@@ -107,21 +103,20 @@ const Middle = () => {
           >
             <Typography
               className="rosaria-text"
-              style={{ color: "black" }}
+              style={{ color: "rgb(2 34 31)", fontFamily: "Poppins, sans-serif",
+              fontWeight:"bold",
+              fontSize:"15px", }}
               variant="body1"
             >
-              View Our Collection
+              View  Collection
             </Typography>
-            <BiArrowToRight
-              style={{ color: "#FFFFFF", width: "25px", height: "25px" }}
-            />
           </Box>
         </Stack>
       </motion.div>
       <div style={{position:"relative",width:"35%" }}>
         <motion.img
-        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 1000 }}
-        transition={{ duration: 1, }}
+        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 1000,x:isVisible?0:1000 }}
+        transition={{ duration: 3, }}
           src={
             "https://www.decorspectrum.com/wp-content/uploads/elementor/thumbs/IMG_4694-scaled-1-e1670854127657-pz231i86feigmor6hfv2dpvz8c29zwau7ptop9fp18-qembgj68es2551p6d6f258rjsntn726py1fi84js70.jpg"
           }

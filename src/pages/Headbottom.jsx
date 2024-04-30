@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { ImPriceTag } from "react-icons/im";
 import { BiLike, BiPlay, BiStar, BiVideoPlus } from "react-icons/bi";
+import { delay, motion } from "framer-motion";
 const Headbottom = () => {
   const videoId = "VIDEO_ID_HERE";
   const [isVisible, setIsVisible] = useState(false);
@@ -37,10 +38,116 @@ const Headbottom = () => {
     };
   }, []);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  const text1Variants = {
+    initial: {
+        x: -100,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            delay:1,
+            staggerChildren: 0.1,
+        },
+    }
+};
+const text2variants={
+  initial: {
+    opacity: 0,
+    x:100,
+},
+animate: {
+  x:0,
+    opacity: 1,
+    transition: {
+        duration: 1,
+        delay:2,
+        staggerChildren: 0.1,
+    },
+}
+}
+
+const text3Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:3,
+      },
+  }
+};
+
+const text4Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:4,
+      },
+  }
+};
+const text5Variants = {
+  initial: {
+      y: 50,
+      opacity: 0,
+  },
+  animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:4,
+      },
+  }
+};
+
+const text6Variants = {
+  initial: {
+      x: 100,
+      opacity: 0,
+  },
+  animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+          duration: 1,
+          delay:5,
+          staggerChildren: 0.1,
+      },
+  }
+};
+
+useEffect(() => {
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+        console.log(window.scrollY);  
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
+
   return (
-    <div style={{ backgroundColor: "#02221F", height:"100vh" }}>
-      <Stack direction="row" style={{ backgroundColor: "#02221F" }}>
-        <div style={{ position: "relative", width: "50%",overflow:"hidden",objectFit:"cover" }}>
+    <div style={{  height:"100vh",marginBottom:"50px",overflow:"hidden" }}>
+      <Stack direction="row" style={{ height:"100%" }}>
+        <motion.div variants={text1Variants} initial="initial" animate={scrollPosition > 5000 ? "animate" : "initial"}  style={{ height:"100%", position: "relative", width: "50%",overflow:"hidden",objectFit:"cover" }}>
           <img
             width="100%"
             src={image12}
@@ -51,7 +158,7 @@ const Headbottom = () => {
           <div
             style={{
               position: "absolute",
-              top: "30%",
+              top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
             }}
@@ -68,37 +175,35 @@ const Headbottom = () => {
               />
             </div>
           </div>
-        </div>
-        <Stack direction="column" style={{padding : '80px' }}>
-          <Typography
+        </motion.div>
+        <Stack  direction="column" style={{height:"100%",padding : '50px',width:"50%" ,backgroundColor: "#02221F" }}>
+          <motion.Typography
+          variants={text2variants} initial="initial" animate={scrollPosition > 5100 ? "animate" : "initial"} 
             className="rosaria-text"
-            style={{ color: "#ffffff", fontSize: "42px", fontWeight: "300",marginBottom : '50px', textAlign:"center" }}
+            style={{ color: "#C1CCCF", fontSize: "42px", fontWeight: "300",marginBottom : '50px', textAlign:"center" }}
           >
             Passionate About Elegance and Beauty In Design
-          </Typography>
+          </motion.Typography>
 
-          <Stack direction="row">
+          <motion.Stack variants={text3Variants} initial="initial" animate={scrollPosition > 5100 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
+                  
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
+                 
                 }}
               >
                 <BiStar
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    color: "#ffffff",
+                    width: "50px",
+                    height: "50px",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -108,7 +213,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                 }}
               >
                 100 % Guarantee
@@ -116,7 +221,7 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                   fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
@@ -125,29 +230,24 @@ const Headbottom = () => {
                 you will fall in love with them.
               </Typography>
             </Stack>
-          </Stack>
-          <Stack direction="row">
+          </motion.Stack>
+          <motion.Stack variants={text4Variants} initial="initial" animate={scrollPosition > 5300 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
                 }}
               >
                 <BiLike
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    color: "#ffffff",
+                    width: "50px",
+                    height: "50px",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -157,7 +257,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                   textAlign : 'left'
                 }}
               >
@@ -166,7 +266,7 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                   fontSize: "16px",
                   fontFamily: "Poppins",
                 }}
@@ -174,29 +274,24 @@ const Headbottom = () => {
                 We are a family-owned business that respects the need of every customer.We provide friendly customer service and are always happy to help
               </Typography>
             </Stack>
-          </Stack>
-          <Stack direction="row">
+          </motion.Stack>
+          <motion.Stack variants={text5Variants} initial="initial" animate={scrollPosition > 5400 ? "animate" : "initial"}  direction="row">
           <div
                 style={{
                   position: "absolute",
-                  backgroundColor: "#b39373",
                   paddingLeft: "15px",
                   paddingRight: "15px",
                   paddingBottom : '12px',
                   paddingTop: "15px",
                   overflow: "hidden",
                   width: "fit-content",
-                  borderBottomLeftRadius: "5px",
-                  borderBottomRightRadius: "5px",
-                  borderTopLeftRadius: "40px",
-                  borderTopRightRadius: "5px",
                 }}
               >
                 <ImPriceTag
                   style={{
                     width: "30px",
                     height: "30px",
-                    color: "#ffffff",
+                    color: "#C1CCCF",
                   }}
                 />
               </div>
@@ -206,7 +301,7 @@ const Headbottom = () => {
                 style={{
                   fontSize: "26px",
                   fontStyle: "normal",
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                 }}
               >
                 Affordable Prioe
@@ -214,7 +309,7 @@ const Headbottom = () => {
               <Typography
                 variant="body1"
                 style={{
-                  color: "#ffffff",
+                  color: "#C1CCCF",
                   fontSize: "16px",
                   fontFamily: "Rosario-Regular",
                 }}
@@ -223,11 +318,12 @@ const Headbottom = () => {
 
               </Typography>
             </Stack>
-          </Stack>
+          </motion.Stack>
           
-          <Typography
+          <motion.Typography
+          variants={text6Variants} initial="initial" animate={scrollPosition > 5600 ? "animate" : "initial"} 
             style={{
-              color: "#ffffff",
+              color: "#C1CCCF",
               marginTop:"20px",
               fontSize: "18px",
               marginLeft: "10px",
@@ -237,7 +333,7 @@ const Headbottom = () => {
             Explore our huge selection of Exotic handmade Turkish Chandeliers, <br />
             Lamps, Ceiling Lights and Ceramics.  Choose from our fast-selling
             colors or <br /> customize your own unique combination of
-          </Typography>
+          </motion.Typography>
         </Stack>
       </Stack>
     </div>
